@@ -1,0 +1,49 @@
+{
+    "date": "20240915",
+    "songs": {
+        "intro": [
+            "Benedici il Signore Anima mia",
+            "Grandi cose",
+            "Il canto dell'amore"
+        ],
+        "gloria": [
+            "Gloria Mariano"
+        ],
+        "offertorio": [
+            "Segni del tuo amore"
+        ],
+        "pace": [
+            "La pace del Signore sia con te"
+        ],
+        "comunione": [
+            "Grandi cose",
+            "Chiamati per nome"
+        ],
+        "fine": [
+            "Il canto dell'amore"
+        ]
+    },
+    "lectures": {
+        "lettura_1": {
+            "head": "Dal libro del profeta Isa\u00eca",
+            "body": "Il Signore Dio mi ha aperto l\u2019orecchio e io non ho opposto resistenza, non mi sono tirato indietro. Ho presentato il mio dorso ai flagellatori, le mie guance a coloro che mi strappavano la barba; non ho sottratto la faccia agli insulti e agli sputi. Il Signore Dio mi assiste, per questo non resto svergognato, per questo rendo la mia faccia dura come pietra, sapendo di non restare confuso. \u00c8 vicino chi mi rende giustizia: chi oser\u00e0 venire a contesa con me? Affrontiamoci. Chi mi accusa? Si avvicini a me. Ecco, il Signore Dio mi assiste: chi mi dichiarer\u00e0 colpevole?",
+            "ending": "Parola di Dio"
+        },
+        "salmo": {
+            "rit": "Camminer\u00f2 alla presenza del Signore nella terra dei viventi."
+        },
+        "lettura_2": {
+            "head": "Dalla lettera di san Giacomo apostolo",
+            "body": "A che serve, fratelli miei, se uno dice di avere fede, ma non ha opere? Quella fede pu\u00f2 forse salvarlo?  Se un fratello o una sorella sono senza vestiti e sprovvisti del cibo quotidiano e uno di voi dice loro: \u00abAndatevene in pace, riscaldatevi e saziatevi\u00bb, ma non date loro il necessario per il corpo, a che cosa serve? Cos\u00ec anche la fede: se non \u00e8 seguita dalle opere, in se stessa \u00e8 morta.  Al contrario uno potrebbe dire: \u00abTu hai la fede e io ho le opere; mostrami la tua fede senza le opere, e io con le mie opere ti mostrer\u00f2 la mia fede\u00bb.",
+            "ending": "Parola di Dio"
+        },
+        "alleluia": {
+            "body": "Quanto a me non ci sia altro vanto che nella croce del Signore, \r\nper mezzo della quale il mondo per me \u00e8 stato crocifisso, \r\ncome io per il mondo."
+        },
+        "vangelo": {
+            "head": "Dal Vangelo secondo Marco",
+            "body": "In quel tempo, Ges\u00f9 part\u00ec con i suoi discepoli verso i villaggi intorno a Cesar\u00e8a di Filippo, e per la strada interrogava i suoi discepoli dicendo: \u00abLa gente, chi dice che io sia?\u00bb. Ed essi gli risposero: \u00abGiovanni il Battista; altri dicono El\u00eca e altri uno dei profeti\u00bb.  Ed egli domandava loro: \u00abMa voi, chi dite che io sia?\u00bb. Pietro gli rispose: \u00abTu sei il Cristo\u00bb. E ordin\u00f2 loro severamente di non parlare di lui ad alcuno. E cominci\u00f2 a insegnare loro che il Figlio dell\u2019uomo doveva soffrire molto, ed essere rifiutato dagli anziani, dai capi dei sacerdoti e dagli scribi, venire ucciso e, dopo tre giorni, risorgere.  Faceva questo discorso apertamente. Pietro lo prese in disparte e si mise a rimproverarlo. Ma egli, voltatosi e guardando i suoi discepoli, rimprover\u00f2 Pietro e disse: \u00abVa\u2019 dietro a me, Satana! Perch\u00e9 tu non pensi secondo Dio, ma secondo gli uomini\u00bb. Convocata la folla insieme ai suoi discepoli, disse loro: \u00abSe qualcuno vuol venire dietro a me, rinneghi se stesso, prenda la sua croce e mi segua. Perch\u00e9 chi vuole salvare la propria vita, la perder\u00e0; ma chi perder\u00e0 la propria vita per causa mia e del Vangelo, la salver\u00e0\u00bb.",
+            "ending": "Parola del Signore"
+        }
+    }
+}
