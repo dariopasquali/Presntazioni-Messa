@@ -2,9 +2,7 @@
     "date": "20240915",
     "songs": {
         "intro": [
-            "Benedici il Signore Anima mia",
-            "Grandi cose",
-            "Il canto dell'amore"
+            "Popoli tutti"
         ],
         "gloria": [
             "Gloria Mariano"
@@ -16,11 +14,10 @@
             "La pace del Signore sia con te"
         ],
         "comunione": [
-            "Grandi cose",
-            "Chiamati per nome"
+            "Grandi cose"
         ],
         "fine": [
-            "Il canto dell'amore"
+            "Grandi cose"
         ]
     },
     "lectures": {
@@ -30,7 +27,13 @@
             "ending": "Parola di Dio"
         },
         "salmo": {
-            "rit": "Camminer\u00f2 alla presenza del Signore nella terra dei viventi."
+            "rit": "Camminer\u00f2 alla presenza del Signore nella terra dei viventi.",
+            "body": [
+                "Amo il Signore, perch\u00e9 ascolta\nil grido della mia preghiera.\nVerso di me ha teso l\u2019orecchio\nnel giorno in cui lo invocavo.",
+                "Mi stringevano funi di morte,\nero preso nei lacci degli inferi,\nero preso da tristezza e angoscia.\nAllora ho invocato il nome del Signore:\n\u00abTi prego, liberami, Signore\u00bb.",
+                "Pietoso e giusto \u00e8 il Signore,\nil nostro Dio \u00e8 misericordioso.\nIl Signore protegge i piccoli:\nero misero ed egli mi ha salvato.",
+                "S\u00ec, hai liberato la mia vita dalla morte,\ni miei occhi dalle lacrime,\ni miei piedi dalla caduta.\nIo camminer\u00f2 alla presenza del Signore\nnella terra dei viventi."
+            ]
         },
         "lettura_2": {
             "head": "Dalla lettera di san Giacomo apostolo",

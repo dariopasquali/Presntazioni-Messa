@@ -12,28 +12,46 @@ class MassMoment(enum.Enum):
     confesso = 1  # RITO
     kyrie = 2  # RITO
     gloria = 3  # CANTO
-
     lettura_1 = 4  # LETTURA
     salmo = 5  # LETTURA
     lettura_2 = 6  # LETTURA
     alleluia = 7  # LETTURA
     vangelo = 8  # LETTURA
-
     credo = 9  # RITO
     offertorio = 10  # CANTO
     santo = 17  # CANTO
-
     padre_nostro = 11  # RITO
     pace = 12  # CANTO (Opt)
     agnello = 13  # CANTO
-
     invito_cena = 14  # RITO
-
     comunione = 15  # CANTO (x2/3)
-
     fine = 16  # CANTO
-
     silence = 20
+
+    @staticmethod
+    def from_name(name):
+        return {
+            "welcome": MassMoment.welcome,
+            "intro": MassMoment.intro,
+            "confesso": MassMoment.confesso,
+            "kyrie": MassMoment.kyrie,
+            "gloria": MassMoment.gloria,
+            "lettura_1": MassMoment.lettura_1,
+            "salmo": MassMoment.salmo,
+            "lettura_2": MassMoment.lettura_2,
+            "alleluia": MassMoment.alleluia,
+            "vangelo": MassMoment.vangelo,
+            "credo": MassMoment.credo,
+            "offertorio": MassMoment.offertorio,
+            "santo": MassMoment.santo,
+            "padre_nostro": MassMoment.padre_nostro,
+            "pace": MassMoment.pace,
+            "agnello": MassMoment.agnello,
+            "invito_cena": MassMoment.invito_cena,
+            "comunione": MassMoment.comunione,
+            "fine": MassMoment.fine,
+            "silence": MassMoment.silence,
+        }[name]
 
 
 website_root = "https://www.lachiesa.it/calendario/{aaaammdd}.html"
@@ -54,6 +72,10 @@ class Lecture(Pages):
         self.head = head
         self.body = body
         self.ending = ending
+
+    @staticmethod
+    def from_json(js):
+        return Lecture(head=js['head'], body=js['body'], ending=js['ending'])
 
     def to_json(self):
         return {
@@ -77,8 +99,13 @@ class Salmo(Lecture):
 
     def to_json(self):
         return {
-            "rit": self.rit
+            "rit": self.rit,
+            "body": self.body,
         }
+
+    @staticmethod
+    def from_json(js):
+        return Salmo(rit=js['rit'], body=js['body'])
 
     def get_pages(self, wpp=100):
         pages = []
@@ -94,6 +121,10 @@ class Alleluia(Lecture):
     def __init__(self, body, head=""):
         super().__init__(body, head)
 
+    @staticmethod
+    def from_json(js):
+        return Alleluia(body=js['body'])
+
     def to_json(self):
         return {
             "body": self.body,
@@ -107,7 +138,7 @@ class Alleluia(Lecture):
 
 
 class Bible:
-    def __init__(self, aaaammdd="20240101"):
+    def __init__(self):
         self.lectures = {
             MassMoment.lettura_1: None,
             MassMoment.salmo: None,
@@ -116,14 +147,24 @@ class Bible:
             MassMoment.vangelo: None,
         }
 
-        self.fetch(aaaammdd=aaaammdd)
-
     def get(self, mass_moment):
         if mass_moment in self.lectures:
             return self.lectures[mass_moment]
         return None
 
-    def fetch(self, aaaammdd="20240101"):
+    def load_json(self, bible_json):
+        for moment_name, lect in bible_json.items():
+            self.lectures[MassMoment.from_name(moment_name)] = lect
+
+        for moment, lect_json in self.lectures.items():
+            if moment == MassMoment.salmo:
+                self.lectures[moment] = Salmo.from_json(lect_json)
+            elif moment == MassMoment.alleluia:
+                self.lectures[moment] = Alleluia.from_json(lect_json)
+            else:
+                self.lectures[moment] = Lecture.from_json(lect_json)
+
+    def fetch_online(self, aaaammdd="20240101"):
         url = website_root.format(aaaammdd=aaaammdd)
         response = requests.get(url)
         response.encoding = 'utf-8'
@@ -227,7 +268,6 @@ class Librone:
             songs[moment] = [title for (title, tags) in song_moment_list if moment.name in tags]
 
         return songs
-
 
     def search(self, title=""):
         find = [song for song in self.librone["songs"] if song["title"] == title]

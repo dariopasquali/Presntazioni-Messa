@@ -1,0 +1,51 @@
+{
+    "date": "20240922",
+    "songs": {
+        "intro": [
+            "Popoli tutti"
+        ],
+        "gloria": [
+            "Gloria Mariano"
+        ],
+        "offertorio": [
+            "Segni del tuo amore"
+        ],
+        "pace": [
+            "La pace del Signore sia con te"
+        ],
+        "comunione": [
+            "Grandi cose"
+        ],
+        "fine": [
+            "Grandi cose"
+        ]
+    },
+    "lectures": {
+        "lettura_1": {
+            "head": "Dal libro della Sapienza",
+            "body": "[Dissero gli empi:] \u00abTendiamo insidie al giusto, che per noi \u00e8 d\u2019incomodo e si oppone alle nostre azioni; ci rimprovera le colpe contro la legge e ci rinfaccia le trasgressioni contro l\u2019educazione ricevuta.",
+            "ending": "Parola di Dio"
+        },
+        "salmo": {
+            "rit": "Il Signore sostiene la mia vita.",
+            "body": [
+                "Dio, per il tuo nome salvami,\nper la tua potenza rendimi giustizia.\nDio, ascolta la mia preghiera,\nporgi l\u2019orecchio alle parole della mia bocca.",
+                "Poich\u00e9 stranieri contro di me sono insorti\ne prepotenti insidiano la mia vita;\nnon pongono Dio davanti ai loro occhi.",
+                "Ecco, Dio \u00e8 il mio aiuto,\nil Signore sostiene la mia vita.\nTi offrir\u00f2 un sacrificio spontaneo,\nloder\u00f2 il tuo nome, Signore, perch\u00e9 \u00e8 buono."
+            ]
+        },
+        "lettura_2": {
+            "head": "Dalla lettera di san Giacomo apostolo",
+            "body": "Fratelli miei, dove c\u2019\u00e8 gelosia e spirito di contesa, c\u2019\u00e8 disordine e ogni sorta di cattive azioni. Invece la sapienza che viene dall\u2019alto anzitutto \u00e8 pura, poi pacifica, mite, arrendevole, piena di misericordia e di buoni frutti, imparziale e sincera. Per coloro che fanno opera di pace viene seminato nella pace un frutto di giustizia. Da dove vengono le guerre e le liti che sono in mezzo a voi? Non vengono forse dalle vostre passioni che fanno guerra nelle vostre membra? Siete pieni di desideri e non riuscite a possedere; uccidete, siete invidiosi e non riuscite a ottenere; combattete e fate guerra! Non avete perch\u00e9 non chiedete; chiedete e non ottenete perch\u00e9 chiedete male, per soddisfare cio\u00e8 le vostre passioni.",
+            "ending": "Parola di Dio"
+        },
+        "alleluia": {
+            "body": "Dio ci ha chiamati mediante il Vangelo, \r\nper entrare in possesso della gloria \r\ndel Signore nostro Ges\u00f9 Cristo."
+        },
+        "vangelo": {
+            "head": "Dal Vangelo secondo Marco",
+            "body": "In quel tempo, Ges\u00f9 e i suoi discepoli attraversavano la Galilea, ma egli non voleva che alcuno lo sapesse. Insegnava infatti ai suoi discepoli e diceva loro: \u00abIl Figlio dell\u2019uomo viene consegnato nelle mani degli uomini e lo uccideranno; ma, una volta ucciso, dopo tre giorni risorger\u00e0\u00bb. Essi per\u00f2 non capivano queste parole e avevano timore di interrogarlo. Giunsero a Caf\u00e0rnao. Quando fu in casa, chiese loro: \u00abDi che cosa stavate discutendo per la strada?\u00bb. Ed essi tacevano. Per la strada infatti avevano discusso tra loro chi fosse pi\u00f9 grande. Sedutosi, chiam\u00f2 i Dodici e disse loro: \u00abSe uno vuole essere il primo, sia l\u2019ultimo di tutti e il servitore di tutti\u00bb.  E, preso un bambino, lo pose in mezzo a loro e, abbracciandolo, disse loro: \u00abChi accoglie uno solo di questi bambini nel mio nome, accoglie me; e chi accoglie me, non accoglie me, ma colui che mi ha mandato\u00bb.",
+            "ending": "Parola del Signore"
+        }
+    }
+}
