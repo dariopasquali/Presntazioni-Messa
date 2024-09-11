@@ -12,17 +12,24 @@ from model.rfixed_rites import *
 from qt_material import apply_stylesheet
 
 casi_duso = """
-- aggiungere immagine volante/predefinita, solitamente alla fine
-- aggiungere canzone volante, poco prima della messa, ma anche durante prendendo spunto dall'omelia
-- testo nuovo, di canzone già, serve aggiongerlo al librone
-- librone su drive
-- file .messa con già tutto, canti e testi, scaricati in fase di creazione
-- santo
-- sequenze particolari (sequenza pasquale,)
+
+# BASE
+- Download dicitura tempo ordinario e messa + data
+- Accetta di non trovare la seconda lettura in settimana
+
+- Paginazione più smart, canti (strofa + RIT in pagina), letture (wpp 150), fixed (wpp 100)
+
+- CANTO santo (momento messa, canto in Librone, selezione Launcher)
+
+- TASTO PER aggiungere immagine volante/predefinita, solitamente alla fine
+- TASTO PER aggiungere canzone volante, poco prima della messa, ma anche durante prendendo spunto dall'omelia
+- TASI +/- per resize del font
+
+- librone su drive, scaricare canzoni in fase di creazione nel file .json
+
+# EXTRA
 - canti con doppie voci
-- resize del font con +/-
-- dicitura tempo ordinario e messa + data (download da lachiesa)
-- accetta di non trovare la seconda lettura
+- sequenze particolari (sequenza pasquale,)
 """
 
 
