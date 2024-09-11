@@ -2,22 +2,24 @@
     "date": "20240915",
     "songs": {
         "intro": [
-            "Popoli tutti"
+            "Benedici il Signore Anima mia"
         ],
         "gloria": [
             "Gloria Mariano"
         ],
         "offertorio": [
-            "Segni del tuo amore"
+            "Eccomi manda me"
         ],
-        "pace": [
-            "La pace del Signore sia con te"
+        "santo": [
+            "Santo, Santo"
         ],
+        "pace": [],
         "comunione": [
-            "Grandi cose"
+            "Inno all'amore",
+            "Non c'\u00e8 Amore pi\u00f9 grande"
         ],
         "fine": [
-            "Grandi cose"
+            "Cantiamo insieme al Signore"
         ]
     },
     "lectures": {

@@ -1,0 +1,42 @@
+{
+    "date": "20240911",
+    "songs": {
+        "intro": [],
+        "gloria": [],
+        "offertorio": [],
+        "santo": [
+            "Santo, Santo"
+        ],
+        "pace": [],
+        "comunione": [],
+        "fine": []
+    },
+    "lectures": {
+        "lettura_1": {
+            "head": "Dalla prima lettera di san Paolo apostolo ai Cor\u00ecnzi",
+            "body": "Fratelli, riguardo alle vergini, non ho alcun comando dal Signore, ma do un consiglio, come uno che ha ottenuto misericordia dal Signore e merita fiducia. Penso dunque che sia bene per l\u2019uomo, a causa delle presenti difficolt\u00e0, rimanere cos\u00ec com\u2019\u00e8.  Ti trovi legato a una donna? Non cercare di scioglierti. Sei libero da donna? Non andare a cercarla. Per\u00f2 se ti sposi non fai peccato; e se la giovane prende marito, non fa peccato. Tuttavia costoro avranno tribolazioni nella loro vita, e io vorrei risparmiarvele.  Questo vi dico, fratelli: il tempo si \u00e8 fatto breve; d\u2019ora innanzi, quelli che hanno moglie, vivano come se non l\u2019avessero; quelli che piangono, come se non piangessero; quelli che gioiscono, come se non gioissero; quelli che comprano, come se non possedessero; quelli che usano i beni del mondo, come se non li usassero pienamente: passa infatti la figura di questo mondo!",
+            "ending": "Parola di Dio"
+        },
+        "salmo": {
+            "rit": "Ascolta, figlia, guarda, porgi l\u2019orecchio.",
+            "body": [
+                "Ascolta, figlia, guarda, porgi l\u2019orecchio:\ndimentica il tuo popolo e la casa di tuo padre;\nil re \u00e8 invaghito della tua bellezza.\n\u00c8 lui il tuo signore: rendigli omaggio. ",
+                "Entra la figlia del re: \u00e8 tutta splendore,\ntessuto d\u2019oro \u00e8 il suo vestito.\n\u00c8 condotta al re in broccati preziosi;\ndietro a lei le vergini, sue compagne,\na te sono presentate.",
+                "Condotte in gioia ed esultanza,\nsono presentate nel palazzo del re.\nAi tuoi padri succederanno i tuoi figli;\nli farai pr\u00ecncipi di tutta la terra."
+            ]
+        },
+        "lettura_2": {
+            "head": "",
+            "body": "",
+            "ending": "Parola di Dio"
+        },
+        "alleluia": {
+            "body": "Rallegratevi ed esultate, dice il Signore,\r\nperch\u00e9, ecco, la vostra ricompensa \u00e8 grande nel cielo."
+        },
+        "vangelo": {
+            "head": "Dal Vangelo secondo Luca",
+            "body": "In quel tempo, Ges\u00f9, alz\u00e0ti gli occhi verso i suoi discepoli, diceva: \u00abBeati voi, poveri, perch\u00e9 vostro \u00e8 il regno di Dio. Beati voi, che ora avete fame, perch\u00e9 sarete saziati. Beati voi, che ora piangete, perch\u00e9 riderete. Beati voi, quando gli uomini vi odieranno e quando vi metteranno al bando e vi insulteranno e disprezzeranno il vostro nome come infame, a causa del Figlio dell\u2019uomo. Rallegratevi in quel giorno ed esultate perch\u00e9, ecco, la vostra ricompensa \u00e8 grande nel cielo. Allo stesso modo infatti agivano i loro padri con i profeti. Ma guai a voi, ricchi, perch\u00e9 avete gi\u00e0 ricevuto la vostra consolazione. Guai a voi, che ora siete sazi, perch\u00e9 avrete fame. Guai a voi, che ora ridete, perch\u00e9 sarete nel dolore e piangerete. Guai, quando tutti gli uomini diranno bene di voi. Allo stesso modo infatti agivano i loro padri con i falsi profeti\u00bb.",
+            "ending": "Parola del Signore"
+        }
+    }
+}

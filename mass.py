@@ -6,7 +6,9 @@ from PyQt6.QtGui import QFont, QIcon
 from PyQt6.QtWidgets import QVBoxLayout, QLabel, QMainWindow, QHBoxLayout, QFrame, QApplication, QLineEdit, QPushButton, \
     QDateEdit, QListWidget, QListWidgetItem, QAbstractItemView, QFileDialog
 
-from model.mass_elements import Bible, MassMoment, Librone, Pages
+from model.bible import Bible
+from model.librone import Librone
+from model.commons import MassMoment, Pages
 from model.rfixed_rites import *
 
 from qt_material import apply_stylesheet
@@ -14,12 +16,10 @@ from qt_material import apply_stylesheet
 casi_duso = """
 
 # BASE
+- Eseguibile
+
 - Download dicitura tempo ordinario e messa + data
-- Accetta di non trovare la seconda lettura in settimana
-
 - Paginazione più smart, canti (strofa + RIT in pagina), letture (wpp 150), fixed (wpp 100)
-
-- CANTO santo (momento messa, canto in Librone, selezione Launcher)
 
 - TASTO PER aggiungere immagine volante/predefinita, solitamente alla fine
 - TASTO PER aggiungere canzone volante, poco prima della messa, ma anche durante prendendo spunto dall'omelia
@@ -33,7 +33,7 @@ casi_duso = """
 """
 
 
-class Mass(QMainWindow):
+class MassPresenter(QMainWindow):
     def __init__(self, aaaammdd):
         super().__init__()
         self.date = aaaammdd
@@ -143,6 +143,7 @@ class Mass(QMainWindow):
         self.mass_structure[MassMoment.intro] = self.librone.get(MassMoment.intro)  # C
         self.mass_structure[MassMoment.gloria] = self.librone.get(MassMoment.gloria)  # C
         self.mass_structure[MassMoment.offertorio] = self.librone.get(MassMoment.offertorio)  # C
+        self.mass_structure[MassMoment.santo] = self.librone.get(MassMoment.santo)  # C
         self.mass_structure[MassMoment.pace] = self.librone.get(MassMoment.pace)  # C
         self.mass_structure[MassMoment.comunione] = self.librone.get(MassMoment.comunione)  # C
         self.mass_structure[MassMoment.fine] = self.librone.get(MassMoment.fine)  # C
@@ -236,147 +237,4 @@ class Mass(QMainWindow):
         self.mass_structure[mass_moment].append(song)
 
 
-class Launcher(QMainWindow):
-    def __init__(self, file_librone="librone.json"):
-        super().__init__()
 
-        self.messa = None
-        self.date = ""
-        self.bible = Bible()
-        self.librone = Librone("../librone.json")
-        self.songs_by_moment = self.librone.load_songs_by_moment()
-
-        main_layout = QVBoxLayout()
-        main_frame = QFrame()
-
-        load_layout = QHBoxLayout()
-        self.txt_filename = QLineEdit()
-        self.txt_filename.setEnabled(False)
-        btn_pick_file = QPushButton('...')
-        btn_pick_file.clicked.connect(self.on_pick_file)
-        self.btn_start = QPushButton(' INIZIA MESSA!')
-        self.btn_start.setIcon(QIcon("../start.png"))
-        self.btn_start.clicked.connect(self.on_start_messa)
-        self.btn_start.setEnabled(False)
-        load_layout.addWidget(self.txt_filename)
-        load_layout.addWidget(btn_pick_file)
-        load_layout.addWidget(self.btn_start)
-
-        new_layout = QHBoxLayout()
-        self.date_edit = QDateEdit(calendarPopup=True)
-        self.date_edit.setDate(QDate(2024, 9, 1))
-        btn_save = QPushButton('Salva Messa')
-        btn_save.clicked.connect(self.on_save_messa)
-        new_layout.addWidget(self.date_edit)
-        new_layout.addWidget(btn_save)
-
-        lbl_canto_text = {
-            MassMoment.intro: "Ingresso",
-            MassMoment.gloria: "Gloria",
-            MassMoment.offertorio: "Offertorio",
-            MassMoment.pace: "Pace",
-            MassMoment.comunione: "Comunione",
-            MassMoment.fine: "Uscita"
-        }
-
-        self.list_songs = {}
-
-        layout_songs = QHBoxLayout()
-
-        for mom, head in lbl_canto_text.items():
-            ly = QVBoxLayout()
-            lbl = QLabel(f"<b>{head}:</b>")
-            self.list_songs[mom] = QListWidget()
-            for title in self.songs_by_moment[mom]:
-                self.list_songs[mom].addItem(QListWidgetItem(title))
-            self.list_songs[mom].setSelectionMode(QListWidget.SelectionMode.MultiSelection)
-            ly.addWidget(lbl)
-            ly.addWidget(self.list_songs[mom])
-
-            layout_songs.addLayout(ly)
-
-        main_layout.addLayout(new_layout)
-        main_layout.addLayout(layout_songs)
-        main_layout.addLayout(load_layout)
-
-        main_frame.setLayout(main_layout)
-        self.setCentralWidget(main_frame)
-
-    def on_start_messa(self):
-        # Set and configure the messa
-        self.messa = Mass(aaaammdd=self.date)
-        self.messa.set_bible(self.bible)
-        self.messa.set_librone(self.librone)
-        self.messa.showMaximized()
-
-    def on_pick_file(self):
-        fname = QFileDialog.getOpenFileName(self, 'Open file', '../messe')[0]
-        self.txt_filename.setText(fname)
-
-        # Load the schema
-        with open(fname, 'r') as f:
-            messa_js = json.load(f)
-
-        # Set the date
-        self.date = messa_js['date']
-
-        # Load lectures
-        self.bible.load_json(messa_js['lectures'])
-
-        # Load songs
-        scaletta = {}
-        for moment_name, song_list in messa_js['songs'].items():
-            scaletta[MassMoment.from_name(moment_name)] = song_list
-        self.librone.load_songs(scaletta)
-
-        self.btn_start.setEnabled(True)
-
-    def on_save_messa(self):
-        scaletta = {}
-        for moment, ls in self.list_songs.items():
-            scaletta[moment] = [it.text() for it in ls.selectedItems()]
-        self.librone.load_songs(scaletta)
-        songs = {mom.name: value for (mom, value) in scaletta.items()}
-
-        self.date = self.date_edit.date().toString("yyyyMMdd")
-        self.bible.fetch_online(aaaammdd=self.date)
-
-        lectures = {}
-        for moment, lect in self.bible.lectures.items():
-            lectures[moment.name] = lect.to_json()
-
-        messa_js = {
-            "date": self.date,
-            "songs": songs,
-            "lectures": lectures
-        }
-
-        with open(f'../messe/messa_{self.date}.json', 'w', encoding="utf-8") as outfile:
-            json.dump(messa_js, outfile, indent=4)
-
-        self.btn_start.setEnabled(True)
-
-
-
-stylesheet = {
-    # Button colors
-    'danger': '#dc3545',
-    'warning': '#ffc107',
-    'success': '#13191c',
-    # Font
-    'font_family': 'Roboto',
-    'background': '#202020',
-}
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    apply_stylesheet(app, theme='dark_lightgreen.xml', invert_secondary=False,
-                     extra=stylesheet, css_file="custom.css")
-
-    # create the instance of our Window
-    # window = Mass(aaaammdd="20240908")
-    window = Launcher()
-    window.showMaximized()
-
-    # start the app
-    sys.exit(app.exec())
