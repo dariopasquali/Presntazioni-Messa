@@ -1,17 +1,11 @@
-import json
 import sys
 
-from PyQt6.QtCore import Qt, QDate
-from PyQt6.QtGui import QFont, QIcon
-from PyQt6.QtWidgets import QVBoxLayout, QLabel, QMainWindow, QHBoxLayout, QFrame, QApplication, QLineEdit, QPushButton, \
-    QDateEdit, QListWidget, QListWidgetItem, QAbstractItemView, QFileDialog
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QLabel, QMainWindow, QHBoxLayout, QFrame, QDialog, QDialogButtonBox, QVBoxLayout
 
-from model.bible import Bible
-from model.librone import Librone
 from model.commons import MassMoment, Pages
 from model.rfixed_rites import *
-
-from qt_material import apply_stylesheet
+from pdf import PDFMaker
 
 casi_duso = """
 
@@ -23,7 +17,6 @@ casi_duso = """
 
 - TASTO PER aggiungere immagine volante/predefinita, solitamente alla fine
 - TASTO PER aggiungere canzone volante, poco prima della messa, ma anche durante prendendo spunto dall'omelia
-- TASI +/- per resize del font
 
 - librone su drive, scaricare canzoni in fase di creazione nel file .json
 
@@ -33,9 +26,47 @@ casi_duso = """
 """
 
 
-class MassPresenter(QMainWindow):
-    def __init__(self, aaaammdd):
+class InstrDialog(QDialog):
+    def __init__(self, pdf_maker_mode=False):
         super().__init__()
+
+        self.setWindowTitle("HELLO!")
+
+        QBtn = (
+            QDialogButtonBox.StandardButton.Ok
+        )
+
+        self.buttonBox = QDialogButtonBox(QBtn)
+        self.buttonBox.accepted.connect(self.accept)
+
+        layout = QVBoxLayout()
+        if not pdf_maker_mode:
+            message = QLabel("<b>Comandi<b><br>"
+                             "-&gt; Avanti<br>"
+                             "&lt;- Indietro<br>"
+                             "+ Zoom In<br>"
+                             "- Zoom Out<br>")
+        else:
+            message = QLabel("<b>Aggiusta la dimensione del testo con i tasti + e -<b><br>"
+                             "<b>Quindi premi <b>Freccia Destra -&gt;</b> per aggiungere la Slide al PDF<b><br>"
+                             "+ Zoom In<br>"
+                             "- Zoom Out<br>"
+                             "Invio: Conferma Slide<br>")
+        # message.setStyleSheet("font-size: 30pt")
+        layout.addWidget(message)
+        layout.addWidget(self.buttonBox)
+        self.setLayout(layout)
+
+    def accept(self):
+        self.close()
+
+
+class MassPresenter(QMainWindow):
+    def __init__(self, aaaammdd, pdf_maker_mode=False):
+        super().__init__()
+        self.pdf_maker_mode = pdf_maker_mode
+        self.pdf_maker = PDFMaker()
+
         self.date = aaaammdd
         self.bible = None
         self.librone = None
@@ -72,7 +103,7 @@ class MassPresenter(QMainWindow):
             MassMoment.silence,
 
             MassMoment.padre_nostro,
-            MassMoment.padre_nostro,
+            MassMoment.silence,
 
             MassMoment.pace,
             MassMoment.silence,
@@ -100,7 +131,7 @@ class MassPresenter(QMainWindow):
             MassMoment.vangelo: [],  # L
             MassMoment.credo: [Pages(body=credo_apostolico)],  # R
             MassMoment.offertorio: [],  # C
-            MassMoment.santo: [],       # TODO
+            MassMoment.santo: [],  # TODO
             MassMoment.padre_nostro: [Pages(body=padre_nostro)],  # R
             MassMoment.pace: [],  # C
             MassMoment.agnello: [Pages(body=agnello)],  # R
@@ -109,13 +140,15 @@ class MassPresenter(QMainWindow):
             MassMoment.fine: [],  # C
         }
 
+        self.body_font = 45
+
         self.setWindowTitle(f'Messa del {aaaammdd}')
         main_layout = QHBoxLayout()
         main_frame = QFrame()
 
         self.body = QLabel(f'Messa del {aaaammdd}')
-        # self.body.setStyleSheet("font-size: 45pt;")
-        self.body.setFont(QFont("Roboto", 50))
+        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
+        # self.body.setFont(QFont("Roboto", 50))
         self.body.setWordWrap(True)
         self.body.setContentsMargins(20, 0, 20, 0)
         self.body.setProperty('class', 'main_label')
@@ -137,7 +170,6 @@ class MassPresenter(QMainWindow):
         self.mass_structure[MassMoment.alleluia] = [self.bible.get(MassMoment.alleluia)]  # L
         self.mass_structure[MassMoment.vangelo] = [self.bible.get(MassMoment.vangelo)]  # L
 
-
     def set_librone(self, librone):
         self.librone = librone
         self.mass_structure[MassMoment.intro] = self.librone.get(MassMoment.intro)  # C
@@ -148,7 +180,6 @@ class MassPresenter(QMainWindow):
         self.mass_structure[MassMoment.comunione] = self.librone.get(MassMoment.comunione)  # C
         self.mass_structure[MassMoment.fine] = self.librone.get(MassMoment.fine)  # C
 
-
     def load_songs(self, mass_moment, song):
         self.mass_structure[mass_moment].append(song)
 
@@ -157,15 +188,28 @@ class MassPresenter(QMainWindow):
         return [" ".join(words[i:i + self.words_per_page]) for i in range(0, len(words), self.words_per_page)]
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key.Key_Left:
+        if event.key() == Qt.Key.Key_Plus:
+            self.zoom_in()
+        elif event.key() == Qt.Key.Key_Minus:
+            self.zoom_out()
+        elif event.key() == Qt.Key.Key_Escape:
+            self.close()
+        elif event.key() == Qt.Key.Key_Left:
             self.on_left()
         elif event.key() == Qt.Key.Key_Right:
             self.on_right()
 
-    def resizeEvent(self, event):
-        """Automatically adjust the font size based on the window's width."""
-        self.adjust_font_size()
-        super().resizeEvent(event)  # Call the parent's resizeEvent
+    def zoom_in(self):
+        self.body_font += 2
+        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
+
+    def reset_font(self):
+        self.body_font = 45
+        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
+
+    def zoom_out(self):
+        self.body_font -= 2
+        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
 
     def adjust_font_size(self):
         """Adjust font size dynamically based on window width."""
@@ -206,35 +250,51 @@ class MassPresenter(QMainWindow):
             self.page_pointer = len(self.pages) - 1
 
         self.body.setText(self.pages[self.page_pointer])
-        self.adjust_font_size()
 
     def on_right(self):
+        # Store the last page
+        if self.pdf_maker_mode and self.page_pointer >= 0:
+            self.pdf_maker.new_page(self.pages[self.page_pointer], font_size=self.body_font)
+            self.reset_font()
+
         self.page_pointer += 1
         if self.page_pointer >= len(self.pages):
             # Next Section
             self.mass_moment_pointer = min(len(self.sequence), self.mass_moment_pointer + 1)
-            if self.mass_moment_pointer == len(self.sequence):
-                sys.exit(0)
+            if self.mass_moment_pointer >= len(self.sequence):
+                if self.pdf_maker_mode:
+                    self.pdf_maker.write_pdf()
+                self.close()
+                return
+
             mass_el = self.sequence[self.mass_moment_pointer]
 
             if mass_el == MassMoment.silence:
                 self.pages = [""]
-
             elif len(self.mass_structure[mass_el]) == 0:
-                self.pages = [f"TODO {mass_el.name}"]
+                self.pages = []
             else:
                 self.pages = []
                 for el in self.mass_structure[mass_el]:
                     for p in el.get_pages(wpp=self.words_per_page):
                         self.pages.append(p)
-
             self.page_pointer = 0
 
         self.body.setText(self.pages[self.page_pointer])
-        self.adjust_font_size()
 
     def add(self, mass_moment, song):
         self.mass_structure[mass_moment].append(song)
 
+    def run_fullscreen(self, pdf_filename="messa.pdf"):
+        dlg = InstrDialog(pdf_maker_mode=self.pdf_maker_mode)
+        self.pdf_maker.set_filename(pdf_filename)
+        self.showFullScreen()
+        dlg.exec()
+        # dlg.show()
 
-
+    def run_maximized(self, pdf_filename="messa/messa.pdf"):
+        dlg = InstrDialog(pdf_maker_mode=self.pdf_maker_mode)
+        self.pdf_maker.set_filename(pdf_filename)
+        self.showMaximized()
+        dlg.exec()
+        # dlg.show()

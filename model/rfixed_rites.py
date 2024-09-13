@@ -1,4 +1,5 @@
 confesso = """
+<u><b>Confesso</b></u><br>
 Confesso a Dio onnipotente<br>
 e a voi, fratelli <b>E SORELLE</b>,
 <br>che ho molto peccato<br>
@@ -21,6 +22,7 @@ Kýrie, kyrie, eléison.<br>
 Kýrie, kyrie, eléison."""
 
 credo_apostolico = """
+<u><b>Credo Apostolico</b></u><br>
 Io credo in Dio, Padre onnipotente, Creatore del cielo e della terra.<br>
 E in Gesù Cristo, Suo unico Figlio, nostro Signore,<br>
 il quale fu concepito di Spirito Santo, nacque da Maria Vergine,<br>
@@ -36,6 +38,7 @@ la remissione dei peccati,<br>
 la risurrezione della carne, la vita eterna. Amen."""
 
 credo_tradizionale = """
+<u><b>Credo</b></u><br>
 Credo in un solo Dio, Padre onnipotente,<br>
 Creatore del cielo e della terra,<br>
 di tutte le cose visibili e invisibili.<br>
@@ -60,6 +63,7 @@ e la vita del mondo che verrà. Amen.
 """
 
 padre_nostro = """
+<u><b>Padre Nostro</b></u><br>
 Padre nostro che sei nei cieli,<br>
 sia santificato il tuo nome,<br>
 venga il tuo regno,<br>

@@ -2,6 +2,7 @@ import json
 import os
 import sys
 
+from PyQt6 import QtCore
 from PyQt6.QtCore import QDate
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QFileDialog, QVBoxLayout, QLabel, QListWidget, QListWidgetItem, QHBoxLayout, \
@@ -30,7 +31,7 @@ class Launcher(QMainWindow):
         load_layout = QHBoxLayout()
         self.txt_filename = QLineEdit()
         self.txt_filename.setEnabled(False)
-        btn_pick_file = QPushButton('...')
+        btn_pick_file = QPushButton('CARICA MESSA')
         btn_pick_file.clicked.connect(self.on_pick_file)
         self.btn_start = QPushButton(' INIZIA MESSA!')
         self.btn_start.setIcon(QIcon("../start.png"))
@@ -44,7 +45,7 @@ class Launcher(QMainWindow):
         self.date_edit = QDateEdit(calendarPopup=True)
         self.date_edit.setDate(QDate.currentDate())
         self.date_edit.setStyleSheet("color: rgb(255, 255, 255);")
-        btn_save = QPushButton('Salva Messa')
+        btn_save = QPushButton('CREA PDF MESSA')
         btn_save.clicked.connect(self.on_save_messa)
         new_layout.addWidget(self.date_edit)
         new_layout.addWidget(btn_save)
@@ -84,15 +85,19 @@ class Launcher(QMainWindow):
 
     def on_start_messa(self):
         # Set and configure the messa
+        self.get_data()
         self.messa = MassPresenter(aaaammdd=self.date)
         self.messa.set_bible(self.bible)
         self.messa.set_librone(self.librone)
-        self.messa.showMaximized()
+        self.messa.run_maximized()
 
     def on_pick_file(self):
         os.makedirs("messe", exist_ok=True)
         fname = QFileDialog.getOpenFileName(self, 'Open file', 'messe')[0]
         self.txt_filename.setText(fname)
+
+        if fname == "":
+            return
 
         # Load the schema
         with open(fname, 'r') as f:
@@ -119,7 +124,7 @@ class Launcher(QMainWindow):
 
         self.btn_start.setEnabled(True)
 
-    def on_save_messa(self):
+    def get_data(self):
         scaletta = {}
         for moment, ls in self.list_songs.items():
             scaletta[moment] = [it.text() for it in ls.selectedItems()]
@@ -133,17 +138,24 @@ class Launcher(QMainWindow):
         for moment, lect in self.bible.lectures.items():
             lectures[moment.name] = lect.to_json()
 
+        return songs, lectures
+
+    def on_save_messa(self):
+
+        songs, lectures = self.get_data()
         messa_js = {
             "date": self.date,
             "songs": songs,
             "lectures": lectures
         }
-
         os.makedirs("messe", exist_ok=True)
         with open(f'messe/messa_{self.date}.json', 'w', encoding="utf-8") as outfile:
             json.dump(messa_js, outfile, indent=4)
 
-        self.btn_start.setEnabled(True)
+        self.messa = MassPresenter(aaaammdd=self.date, pdf_maker_mode=True)
+        self.messa.set_bible(self.bible)
+        self.messa.set_librone(self.librone)
+        self.messa.run_maximized(pdf_filename=f'messe/messa_{self.date}.pdf')
 
 
 

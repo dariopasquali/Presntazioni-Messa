@@ -1,0 +1,55 @@
+{
+    "date": "20240913",
+    "songs": {
+        "intro": [
+            "Abbracciami"
+        ],
+        "gloria": [
+            "Gloria Mariano"
+        ],
+        "offertorio": [
+            "Cosa offrirti"
+        ],
+        "santo": [
+            "Santo, Santo"
+        ],
+        "pace": [
+            "La pace del Signore sia con te"
+        ],
+        "comunione": [
+            "Abbracciami"
+        ],
+        "fine": [
+            "Benedici il Signore Anima mia"
+        ]
+    },
+    "lectures": {
+        "lettura_1": {
+            "head": "Dalla prima lettera di san Paolo apostolo ai Cor\u00ecnzi",
+            "body": "Fratelli, annunciare il Vangelo non \u00e8 per me un vanto, perch\u00e9 \u00e8 una necessit\u00e0 che mi si impone: guai a me se non annuncio il Vangelo! Se lo faccio di mia iniziativa, ho diritto alla ricompensa; ma se non lo faccio di mia iniziativa, \u00e8 un incarico che mi \u00e8 stato affidato. Qual \u00e8 dunque la mia ricompensa? Quella di annunciare gratuitamente il Vangelo senza usare il diritto conferitomi dal Vangelo. Infatti, pur essendo libero da tutti, mi sono fatto servo di tutti per guadagnarne il maggior numero; mi sono fatto tutto per tutti, per salvare a ogni costo qualcuno. Ma tutto io faccio per il Vangelo, per diventarne partecipe anch\u2019io. Non sapete che, nelle corse allo stadio, tutti corrono, ma uno solo conquista il premio? Correte anche voi in modo da conquistarlo! Per\u00f2 ogni atleta \u00e8 disciplinato in tutto; essi lo fanno per ottenere una corona che appassisce, noi invece una che dura per sempre.  Io dunque corro, ma non come chi \u00e8 senza m\u00e8ta; faccio pugilato, ma non come chi batte l\u2019aria; anzi tratto duramente il mio corpo e lo riduco in schiavit\u00f9, perch\u00e9 non succeda che, dopo avere predicato agli altri, io stesso venga squalificato.",
+            "ending": "Parola di Dio"
+        },
+        "salmo": {
+            "rit": "Quanto sono amabili le tue dimore, Signore!",
+            "body": [
+                "L\u2019anima mia anela\ne desidera gli atri del Signore.\nIl mio cuore e la mia carne\nesultano nel Dio vivente. ",
+                "Anche il passero trova una casa\ne la rondine il nido dove porre i suoi piccoli,\npresso i tuoi altari, Signore degli eserciti,\nmio re e mio Dio. ",
+                "Beato chi abita nella tua casa:\nsenza fine canta le tue lodi.\nBeato l\u2019uomo che trova in te il suo rifugio\ne ha le tue vie nel suo cuore.",
+                "Perch\u00e9 sole e scudo \u00e8 il Signore Dio;\nil Signore concede grazia e gloria,\nnon rifiuta il bene\na chi cammina nell\u2019integrit\u00e0."
+            ]
+        },
+        "lettura_2": {
+            "head": "",
+            "body": "",
+            "ending": "Parola di Dio"
+        },
+        "alleluia": {
+            "body": "La tua parola, Signore, \u00e8 verit\u00e0;\r\nconsacraci nella verit\u00e0."
+        },
+        "vangelo": {
+            "head": "Dal Vangelo secondo Luca",
+            "body": "In quel tempo, Ges\u00f9 disse ai suoi discepoli una parabola:  \u00abPu\u00f2 forse un cieco guidare un altro cieco? Non cadranno tutti e due in un fosso? Un discepolo non \u00e8 pi\u00f9 del maestro; ma ognuno, che sia ben preparato, sar\u00e0 come il suo maestro.  Perch\u00e9 guardi la pagliuzza che \u00e8 nell\u2019occhio del tuo fratello e non ti accorgi della trave che \u00e8 nel tuo occhio? Come puoi dire al tuo fratello: \u201cFratello, lascia che tolga la pagliuzza che \u00e8 nel tuo occhio\u201d, mentre tu stesso non vedi la trave che \u00e8 nel tuo occhio? Ipocrita! Togli prima la trave dal tuo occhio e allora ci vedrai bene per togliere la pagliuzza dall\u2019occhio del tuo fratello\u00bb.",
+            "ending": "Parola del Signore"
+        }
+    }
+}

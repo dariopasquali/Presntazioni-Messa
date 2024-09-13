@@ -15,23 +15,47 @@ class Song:
         self.number = song_json["number"]
         self.body = song_json["body"]
 
+    def __get_body_page_html(self, id):
+        if id >= len(self.body):
+            return ""
+
+        verse = self.body[id]
+        # Fetch and prettify the rit
+        if "<RIT" in verse:
+            verse = f"<b>{self.raw[verse]}</b>"
+
+        # To HTML
+        verse = verse.replace("\n", "<br>")
+        return verse
+
+
     def get_pages(self, wpp=100):
+        # Generate the following pages combo
+        # RIT alone / RIT + verse / verse + RIT / verse alone
         pages = []
         word_count = 0
-        current_page = f"<b>{self.title}</b><br><br>"
-        for verse in self.body:
-            if "<RIT" in verse:
-                verse = f"<b>{self.raw[verse]}</b>"
-            l = len(verse.split(" "))
 
-            if (word_count + l) > wpp:
-                pages.append(current_page)
-                current_page = ""
-                word_count = 0
+        current_page = f"<b><u>{self.title}</u></b><br>"
 
-            word_count += l
-            current_page += f"{verse}<br><br>"
-        pages.append(current_page)
+        for i in range(0, len(self.body), 2):
+
+            v1 = self.__get_body_page_html(i)
+            v2 = self.__get_body_page_html(i+1)
+
+            current_page += f"{v1}<br><br>{v2}"
+            if i+1 < len(self.body):
+                current_page += "<br><br>"
+
+            pages.append(current_page)
+            current_page = ""
+
+            # l = len(verse.split(" "))
+            # if (word_count + l) > wpp:
+            #     pages.append(current_page)
+            #     current_page = ""
+            #     word_count = 0
+            #
+            # word_count += l
         return pages
 
 

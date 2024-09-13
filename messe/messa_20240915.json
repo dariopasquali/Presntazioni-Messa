@@ -2,24 +2,25 @@
     "date": "20240915",
     "songs": {
         "intro": [
-            "Benedici il Signore Anima mia"
+            "Abbracciami"
         ],
         "gloria": [
             "Gloria Mariano"
         ],
         "offertorio": [
-            "Eccomi manda me"
+            "Cosa offrirti"
         ],
         "santo": [
             "Santo, Santo"
         ],
-        "pace": [],
+        "pace": [
+            "La pace del Signore sia con te"
+        ],
         "comunione": [
-            "Inno all'amore",
-            "Non c'\u00e8 Amore pi\u00f9 grande"
+            "Abbracciami"
         ],
         "fine": [
-            "Cantiamo insieme al Signore"
+            "Benedici il Signore Anima mia"
         ]
     },
     "lectures": {
