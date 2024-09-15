@@ -1,27 +1,15 @@
 {
     "date": "20240913",
     "songs": {
-        "intro": [
-            "Abbracciami"
-        ],
-        "gloria": [
-            "Gloria Mariano"
-        ],
+        "intro": [],
+        "gloria": [],
         "offertorio": [
-            "Cosa offrirti"
+            "Eccomi manda me"
         ],
-        "santo": [
-            "Santo, Santo"
-        ],
-        "pace": [
-            "La pace del Signore sia con te"
-        ],
-        "comunione": [
-            "Abbracciami"
-        ],
-        "fine": [
-            "Benedici il Signore Anima mia"
-        ]
+        "santo": [],
+        "pace": [],
+        "comunione": [],
+        "fine": []
     },
     "lectures": {
         "lettura_1": {

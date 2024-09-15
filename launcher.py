@@ -14,6 +14,8 @@ from model.librone import Librone
 from mass import MassPresenter
 from model.commons import MassMoment
 
+import subprocess
+
 
 class Launcher(QMainWindow):
     def __init__(self, file_librone="librone.json"):
@@ -89,7 +91,7 @@ class Launcher(QMainWindow):
         self.messa = MassPresenter(aaaammdd=self.date)
         self.messa.set_bible(self.bible)
         self.messa.set_librone(self.librone)
-        self.messa.run_maximized()
+        self.messa.run_fullscreen()
 
     def on_pick_file(self):
         os.makedirs("messe", exist_ok=True)
@@ -155,8 +157,10 @@ class Launcher(QMainWindow):
         self.messa = MassPresenter(aaaammdd=self.date, pdf_maker_mode=True)
         self.messa.set_bible(self.bible)
         self.messa.set_librone(self.librone)
-        self.messa.run_maximized(pdf_filename=f'messe/messa_{self.date}.pdf')
+        self.messa.run_fullscreen(pdf_filename=f'messe/messa_{self.date}.pdf', on_close=self.on_close)
 
+    def on_close(self):
+        subprocess.call("explorer messe", shell=True)
 
 
 stylesheet = {

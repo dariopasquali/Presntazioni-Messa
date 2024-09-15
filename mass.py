@@ -42,6 +42,7 @@ class InstrDialog(QDialog):
         layout = QVBoxLayout()
         if not pdf_maker_mode:
             message = QLabel("<b>Comandi<b><br>"
+                             "ESC: esci"
                              "-&gt; Avanti<br>"
                              "&lt;- Indietro<br>"
                              "+ Zoom In<br>"
@@ -51,7 +52,7 @@ class InstrDialog(QDialog):
                              "<b>Quindi premi <b>Freccia Destra -&gt;</b> per aggiungere la Slide al PDF<b><br>"
                              "+ Zoom In<br>"
                              "- Zoom Out<br>"
-                             "Invio: Conferma Slide<br>")
+                             "ESC: esci")
         # message.setStyleSheet("font-size: 30pt")
         layout.addWidget(message)
         layout.addWidget(self.buttonBox)
@@ -64,6 +65,7 @@ class InstrDialog(QDialog):
 class MassPresenter(QMainWindow):
     def __init__(self, aaaammdd, pdf_maker_mode=False):
         super().__init__()
+        self.on_close = lambda: None
         self.pdf_maker_mode = pdf_maker_mode
         self.pdf_maker = PDFMaker()
 
@@ -140,7 +142,8 @@ class MassPresenter(QMainWindow):
             MassMoment.fine: [],  # C
         }
 
-        self.body_font = 45
+        self.default_font = 40
+        self.body_font = self.default_font
 
         self.setWindowTitle(f'Messa del {aaaammdd}')
         main_layout = QHBoxLayout()
@@ -194,9 +197,10 @@ class MassPresenter(QMainWindow):
             self.zoom_out()
         elif event.key() == Qt.Key.Key_Escape:
             self.close()
-        elif event.key() == Qt.Key.Key_Left:
-            self.on_left()
-        elif event.key() == Qt.Key.Key_Right:
+        elif event.key() in [Qt.Key.Key_Left, Qt.Key.Key_PageUp]:
+            if not self.pdf_maker_mode:
+                self.on_left()
+        elif event.key() in [Qt.Key.Key_Right, Qt.Key.Key_PageDown]:
             self.on_right()
 
     def zoom_in(self):
@@ -204,7 +208,7 @@ class MassPresenter(QMainWindow):
         self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
 
     def reset_font(self):
-        self.body_font = 45
+        self.body_font = self.default_font
         self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
 
     def zoom_out(self):
@@ -253,6 +257,7 @@ class MassPresenter(QMainWindow):
 
     def on_right(self):
         # Store the last page
+        self.showFullScreen()
         if self.pdf_maker_mode and self.page_pointer >= 0:
             self.pdf_maker.new_page(self.pages[self.page_pointer], font_size=self.body_font)
             self.reset_font()
@@ -264,6 +269,7 @@ class MassPresenter(QMainWindow):
             if self.mass_moment_pointer >= len(self.sequence):
                 if self.pdf_maker_mode:
                     self.pdf_maker.write_pdf()
+                self.on_close()
                 self.close()
                 return
 
@@ -272,7 +278,7 @@ class MassPresenter(QMainWindow):
             if mass_el == MassMoment.silence:
                 self.pages = [""]
             elif len(self.mass_structure[mass_el]) == 0:
-                self.pages = []
+                self.pages = [""]
             else:
                 self.pages = []
                 for el in self.mass_structure[mass_el]:
@@ -280,21 +286,26 @@ class MassPresenter(QMainWindow):
                         self.pages.append(p)
             self.page_pointer = 0
 
-        self.body.setText(self.pages[self.page_pointer])
+        try:
+            self.body.setText(self.pages[self.page_pointer])
+        except Exception as e:
+            print(e)
 
     def add(self, mass_moment, song):
         self.mass_structure[mass_moment].append(song)
 
-    def run_fullscreen(self, pdf_filename="messa.pdf"):
+    def run_fullscreen(self, pdf_filename="messa.pdf", on_close=lambda: None):
         dlg = InstrDialog(pdf_maker_mode=self.pdf_maker_mode)
         self.pdf_maker.set_filename(pdf_filename)
+        self.on_close = on_close
         self.showFullScreen()
         dlg.exec()
         # dlg.show()
 
-    def run_maximized(self, pdf_filename="messa/messa.pdf"):
+    def run_maximized(self, pdf_filename="messa/messa.pdf", on_close=lambda: None):
         dlg = InstrDialog(pdf_maker_mode=self.pdf_maker_mode)
         self.pdf_maker.set_filename(pdf_filename)
+        self.on_close = on_close
         self.showMaximized()
         dlg.exec()
         # dlg.show()

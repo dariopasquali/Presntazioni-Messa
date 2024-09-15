@@ -4,11 +4,11 @@
       "title": "Popoli tutti",
       "number": 161,
       "tag": ["intro"],
-      "<RIT>": "Popoli tutti acclamate al Signore, gloria e potenza cantiamo al Re, mari e monti si prostino a Te, al tuo nome, o Signore. Canto di gioia per quello che fai, per sempre Signore con Te restero', non c'e' promessa, non c'e' fedelta' che in Te.",
+      "<RIT>": "Popoli tutti acclamate al Signore,\ngloria e potenza cantiamo al Re,\nmari e monti si prostino a Te, al tuo nome, o Signore.\nCanto di gioia per quello che fai,\nper sempre Signore con Te restero',\n non c'e' promessa, non c'e' fedelta' che in Te.",
       "body": [
-        "Mio Dio, Signore, nulla è pari a Te. Ora e per sempre, voglio lodare il Tuo grande amor per noi. Mia roccia Tu sei, pace e conforto mi dai. Con tutto il cuore e le mie forze, sempre io Ti adorerò.",
+        "Mio Dio, Signore, nulla è pari a Te.\nOra e per sempre, voglio lodare il Tuo grande amor per noi.\nMia roccia Tu sei, pace e conforto mi dai.\nCon tutto il cuore e le mie forze, sempre io Ti adorerò.",
         "<RIT>",
-        "Mio Dio, Creatore, tutto parla di Te, ora e per sempre voglio cantare la Tua presenza qui tra noi. Mia forza, Tu sei, scudo e difesa mi dai, con tutto me stesso e la mia vita, sempre io Ti amerò!",
+        "Mio Dio, Creatore, tutto parla di Te,\nOra e per sempre voglio cantare la Tua presenza qui tra noi.\nMia forza, Tu sei, scudo e difesa mi dai,\ncon tutto me stesso e la mia vita, sempre io Ti amerò!",
         "<RIT>"
       ]
     },
@@ -27,14 +27,15 @@
       "title": "Gloria Mariano",
       "number": 1000,
       "tag": ["gloria"],
-      "<RIT>": "Gloria a Dio nell’alto dei cieli\ne pace in terra agli uomini che egli ama. (x2)",
+      "<RIT2>": "Gloria a Dio nell’alto dei cieli\ne pace in terra agli uomini che egli ama. (x2)",
+      "<RIT>": "Gloria a Dio nell’alto dei cieli\ne pace in terra agli uomini che egli ama.",
       "body": [
+        "<RIT2>",
+        "Noi ti lodiamo, ti benediciamo,\nti adoriamo, ti glorifichiamo,\nti rendiamo grazie per la tua immensa gloria.\n\nSignore Dio, re del cielo, Dio Padre onnipotente,\nFiglio unigenito, Cristo Gesù.",
         "<RIT>",
-        "Noi ti lodiamo, ti benediciamo,\nti adoriamo, ti glorifichiamo,\nti rendiamo grazie\nper la tua immensa gloria.\n\nSignore Dio, re del cielo,\nDio Padre onnipotente,\nFiglio unigenito,\nCristo Gesù.",
+        "Signore Dio, Agnello di Dio,\nFiglio del Padre onnipotente.\nTu che togli i peccati del mondo, abbi pietà di noi.\n\nTu che togli i peccati del mondo, accogli benigno la nostra preghiera.\nTu che siedi alla destra del Padre, abbi pietà di noi.",
         "<RIT>",
-        "Signore Dio, Agnello di Dio,\nFiglio del Padre onnipotente.\nTu che togli i peccati del mondo,\nabbi pietà di noi.\n\nTu che togli i peccati del mondo,\naccogli benigno la nostra preghiera.\nTu che siedi alla destra del Padre,\nabbi pietà di noi.",
-        "<RIT>",
-        "Tu solo il Santo, tu solo il Signore,\ntu l’Altissimo, Gesù Cristo,\ncon lo Spirito Santo\nnella gloria del Padre.",
+        "Tu solo il Santo, tu solo il Signore,\ntu l’Altissimo, Gesù Cristo,\ncon lo Spirito Santo nella gloria del Padre.",
         "<RIT>"
       ]
     },
@@ -42,11 +43,11 @@
       "title": "Segni del tuo amore",
       "number": 131,
       "tag": ["offertorio"],
-      "<RIT>": "Ecco il pane e il vino, segni del tuo amore. Ecco questa offerta, accoglila Signore: tu di mille e mille cuori fai un cuore solo, un corpo solo in te e il Figlio tuo verrà, vivrà ancora in mezzo a noi.",
+      "<RIT>": "Ecco il pane e il vino, segni del tuo amore.\nEcco questa offerta, accoglila Signore:\ntu di mille e mille cuori fai un cuore solo, un corpo solo in te\ne il Figlio tuo verrà, vivrà ancora in mezzo a noi.",
       "body": [
-        "Mille e mille grani nelle spighe d'oro, mandano fragranza e danno gioia al cuore, quando, macinati, fanno un pane solo: pane quotidiano, dono tuo, Signore.  ",
+        "Mille e mille grani nelle spighe d'oro,\nmandano fragranza e danno gioia al cuore,\nquando, macinati, fanno un pane solo:\npane quotidiano, dono tuo, Signore.",
         "<RIT>",
-        "Mille grappoli maturi sotto il sole, festa della terra, donano vigore, quando da ogni perla stilla il vino nuovo: vino della gioia, dono tuo, Signore.",
+        "Mille grappoli maturi sotto il sole,\nfesta della terra, donano vigore,\nquando da ogni perla stilla il vino nuovo:\nvino della gioia, dono tuo, Signore.",
         "<RIT>"
       ]
     },
@@ -54,11 +55,11 @@
       "title": "Cosa offrirti",
       "number": 1001,
       "tag": ["offertorio"],
-      "<RIT>": "Accetta mio Re, questo poco che ho, offro a te la mia vita, gioia è per me far la tua volontà, il mio unico bene sei solo tu, solo tu.",
+      "<RIT>": "Accetta mio Re, questo poco che ho,\noffro a te la mia vita,\ngioia è per me far la tua volontà,\nil mio unico bene sei solo tu, solo tu.",
       "body": [
         "Cosa offrirti o Dio, cosa posso darti,\neccomi son qui davanti a te.\nLe gioie ed i dolori,\ngli affanni di ogni giorno,\ntutto voglio vivere in te.",
         "<RIT>",
-        "Vengo a te mio Dio, apro le mie braccia che la tua letizia riempirà. Rinnova questo cuore perchè Ti sappia amare e nella tua pace io vivrò",
+        "Vengo a te mio Dio, apro le mie braccia\nche la tua letizia riempirà.\nRinnova questo cuore\nperchè Ti sappia amare e\nnella tua pace io vivrò",
         "<RIT>"
       ]
     },
@@ -66,11 +67,11 @@
       "title": "Prendi la vita mia",
       "number": 166,
       "tag": ["offertorio"],
-      "<RIT>": "Prendi la vita mia, la metto qui davanti a te, poca cosa è tutto per me, fanne ciò che vuoi per le strade che mi dirai cammineremo insieme",
+      "<RIT>": "Prendi la vita mia, la metto qui davanti a te,\npoca cosa è tutto per me, fanne ciò che vuoi\nper le strade che mi dirai cammineremo insieme",
       "body": [
-        "Non so se sarò capace, di amare gli altri più di me, di lasciare ciò che mi piace per seguire un sogno che c’è in te, non so se sarò capace di lasciare tutto ciò che ho le mie facili certezze.",
+        "Non so se sarò capace, di amare gli altri più di me,\ndi lasciare ciò che mi piace per seguire un sogno che c’è in te,\nnon so se sarò capace di lasciare tutto ciò che ho\nle mie facili certezze.",
         "<RIT>",
-        "Signore io non ho la forza di fare tutto ciò che vuoi da solo sono un povero uomo che cerca ancora di nascondersi. Signore io non ho la forza di guardare negli occhi te dammi tu la fede.",
+        "Signore io non ho la forza di fare tutto ciò che vuoi\nda solo sono un povero uomo che cerca ancora di nascondersi.\nSignore io non ho la forza di guardare negli occhi te\ndammi tu la fede.",
         "<RIT>"
       ]
     },
@@ -87,15 +88,15 @@
       "title": "Su ali d'aqulia",
       "number": 139,
       "tag": ["intro","comunione"],
-      "<RIT>": "E ti rialzerà, ti solleverà  su ali d'aquila ti reggerà sulla brezza dell'alba ti farà brillar come il sole, così nelle sue mani vivrai. ",
+      "<RIT>": "E ti rialzerà, ti solleverà  su ali d'aquila\nti reggerà sulla brezza dell'alba ti farà brillar come il sole,\ncosì nelle sue mani vivrai. ",
       "body": [
-        "Tu che abiti al riparo del Signore e che dimori alla sua ombra,  di' al Signore: 'Mio rifugio,  mia roccia su cui confido.'",
+        "Tu che abiti al riparo del Signore\ne che dimori alla sua ombra,\ndi' al Signore: 'Mio rifugio,\nmia roccia su cui confido.'",
         "<RIT>",
-        "Dal laccio del cacciatore ti libererà, e dalla carestia che distrugge, poi ti coprirò con le Sue ali, e rifugio troverai",
+        "Dal laccio del cacciatore ti libererà,\ne dalla carestia che distrugge,\npoi ti coprirò con le Sue ali,\ne rifugio troverai",
         "<RIT>",
-        "Non devi temere i terrori della notte ne' freccia che vola di giorno, mille cadranno al tuo fianco, ma nulla ti colpirà",
+        "Non devi temere i terrori della notte\nne' freccia che vola di giorno,\nmille cadranno al tuo fianco,\nma nulla ti colpirà",
         "<RIT>",
-        "Perché ai Suoi angeli ha dato un comando, di preservarti in tutte le tue vie, ti porteranno sulle loro mani contro la pietra non inciamperai.",
+        "Perché ai Suoi angeli ha dato un comando,\ndi preservarti in tutte le tue vie,\nti porteranno sulle loro mani\ncontro la pietra non inciamperai.",
         "<RIT>"
       ]
     },
@@ -103,11 +104,11 @@
       "title": "Abbracciami",
       "number": 170,
       "tag": ["intro","comunione"],
-      "<RIT>": "Abbracciami Dio dell’eternità\nRifugio dell’anima grazia che opera. Riscaldami fuoco che libera\nManda il tuo Spirito Maranathà Gesù",
+      "<RIT>": "Abbracciami Dio dell’eternità\nRifugio dell’anima grazia che opera.\nRiscaldami fuoco che libera\nManda il tuo Spirito Maranathà Gesù",
       "body": [
         "Gesù parola viva e vera.\nSorgente che disseta e cura ogni ferita.\nFerma su di me i tuoi occhi.\nLa tua mano stendi e donami la vita",
         "<RIT>",
-        "Gesù asciuga il nostro pianto.\nLeone vincitore della tribù di Giuda.\nVieni nella tua potenza questo cuore sciogli. Con ogni sua paura",
+        "Gesù asciuga il nostro pianto.\nLeone vincitore della tribù di Giuda.\nVieni nella tua potenza questo\ncuore sciogli. Con ogni sua paura",
         "<RIT>",
         "Per sempre io canterò la tua immensa fedeltà\nIl tuo spirito in me in eterno ti loderà\nPer sempre io canterò la tua immensa fedeltà\nIl tuo spirito in me in eterno ti loderà",
         "<RIT>"
@@ -159,14 +160,14 @@
       "title": "Chiamati per nome",
       "number": -1,
       "tag": ["intro", "comunione", "fine"],
-      "<RIT>": "Veniamo da te\nChiamati per nome\nChe festa, Signore, tu cammini con noi\nCi parli di te\nPer noi spezzi il pane\nTi riconosciamo e il cuore arde, sei tu\nE noi tuo popolo\nSiamo qui",
+      "<RIT>": "Veniamo da te, Chiamati per nome\nChe festa, Signore, tu cammini con noi\nCi parli di te, Per noi spezzi il pane\nTi riconosciamo e il cuore arde, sei tu\nE noi tuo popolo Siamo qui",
       "body": [
         "<RIT>",
         "Siamo come terra ed argilla\nE la tua parola ci plasmerà\nBrace pronta per la scintilla\nE il tuo spirito soffierà\nC'infiammerà",
         "<RIT>",
         "Siamo come semi nel solco\nCome vigna che il suo frutto darà\nGrano del Signore risorto\nLa tua messe che fiorirà d'eternità",
         "<RIT>",
-        "<b>E noi tuo popolo\nSiamo qui\nSiamo qui</b>"
+        "<b>E noi tuo popolo\nSiamo qui. Siamo qui</b>"
 
       ]
     },
@@ -174,7 +175,7 @@
       "title": "Benedici il Signore Anima mia",
       "number": 16,
       "tag": ["intro", "comunione", "fine"],
-      "<RIT>": "Benedici il Signore, anima mia, quanto è in me benedica il suo nome;\nnon dimenticherò tutti i suoi benefici, benedici il Signore, anima mia.",
+      "<RIT>": "Benedici il Signore, anima mia,\n quanto è in me benedica il suo nome;\nnon dimenticherò tutti i suoi benefici,\nbenedici il Signore, anima mia.",
       "body": [
         "<RIT>",
         "Lui perdona tutte le tue colpe e ti salva dalla morte.\nTi corona di grazia e ti sazia di beni nella tua giovinezza.",
@@ -187,9 +188,9 @@
       "title": "Eccomi manda me",
       "number": -1,
       "tag": ["offertorio"],
-      "<RIT>": "Eccomi, Signore, manda me!\nPiccolo seme, ma se vuoi,\ngrandi frutti io darò!\nEccoci, Signore, manda noi!\nPiccoli semi, ma se vuoi,\ngrandi frutti noi daremo!\nTu, manda noi! Manda noi se vuoi!",
+      "<RIT>": "Eccomi, Signore, manda me!\nPiccolo seme, ma se vuoi, grandi frutti io darò!\nEccoci, Signore, manda noi!\nPiccoli semi, ma se vuoi, grandi frutti noi daremo!\nTu, manda noi! Manda noi se vuoi!",
       "body": [
-        "Se le ore di una vita vuota\nti regalano soltanto solitudine,\ne i tuoi giorni sono tutti uguali,\nse per mettere le ali\nhai bisogno di qualcosa in più…\nLui è lì che aspetta te, tu cantando gli dirai:",
+        "Se le ore di una vita vuota ti regalano soltanto solitudine,\ne i tuoi giorni sono tutti uguali, se per mettere le ali hai bisogno di qualcosa in più…\nLui è lì che aspetta te, tu cantando gli dirai:",
         "<RIT>",
         "Fai silenzio dentro alla tua vita: scoprirai che l'amore\nchiama sempre per nome. Non aver paura di rischiare: quello che tu perderai lo riavrai in quantità\nLui è lì che aspetta te, tu cantando gli dirai.",
         "<RIT>"
