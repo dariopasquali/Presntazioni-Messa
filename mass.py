@@ -191,9 +191,9 @@ class MassPresenter(QMainWindow):
         return [" ".join(words[i:i + self.words_per_page]) for i in range(0, len(words), self.words_per_page)]
 
     def keyPressEvent(self, event):
-        if event.key() == Qt.Key.Key_Plus:
+        if event.key() in [Qt.Key.Key_Plus, Qt.Key.Key_Up, Qt.Key.Key_VolumeUp]:
             self.zoom_in()
-        elif event.key() == Qt.Key.Key_Minus:
+        elif event.key() in [Qt.Key.Key_Minus, Qt.Key.Key_Down, Qt.Key.Key_VolumeDown]:
             self.zoom_out()
         elif event.key() == Qt.Key.Key_Escape:
             self.close()
@@ -230,6 +230,8 @@ class MassPresenter(QMainWindow):
         self.body.setFont(font)
 
     def on_left(self):
+        self.reset_font()
+
         self.page_pointer -= 1
         if self.page_pointer < 0:
             # Previous Section
@@ -260,7 +262,8 @@ class MassPresenter(QMainWindow):
         self.showFullScreen()
         if self.pdf_maker_mode and self.page_pointer >= 0:
             self.pdf_maker.new_page(self.pages[self.page_pointer], font_size=self.body_font)
-            self.reset_font()
+
+        self.reset_font()
 
         self.page_pointer += 1
         if self.page_pointer >= len(self.pages):
