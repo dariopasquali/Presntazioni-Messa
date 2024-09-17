@@ -1,6 +1,10 @@
 import json
 
+import gdown
+
 from model.commons import MassMoment
+
+librone_drive_url = "https://drive.google.com/uc?id=1aB18D_4piytDuV2fMfAp-1ByQ7kdOwV7"
 
 class Song:
     def __init__(self):
@@ -28,7 +32,6 @@ class Song:
         verse = verse.replace("\n", "<br>")
         return verse
 
-
     def get_pages(self, wpp=100):
         # Generate the following pages combo
         # RIT alone / RIT + verse / verse + RIT / verse alone
@@ -40,10 +43,10 @@ class Song:
         for i in range(0, len(self.body), 2):
 
             v1 = self.__get_body_page_html(i)
-            v2 = self.__get_body_page_html(i+1)
+            v2 = self.__get_body_page_html(i + 1)
 
             current_page += f"{v1}<br><br>{v2}"
-            if i+1 < len(self.body):
+            if i + 1 < len(self.body):
                 current_page += "<br><br>"
 
             pages.append(current_page)
@@ -77,6 +80,19 @@ class Librone:
             MassMoment.comunione,
             MassMoment.fine
         ]
+
+    def check_for_updates(self):
+        try:
+            print("Try to update the Librone")
+            gdown.download(librone_drive_url, "librone.json")
+
+            with open(self.filename, 'r', encoding="utf-8") as f:
+                self.librone = json.load(f)
+
+            return True
+        except Exception as e:
+            print(e)
+            return False
 
     def get(self, mass_moment):
         if mass_moment in self.scaletta:

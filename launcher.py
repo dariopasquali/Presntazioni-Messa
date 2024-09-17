@@ -6,7 +6,7 @@ from PyQt6 import QtCore
 from PyQt6.QtCore import QDate
 from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QFileDialog, QVBoxLayout, QLabel, QListWidget, QListWidgetItem, QHBoxLayout, \
-    QDateEdit, QPushButton, QLineEdit, QFrame, QMainWindow
+    QDateEdit, QPushButton, QLineEdit, QFrame, QMainWindow, QDialog, QDialogButtonBox
 from qt_material import apply_stylesheet
 
 from model.bible import Bible
@@ -15,6 +15,17 @@ from mass import MassPresenter
 from model.commons import MassMoment
 
 import subprocess
+
+class UpdateDialog(QDialog):
+    def __init__(self, pdf_maker_mode=False):
+        super().__init__()
+
+        self.setWindowTitle("Update")
+        layout = QVBoxLayout()
+        message = QLabel("Sto scaricando il librone aggiornato")
+        # message.setStyleSheet("font-size: 30pt")
+        layout.addWidget(message)
+        self.setLayout(layout)
 
 
 class Launcher(QMainWindow):
@@ -25,25 +36,17 @@ class Launcher(QMainWindow):
         self.date = ""
         self.bible = Bible()
         self.librone = Librone("librone.json")
-        self.songs_by_moment = self.librone.load_songs_by_moment()
+        self.songs_by_moment = {}
 
         main_layout = QVBoxLayout()
         main_frame = QFrame()
 
-        load_layout = QHBoxLayout()
-        self.txt_filename = QLineEdit()
-        self.txt_filename.setEnabled(False)
-        btn_pick_file = QPushButton('CARICA MESSA')
-        btn_pick_file.clicked.connect(self.on_pick_file)
-        self.btn_start = QPushButton(' INIZIA MESSA!')
-        self.btn_start.setIcon(QIcon("../start.png"))
-        self.btn_start.clicked.connect(self.on_start_messa)
-        # self.btn_start.setEnabled(False)
-        load_layout.addWidget(self.txt_filename)
-        load_layout.addWidget(btn_pick_file)
-        load_layout.addWidget(self.btn_start)
-
         new_layout = QHBoxLayout()
+
+        btn_down_librone = QPushButton('AGGIORNA LIBRONE')
+        btn_down_librone.clicked.connect(self.on_update_librone)
+        new_layout.addWidget(btn_down_librone)
+
         self.date_edit = QDateEdit(calendarPopup=True)
         self.date_edit.setDate(QDate.currentDate())
         self.date_edit.setStyleSheet("color: rgb(255, 255, 255);")
@@ -52,7 +55,15 @@ class Launcher(QMainWindow):
         new_layout.addWidget(self.date_edit)
         new_layout.addWidget(btn_save)
 
-        lbl_canto_text = {
+        btn_pick_file = QPushButton('CARICA MESSA')
+        btn_pick_file.clicked.connect(self.on_pick_file)
+        self.btn_start = QPushButton(' INIZIA MESSA!')
+        self.btn_start.setIcon(QIcon("../start.png"))
+        self.btn_start.clicked.connect(self.on_start_messa)
+        new_layout.addWidget(btn_pick_file)
+        new_layout.addWidget(self.btn_start)
+
+        self.lbl_canto_text = {
             MassMoment.intro: "Ingresso",
             MassMoment.gloria: "Gloria",
             MassMoment.offertorio: "Offertorio",
@@ -63,27 +74,41 @@ class Launcher(QMainWindow):
         }
 
         self.list_songs = {}
-
-        layout_songs = QHBoxLayout()
-
-        for mom, head in lbl_canto_text.items():
-            ly = QVBoxLayout()
-            lbl = QLabel(f"<b>{head}:</b>")
-            self.list_songs[mom] = QListWidget()
-            for title in sorted(self.songs_by_moment[mom]):
-                self.list_songs[mom].addItem(QListWidgetItem(title))
-            self.list_songs[mom].setSelectionMode(QListWidget.SelectionMode.MultiSelection)
-            ly.addWidget(lbl)
-            ly.addWidget(self.list_songs[mom])
-
-            layout_songs.addLayout(ly)
+        self.layout_songs = QHBoxLayout()
+        self.populate_song_lists()
 
         main_layout.addLayout(new_layout)
-        main_layout.addLayout(layout_songs)
-        main_layout.addLayout(load_layout)
+        main_layout.addLayout(self.layout_songs)
 
         main_frame.setLayout(main_layout)
         self.setCentralWidget(main_frame)
+
+        self.update_dialog = UpdateDialog()
+
+    def populate_song_lists(self, reload=False):
+        self.songs_by_moment = self.librone.load_songs_by_moment()
+        for mom, head in self.lbl_canto_text.items():
+            ly = QVBoxLayout()
+            lbl = QLabel(f"<b>{head}:</b>")
+            if reload:
+                self.list_songs[mom].clear()
+            else:
+                self.list_songs[mom] = QListWidget()
+
+            for title in sorted(self.songs_by_moment[mom]):
+                self.list_songs[mom].addItem(QListWidgetItem(title))
+            self.list_songs[mom].setSelectionMode(QListWidget.SelectionMode.MultiSelection)
+
+            if not reload:
+                ly.addWidget(lbl)
+                ly.addWidget(self.list_songs[mom])
+                self.layout_songs.addLayout(ly)
+
+    def on_update_librone(self):
+        self.update_dialog.show()
+        if self.librone.check_for_updates():
+            self.populate_song_lists(reload=True)
+            self.update_dialog.close()
 
     def on_start_messa(self):
         # Set and configure the messa
@@ -96,7 +121,6 @@ class Launcher(QMainWindow):
     def on_pick_file(self):
         os.makedirs("messe", exist_ok=True)
         fname = QFileDialog.getOpenFileName(self, 'Open file', 'messe')[0]
-        self.txt_filename.setText(fname)
 
         if fname == "":
             return

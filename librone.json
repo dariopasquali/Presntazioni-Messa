@@ -211,6 +211,18 @@
       ]
     },
     {
+      "title": "Santo Scout",
+      "number": -1,
+      "tag": ["santo"],
+      "<RIT>": "Osanna osanna osanna-a, osanna osanna-a \nOsanna osanna osanna-a, osanna osanna-a ",
+      "body": [
+        "Santo santo, santo santo, santo il Signore Dio dell’Universo\nI cieli e la terra sono pieni della tua gloria",
+        "<RIT>",
+        "Benedetto è benedetto è, è colui che viene nel nome del Signore",
+        "<RIT>"
+      ]
+    },
+    {
       "title": "Inno all'amore",
       "number": -1,
       "tag": ["comunione"],
