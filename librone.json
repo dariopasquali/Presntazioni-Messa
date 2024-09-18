@@ -256,15 +256,93 @@
       "title": "Cantiamo insieme al Signore",
       "number": 222,
       "tag": ["fine"],
-      "<RIT>": "Cantiamo insieme al Signor: “lode a te”\nGridiamo forte a lui: “Santo tu sei”\nCantiamo insieme al Signor: “lode a te”\nGridiamo forte a lui: “Santo tu sei”\nLode gloria a Dio, lode gloria a lui RE\nLode gloria a Dio, lode gloria a lui",
-      "<RIT2>": "Cantiamo insieme a Dio. Cantiamo insieme a Dio\nLode al Signor, gridiamo forte a Lui Cantiamo insieme al Signor: “lode a te” Gridiamo forte a lui: “Santo tu sei” Lode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui\n\nCantiamo insieme a Dio: “Lode al Signor!”\n",
+      "<RIT>": "Cantiamo insieme al Signor: “lode a te”\nGridiamo forte a lui: “Santo tu sei”\nCantiamo insieme al Signor: “lode a te”\nGridiamo forte a lui: “Santo tu sei”\nLode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui",
+      "<RIT2>": "Cantiamo insieme a Dio. Cantiamo insieme a Dio\nLode al Signor, gridiamo forte a Lui Cantiamo insieme al Signor: “lode a te” Gridiamo forte a lui: “Santo tu sei” Lode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui\n\nCantiamo insieme a Dio: “Lode al Signor!”",
       "body": [
-        "Ti esalterò per sempre Signore perché mi hai liberato\nA te ho gridato e mi hai guarito mi hai dato la vita Signore.\nCantate inni al Signore rendete grazie a lui RE\nPerché la sua collera dura un istante \nper sempre la sua bontà\n",
+        "Ti esalterò per sempre Signore perché mi hai liberato\nA te ho gridato e mi hai guarito mi hai dato la vita Signore.\nCantate inni al Signore rendete grazie a lui\nPerché la sua collera dura un istante \nper sempre la sua bontà",
         "<RIT>",
         "Signore vieni in mio aiuto ascolta la mia preghiera\nLa sera sopraggiunge il pianto ma ecco al mattino la gioia Tu hai cambiato il mio lamento in gioia ed esultanza Perché io possa cantare al Signore per sempre la tua bontà.",
         "<RIT>",
         "Lode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui",
         "<RIT2>"
+      ]
+    },
+    {
+      "title": "Cantico di Giuditta",
+      "number": 222,
+      "tag": ["intro", "fine"],
+      "<RIT>": "Inneggiate al Signor con canti di gioia;\ncelebrate voi tutti il suo Nome;\nintonate a Lui un cantico nuovo;\nesultate in Dio Salvatore!",
+      "body": [
+        "<RIT>",
+        "Cantate al Signore con salmi di lode,\ndate al suo nome splendida gloria;\ncantate al Signore che stronca le guerre;\nci salva dai nostri nemici.",
+        "<RIT>",
+        "Ti temano tutte le creature,\ndalla tua Parola furono fatte;\nmandasti il tuo Spirito ed ebbero vita\ndalla tua voce potente.",
+        "<RIT>",
+        "I monti e le acque sussulteranno,\nle rocce come cera si scioglieranno,\nnon avrà paura chi teme Te,\nsarà sempre grande in eterno.",
+        "<RIT>",
+        "Adorate il Signore, sia in festa il vostro cuore,\nperché grande è la vittoria del Signore.\n\nAl Signore andrà la mia lode e il mio canto:\nil Signore saprà tutto di me (x2)",
+        "<RIT>"
+      ]
+    },
+    {
+      "title": "Grande è la tua bontà",
+      "number": 228,
+      "tag": ["comunione"],
+      "<RIT>": "Tu dirigi ogni mio passo\nSei mia roccia e mio baluardo\nE dal laccio che mi hanno teso\nMia difesa, Tu mi scioglierai.",
+      "body": [
+        "Grande è la Tua bontà, che riservi per chi Ti teme\nColmi della Tua grazia l'uomo che in Te si rifugia.\nSolo Tu mio Dio sei la rupe che mi accoglie\nTu sei la mia fortezza, confido in Te mio Signor.",
+        "<RIT>",
+        "Porgi a me l'orecchio, vieni presto a liberarmi,\nPer la Tua giustizia, non privarmi del Tuo volto.\nIn Te io mi rifugio, mi affido alle Tue mani,\nSolo Tu mi proteggi, ho fede in Te mio Signor",
+        "<RIT>"
+      ]
+    },
+    {
+      "title": "Quale gioia è star con te",
+      "number": 167,
+      "tag": ["finale"],
+      "<RIT>": "Quale gioia è star con Te, Gesù, vivo e vicino;\nbello è dar lode a Te: Tu sei il Signor.\nQuale dono è aver creduto in Te, che non mi abbandoni;\nio per sempre abiterò la Tua casa, mio Re.",
+      "body": [
+        "Ogni volta che Ti cerco, ogni volta che Ti invoco,\nsempre mi accogli, Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.",
+        "<RIT>",
+        "Hai guarito il mio dolore, hai cambiato questo cuore:\noggi rinasco, Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.\n",
+        "<RIT>",
+        "Hai salvato la mia vita, hai aperto la mia bocca;\ncanto per Te, mio Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.",
+        "<RIT>"
+      ]
+    },
+    {
+      "title": "Servire e Regnare",
+      "number": 259,
+      "tag": ["comunione", "offertorio"],
+      "<RIT>": "Fa’ che impariamo, Signore, da Te,\nChe il più grande è chi più sa servire,\nChi s’abbassa e chi si sa piegare,\nPerché grande è soltanto l’amore.",
+      "body": [
+        "Guardiamo a te che sei\nMaestro e Signore:\nChinato a terra stai,\nCi mostri che l’amore\nÈ cingersi il grembiule,\nSapersi inginocchiare,\nC’insegni che amare è servire.",
+        "<RIT>",
+        "E ti vediamo poi,\nMaestro e Signore,\nChe lavi i piedi a noi\nChe siamo tue creature\nE cinto del grembiule,\nChe è il manto tuo regale,\nC’insegni che servire è regnare.",
+        "<RIT>"
+      ]
+    },
+    {
+      "title": "Servo per Amore",
+      "number": 133,
+      "tag": ["offertorio", "comunione"],
+      "<RIT>": "Offri la vita tua come Maria ai piedi della croce\ne sarai servo di ogni uomo servo per amore,\nsacerdote dell'umanità.",
+      "body": [
+        "Una notte di sudore sulla barca in mezzo al mare\ne mentre il cielo s'imbianca già tu guardi le tue reti vuote.\nMa la voce che ti chiama un altro mare ti mostrerà \ne sulle rive di ogni cuore le tue reti getterai.",
+        "<RIT>",
+        "Avanzavi nel silenzio fra le lacrime speravi\nche il seme sparso davanti a te cadesse sulla buona terra.\nOra il cuore tuo è in festa perchè il grano biondeggia ormai,\nè maturato sotto il sole puoi riporlo nei granai."
+      ]
+    },
+    {
+      "title": "Tempo per Ricominciare",
+      "number": 206,
+      "tag": ["intro", "comunione"],
+      "<RIT>": "Oggi è tempo di ricominciare Tempo di perdono nella verità\nPer comporre in terra un firmamento Stelle sopra il fango d'ogni povertà\ne l'unità",
+      "body": [
+        "Padre nostro siamo qui nella nostra povertà davanti a te\nTu che di ogni cuore sai storie, luci, lacrime e verità\nDacci il tuo perdono che ci risana l'anima con la tua pace\nPadre nostro tu che puoi tutti i nostri debiti prendili tu\nIl ritorno che non c'è, la ferita, il torto che brucia di più\nIl perdono che ci dai ce lo offriamo tra di noi e lo chiediamo",
+        "<RIT>",
+        "Vieni, dolce spirito, scendi col tuo balsamo, tu che lo puoi.\nDove il cuore sanguina, quando grida l’anima dentro di noi,\nsoffia via la cenere, dacci il tuo respiro di misericordia.\nVieni, santo spirito, rialzaci e rivestici di novità.\nFa di noi il tuo lievito che nel mondo semina fraternità.\nScendi fuoco limpido, scendi fiume carico di primavera.",
+        "<RIT>"
       ]
     }
 

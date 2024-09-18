@@ -10,15 +10,10 @@ from pdf import PDFMaker
 casi_duso = """
 
 # BASE
-- Eseguibile
-
 - Download dicitura tempo ordinario e messa + data
-- Paginazione più smart, canti (strofa + RIT in pagina), letture (wpp 150), fixed (wpp 100)
 
 - TASTO PER aggiungere immagine volante/predefinita, solitamente alla fine
 - TASTO PER aggiungere canzone volante, poco prima della messa, ma anche durante prendendo spunto dall'omelia
-
-- librone su drive, scaricare canzoni in fase di creazione nel file .json
 
 # EXTRA
 - canti con doppie voci
