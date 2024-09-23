@@ -1,4 +1,5 @@
 import json
+import os
 
 import gdown
 
@@ -67,9 +68,11 @@ class Librone:
         self.filename = filename
         self.scaletta = {}
         self.librone = None
+        self.version = 0.0
 
         with open(self.filename, 'r', encoding="utf-8") as f:
             self.librone = json.load(f)
+            self.version = self.librone["version"]
 
         self.moments = [
             MassMoment.intro,
@@ -83,11 +86,22 @@ class Librone:
 
     def check_for_updates(self):
         try:
-            print("Try to update the Librone")
-            gdown.download(librone_drive_url, "librone.json")
+            print("Check for updates")
+            gdown.download(librone_drive_url, "librone.tmp.json")
 
-            with open(self.filename, 'r', encoding="utf-8") as f:
-                self.librone = json.load(f)
+            with open("librone.tmp.json", 'r', encoding="utf-8") as f:
+                librone_tmp = json.load(f)
+
+            if librone_tmp["version"] > self.version:
+                print("New update found, load the new version!")
+                self.version = librone_tmp["version"]
+                self.librone = librone_tmp
+                os.remove("librone.json")
+                os.rename("librone.tmp.json", self.filename)
+            else:
+                os.remove("librone.tmp.json")
+                print(f"No update, version: {self.version}")
+
 
             return True
         except Exception as e:
@@ -124,3 +138,26 @@ class Librone:
             song.parse_json(find[0])
             return song
         return None
+
+    def add_song(self, title, number, moments, rits, structure):
+        if self.search(title) is not None:
+            return False
+
+        song_dict = {
+            "title": title,
+            "number": number,
+            "tag": moments,
+        }
+
+        for (rit, text) in rits:
+            song_dict[rit] = text
+
+        song_dict['body'] = structure
+
+        self.version += 0.1
+        self.librone["songs"].append(song_dict)
+
+        with open("librone.json", 'w', encoding="utf-8") as f:
+            json.dump(self.librone, f)
+
+        return True

@@ -1,4 +1,5 @@
 {
+  "version": 1.0,
   "songs" : [
     {
       "title": "Popoli tutti",
@@ -299,7 +300,7 @@
     {
       "title": "Quale gioia è star con te",
       "number": 167,
-      "tag": ["finale"],
+      "tag": ["fine"],
       "<RIT>": "Quale gioia è star con Te, Gesù, vivo e vicino;\nbello è dar lode a Te: Tu sei il Signor.\nQuale dono è aver creduto in Te, che non mi abbandoni;\nio per sempre abiterò la Tua casa, mio Re.",
       "body": [
         "Ogni volta che Ti cerco, ogni volta che Ti invoco,\nsempre mi accogli, Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.",
@@ -343,6 +344,18 @@
         "<RIT>",
         "Vieni, dolce spirito, scendi col tuo balsamo, tu che lo puoi.\nDove il cuore sanguina, quando grida l’anima dentro di noi,\nsoffia via la cenere, dacci il tuo respiro di misericordia.\nVieni, santo spirito, rialzaci e rivestici di novità.\nFa di noi il tuo lievito che nel mondo semina fraternità.\nScendi fuoco limpido, scendi fiume carico di primavera.",
         "<RIT>"
+      ]
+    },
+    {
+      "title": "Quelli che amano te",
+      "number": 260,
+      "tag": ["offertorio"],
+      "<RIT>": "Insieme ai doni veniamo noi stessi\nFigli di tutta la Terra\nPer riscaldarci attorno alla mensa\nChe hai preparato per noi",
+      "body": [
+        "Ecco il frumento che noi ti portiamo\nPane della Madre Terra\nE del lavoro e il sudore di tanti\nQuelli che amano te",
+        "Portiamo il vino, frutto della vite\nSangue della Madre Terra\nE del lavoro e la gioia di tanti\nQuelli che amano te",
+        "<RIT>",
+        "Per riscaldarci attorno alla mensa\nChe hai preparato per noi"
       ]
     }
 

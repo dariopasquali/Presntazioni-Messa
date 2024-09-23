@@ -67,9 +67,9 @@ ma liberaci dal male.
 """
 
 agnello = """
-Agnello di Dio che togli i peccati del mondo,\nabbi pietà di noi.<br><br>
-Agnello di Dio, che togli i peccati del mondo,\nabbi pietà di noi.<br><br>
-Agnello di Dio, che togli i peccati del mondo,\ndona a noi la pace. 
+Agnello di Dio che togli i peccati del mondo,<br>abbi pietà di noi.<br><br>
+Agnello di Dio, che togli i peccati del mondo,<br>abbi pietà di noi.<br><br>
+Agnello di Dio, che togli i peccati del mondo,<br>dona a noi la pace. 
 """
 
 invito_cena = """
