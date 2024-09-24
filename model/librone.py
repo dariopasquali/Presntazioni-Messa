@@ -19,6 +19,7 @@ class Song:
         self.title = song_json["title"]
         self.number = song_json["number"]
         self.body = song_json["body"]
+        return self
 
     def __get_body_page_html(self, id):
         if id >= len(self.body):
@@ -39,7 +40,7 @@ class Song:
         pages = []
         word_count = 0
 
-        current_page = f"<b><u>{self.title}</u></b><br>"
+        current_page = f"<b><u>{self.title}</u></b><br><br>"
 
         for i in range(0, len(self.body), 2):
 
@@ -52,14 +53,6 @@ class Song:
 
             pages.append(current_page)
             current_page = ""
-
-            # l = len(verse.split(" "))
-            # if (word_count + l) > wpp:
-            #     pages.append(current_page)
-            #     current_page = ""
-            #     word_count = 0
-            #
-            # word_count += l
         return pages
 
 
@@ -67,7 +60,7 @@ class Librone:
     def __init__(self, filename="librone.json"):
         self.filename = filename
         self.scaletta = {}
-        self.librone = None
+        self.librone = {}
         self.version = 0.0
 
         with open(self.filename, 'r', encoding="utf-8") as f:
@@ -123,6 +116,13 @@ class Librone:
                 print(f"Load {title} for {key}")
                 self.scaletta[key].append(self.search(title=title))
 
+        return self.scaletta
+
+    def get_all_songs(self):
+        ss = [Song().parse_json(js) for js in self.librone["songs"]]
+        ss.sort(key=lambda x: x.title)
+        return ss
+
     def load_songs_by_moment(self):
         song_moment_list = [(s['title'], s['tag']) for s in self.librone['songs']]
         songs = {}
@@ -155,9 +155,24 @@ class Librone:
         song_dict['body'] = structure
 
         self.version += 0.1
+        self.librone['version'] = self.version
         self.librone["songs"].append(song_dict)
 
         with open("librone.json", 'w', encoding="utf-8") as f:
-            json.dump(self.librone, f)
+            json.dump(self.librone, f, indent=4)
 
         return True
+
+    def delete_song(self, title):
+        if self.search(title) is not None:
+            self.librone['songs'] = [s for s in self.librone['songs'] if s['title'] != title]
+
+            self.version += 0.1
+            self.librone['version'] = self.version
+
+            with open("librone.json", 'w', encoding="utf-8") as f:
+                json.dump(self.librone, f, indent=4)
+
+            return True
+
+        return False

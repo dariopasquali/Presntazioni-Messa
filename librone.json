@@ -1,364 +1,428 @@
 {
-  "version": 1.0,
-  "songs" : [
-    {
-      "title": "Popoli tutti",
-      "number": 161,
-      "tag": ["intro"],
-      "<RIT>": "Popoli tutti acclamate al Signore,\ngloria e potenza cantiamo al Re,\nmari e monti si prostino a Te, al tuo nome, o Signore.\nCanto di gioia per quello che fai,\nper sempre Signore con Te restero',\n non c'e' promessa, non c'e' fedelta' che in Te.",
-      "body": [
-        "Mio Dio, Signore, nulla è pari a Te.\nOra e per sempre, voglio lodare il Tuo grande amor per noi.\nMia roccia Tu sei, pace e conforto mi dai.\nCon tutto il cuore e le mie forze, sempre io Ti adorerò.",
-        "<RIT>",
-        "Mio Dio, Creatore, tutto parla di Te,\nOra e per sempre voglio cantare la Tua presenza qui tra noi.\nMia forza, Tu sei, scudo e difesa mi dai,\ncon tutto me stesso e la mia vita, sempre io Ti amerò!",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Grandi cose",
-      "number": 55,
-      "tag": ["intro", "fine", "comunione"],
-      "<RIT>": "Grandi cose ha fatto il Signore per noi, \nha fatto germogliare i fiori fra le rocce.\nGrandi cose ha fatto il Signore per noi, \nci ha riportati liberi alla nostra terra.\nEd ora possiamo cantare possiamo gridare l’amore che Dio ha versato su noi.",
-      "body": [
-        "<RIT>",
-        "Tu che sai strappare dalla morte,\nhai sollevato il nostro viso dalla polvere. \nTu che hai sentito il nostro pianto,\nnel nostro cuore hai messo un seme di felicità.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Gloria Mariano",
-      "number": 1000,
-      "tag": ["gloria"],
-      "<RIT2>": "Gloria a Dio nell’alto dei cieli\ne pace in terra agli uomini che egli ama. (x2)",
-      "<RIT>": "Gloria a Dio nell’alto dei cieli\ne pace in terra agli uomini che egli ama.",
-      "body": [
-        "<RIT2>",
-        "Noi ti lodiamo, ti benediciamo,\nti adoriamo, ti glorifichiamo,\nti rendiamo grazie per la tua immensa gloria.\n\nSignore Dio, re del cielo, Dio Padre onnipotente,\nFiglio unigenito, Cristo Gesù.",
-        "<RIT>",
-        "Signore Dio, Agnello di Dio,\nFiglio del Padre onnipotente.\nTu che togli i peccati del mondo, abbi pietà di noi.\n\nTu che togli i peccati del mondo, accogli benigno la nostra preghiera.\nTu che siedi alla destra del Padre, abbi pietà di noi.",
-        "<RIT>",
-        "Tu solo il Santo, tu solo il Signore,\ntu l’Altissimo, Gesù Cristo,\ncon lo Spirito Santo nella gloria del Padre.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Segni del tuo amore",
-      "number": 131,
-      "tag": ["offertorio"],
-      "<RIT>": "Ecco il pane e il vino, segni del tuo amore.\nEcco questa offerta, accoglila Signore:\ntu di mille e mille cuori fai un cuore solo, un corpo solo in te\ne il Figlio tuo verrà, vivrà ancora in mezzo a noi.",
-      "body": [
-        "Mille e mille grani nelle spighe d'oro,\nmandano fragranza e danno gioia al cuore,\nquando, macinati, fanno un pane solo:\npane quotidiano, dono tuo, Signore.",
-        "<RIT>",
-        "Mille grappoli maturi sotto il sole,\nfesta della terra, donano vigore,\nquando da ogni perla stilla il vino nuovo:\nvino della gioia, dono tuo, Signore.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Cosa offrirti",
-      "number": 1001,
-      "tag": ["offertorio"],
-      "<RIT>": "Accetta mio Re, questo poco che ho,\noffro a te la mia vita,\ngioia è per me far la tua volontà,\nil mio unico bene sei solo tu, solo tu.",
-      "body": [
-        "Cosa offrirti o Dio, cosa posso darti,\neccomi son qui davanti a te.\nLe gioie ed i dolori,\ngli affanni di ogni giorno,\ntutto voglio vivere in te.",
-        "<RIT>",
-        "Vengo a te mio Dio, apro le mie braccia\nche la tua letizia riempirà.\nRinnova questo cuore\nperchè Ti sappia amare e\nnella tua pace io vivrò",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Prendi la vita mia",
-      "number": 166,
-      "tag": ["offertorio"],
-      "<RIT>": "Prendi la vita mia, la metto qui davanti a te,\npoca cosa è tutto per me, fanne ciò che vuoi\nper le strade che mi dirai cammineremo insieme",
-      "body": [
-        "Non so se sarò capace, di amare gli altri più di me,\ndi lasciare ciò che mi piace per seguire un sogno che c’è in te,\nnon so se sarò capace di lasciare tutto ciò che ho\nle mie facili certezze.",
-        "<RIT>",
-        "Signore io non ho la forza di fare tutto ciò che vuoi\nda solo sono un povero uomo che cerca ancora di nascondersi.\nSignore io non ho la forza di guardare negli occhi te\ndammi tu la fede.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "La pace del Signore sia con te",
-      "number": 1002,
-      "tag": ["pace"],
-      "<RIT>": "La pace del Signore sia con te \nLa pace del Signore dentro te \n\nLa pace vera che il mondo non può dare\nLa pace del Signore su di te",
-      "body": [
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Su ali d'aqulia",
-      "number": 139,
-      "tag": ["intro","comunione"],
-      "<RIT>": "E ti rialzerà, ti solleverà  su ali d'aquila\nti reggerà sulla brezza dell'alba ti farà brillar come il sole,\ncosì nelle sue mani vivrai. ",
-      "body": [
-        "Tu che abiti al riparo del Signore\ne che dimori alla sua ombra,\ndi' al Signore: 'Mio rifugio,\nmia roccia su cui confido.'",
-        "<RIT>",
-        "Dal laccio del cacciatore ti libererà,\ne dalla carestia che distrugge,\npoi ti coprirò con le Sue ali,\ne rifugio troverai",
-        "<RIT>",
-        "Non devi temere i terrori della notte\nne' freccia che vola di giorno,\nmille cadranno al tuo fianco,\nma nulla ti colpirà",
-        "<RIT>",
-        "Perché ai Suoi angeli ha dato un comando,\ndi preservarti in tutte le tue vie,\nti porteranno sulle loro mani\ncontro la pietra non inciamperai.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Abbracciami",
-      "number": 170,
-      "tag": ["intro","comunione"],
-      "<RIT>": "Abbracciami Dio dell’eternità\nRifugio dell’anima grazia che opera.\nRiscaldami fuoco che libera\nManda il tuo Spirito Maranathà Gesù",
-      "body": [
-        "Gesù parola viva e vera.\nSorgente che disseta e cura ogni ferita.\nFerma su di me i tuoi occhi.\nLa tua mano stendi e donami la vita",
-        "<RIT>",
-        "Gesù asciuga il nostro pianto.\nLeone vincitore della tribù di Giuda.\nVieni nella tua potenza questo\ncuore sciogli. Con ogni sua paura",
-        "<RIT>",
-        "Per sempre io canterò la tua immensa fedeltà\nIl tuo spirito in me in eterno ti loderà\nPer sempre io canterò la tua immensa fedeltà\nIl tuo spirito in me in eterno ti loderà",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Il canto dell'amore",
-      "number": 189,
-      "tag": ["intro", "comunione", "fine"],
-      "<RIT>": "Perché tu sei prezioso ai miei occhi\nVali più del più grande dei tesori\nIo sarò con te dovunque andrai",
-      "<RIT2>": "Seguirai la mia luce nella notte\nSentirai la mia forza nel cammino\nIo sono il tuo Dio, il Signore",
-      "body": [
-        "Se dovrai attraversare il deserto\nNon temere io sarò con te\nSe dovrai camminare nel fuoco\nLa sua fiamma non ti brucerà",
-        "<RIT>",
-        "Sono io che ti ho fatto e plasmato\nTi ho chiamato per nome\nIo da sempre ti ho conosciuto\nE ti ho dato il mio amore",
-        "<RIT2>",
-        "Non pensare alle cose di ieri\nCose nuove fioriscono già\nAprirò nel deserto sentieri\nDarò acqua nell'aridità",
-        "<RIT2>",
-        "Io ti sarò accanto sarò con te\nPer tutto il tuo viaggio sarò con te\nIo ti sarò accanto sarò con te\nPer tutto il tuo viaggio sarò con te"
-      ]
-    },
-    {
-      "title": "Ti ringrazio",
-      "number": 147,
-      "tag": ["fine"],
-      "<RIT>": "Ti ringrazio mio signore non ho più paura, perché,\ncon la mia mano nella mano degli amici miei,\ncammino fra la gente della mia città e non mi sento più solo;\nnon sento la stanchezza e guardo dritto avanti a me,\nperché sulla mia strada ci sei Tu.",
-      "body": [
-        "Amatevi l'un l'altro come Lui ha amato noi:\ne siate per sempre suoi amici;\ne quello che farete al più piccolo tra voi,\ncredete l'avete fatto a Lui.",
-        "<RIT>",
-        "Se amate veramente perdonatevi tra voi:\nnel cuore di ognuno ci sia pace;\nil Padre che è nei cieli vede tutti i figli suoi\ncon gioia a voi perdonerà.",
-        "<RIT>",
-        "Sarete suoi amici se vi amate fra voi\ne questo è tutto il suo Vangelo;\nl'amore non ha prezzo, non misura ciò che dà:\nl'amore, confini non ne ha.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Ora vado sulla mia strada",
-      "number": 147,
-      "tag": ["fine"],
-      "<RIT>": "Ora vado sulla mia strada\ncon l’amore tuo che mi guida\nOh Signore, ovunque io vada\nResta accanto a me.\n\nIo ti prego, stammi vicino\nogni passo del mio cammino\nOgni notte, ogni mattino\nResta accanto a me",
-      "body": [
-        "Il tuo sguardo puro sia luce per me,\ne la tua parola sia voce per me.\nChe io trovi il senso del mio andare solo in te\nnel tuo fedele amare il mio perché.",
-        "<RIT>",
-        "Fa’ che chi mi guarda non veda che te\nfa’ che chi mi ascolta non senta che te\ne chi pensa a me, fa’ che nel cuore pensi a te\ne trovi quell’amore che hai dato a me.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Chiamati per nome",
-      "number": -1,
-      "tag": ["intro", "comunione", "fine"],
-      "<RIT>": "Veniamo da te, Chiamati per nome\nChe festa, Signore, tu cammini con noi\nCi parli di te, Per noi spezzi il pane\nTi riconosciamo e il cuore arde, sei tu\nE noi tuo popolo Siamo qui",
-      "body": [
-        "<RIT>",
-        "Siamo come terra ed argilla\nE la tua parola ci plasmerà\nBrace pronta per la scintilla\nE il tuo spirito soffierà\nC'infiammerà",
-        "<RIT>",
-        "Siamo come semi nel solco\nCome vigna che il suo frutto darà\nGrano del Signore risorto\nLa tua messe che fiorirà d'eternità",
-        "<RIT>",
-        "<b>E noi tuo popolo\nSiamo qui. Siamo qui</b>"
-
-      ]
-    },
-    {
-      "title": "Benedici il Signore Anima mia",
-      "number": 16,
-      "tag": ["intro", "comunione", "fine"],
-      "<RIT>": "Benedici il Signore, anima mia,\n quanto è in me benedica il suo nome;\nnon dimenticherò tutti i suoi benefici,\nbenedici il Signore, anima mia.",
-      "body": [
-        "<RIT>",
-        "Lui perdona tutte le tue colpe e ti salva dalla morte.\nTi corona di grazia e ti sazia di beni nella tua giovinezza.",
-        "<RIT>",
-        "Il Signore agisce con giustizia, con amore verso i poveri.\nRivelò a Mosè le sue vie, ad Israele le sue grandi opere.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Eccomi manda me",
-      "number": -1,
-      "tag": ["offertorio"],
-      "<RIT>": "Eccomi, Signore, manda me!\nPiccolo seme, ma se vuoi, grandi frutti io darò!\nEccoci, Signore, manda noi!\nPiccoli semi, ma se vuoi, grandi frutti noi daremo!\nTu, manda noi! Manda noi se vuoi!",
-      "body": [
-        "Se le ore di una vita vuota ti regalano soltanto solitudine,\ne i tuoi giorni sono tutti uguali, se per mettere le ali hai bisogno di qualcosa in più…\nLui è lì che aspetta te, tu cantando gli dirai:",
-        "<RIT>",
-        "Fai silenzio dentro alla tua vita: scoprirai che l'amore\nchiama sempre per nome. Non aver paura di rischiare: quello che tu perderai lo riavrai in quantità\nLui è lì che aspetta te, tu cantando gli dirai.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Santo, Santo",
-      "number": -1,
-      "tag": ["santo"],
-      "<RIT>": "Santo, Santo, Santo è il Signore Dio dell'universo\nSanto, Santo, i cieli e la terra sono pieni della sua gloria",
-      "<RIT2>": "Santo, Santo, Santo è il Signore Dio dell'universo\nSanto, Santo, Santo",
-      "body": [
-        "<RIT>",
-        "Osanna nell'alto dei cieli\nOsanna nell'alto dei cieli.",
-        "<RIT>",
-        "Benedetto colui che viene nel nome del Signore\nOsanna nell'alto dei cieli\nOsanna nell'alto dei cieli.",
-        "<RIT2>"
-      ]
-    },
-    {
-      "title": "Santo Scout",
-      "number": -1,
-      "tag": ["santo"],
-      "<RIT>": "Osanna osanna osanna-a, osanna osanna-a \nOsanna osanna osanna-a, osanna osanna-a ",
-      "body": [
-        "Santo santo, santo santo, santo il Signore Dio dell’Universo\nI cieli e la terra sono pieni della tua gloria",
-        "<RIT>",
-        "Benedetto è benedetto è, è colui che viene nel nome del Signore",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Inno all'amore",
-      "number": -1,
-      "tag": ["comunione"],
-      "<RIT>": "L’amore è paziente. L’amore è benigno.\nL’amore non si gonfia. L’amore non si vanta.\nL’amore non invidia\nSempre rispetta",
-      "<RIT2>": "Non cerca mai il proprio interesse.\nNon conta mai il male ricevuto\nL’amore tutto scusa. L’amore tutto crede. L’amore tutto spera.",
-      "<RIT3>": "E tutto sopporta.",
-      "body": [
-        "<RIT>",
-        "Se parlassi le lingue degli uomini\nSe parlassi le lingue degli angeli\nMa, ma non avessi amore\nSe riuscissi a conoscere tutto Se riuscissi a fare miracoli\nMa, ma non avessi amore\nIo sarei bronzo che rimbomba a vuoto\nNon sarei nulla, nulla, nulla",
-        "<RIT>",
-        "Se donassi tutti i miei beni\nSe donassi la mia stessa vita\nMa, ma non avessi amore\nNon servirebbe a nulla, a nulla, a nulla.",
-        "<RIT>",
-        "<RIT2>",
-        "Vediamo come in uno specchio, in modo imperfetto\nTutte le cose passeranno, ma l’amore resta eterno",
-        "<RIT>",
-        "<RIT2>",
-        "<RIT3>"
-
-      ]
-    },
-    {
-      "title": "Non c'è Amore più grande",
-      "number": 261,
-      "tag": ["comunione"],
-      "<RIT>": "Non c’è amore più grande\ndi chi dà la vita per i suoi.\nNon c’è amore più grande:\nio do’ la mia vita per voi.",
-      "body": [
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Cantiamo insieme al Signore",
-      "number": 222,
-      "tag": ["fine"],
-      "<RIT>": "Cantiamo insieme al Signor: “lode a te”\nGridiamo forte a lui: “Santo tu sei”\nCantiamo insieme al Signor: “lode a te”\nGridiamo forte a lui: “Santo tu sei”\nLode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui",
-      "<RIT2>": "Cantiamo insieme a Dio. Cantiamo insieme a Dio\nLode al Signor, gridiamo forte a Lui Cantiamo insieme al Signor: “lode a te” Gridiamo forte a lui: “Santo tu sei” Lode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui\n\nCantiamo insieme a Dio: “Lode al Signor!”",
-      "body": [
-        "Ti esalterò per sempre Signore perché mi hai liberato\nA te ho gridato e mi hai guarito mi hai dato la vita Signore.\nCantate inni al Signore rendete grazie a lui\nPerché la sua collera dura un istante \nper sempre la sua bontà",
-        "<RIT>",
-        "Signore vieni in mio aiuto ascolta la mia preghiera\nLa sera sopraggiunge il pianto ma ecco al mattino la gioia Tu hai cambiato il mio lamento in gioia ed esultanza Perché io possa cantare al Signore per sempre la tua bontà.",
-        "<RIT>",
-        "Lode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui",
-        "<RIT2>"
-      ]
-    },
-    {
-      "title": "Cantico di Giuditta",
-      "number": 222,
-      "tag": ["intro", "fine"],
-      "<RIT>": "Inneggiate al Signor con canti di gioia;\ncelebrate voi tutti il suo Nome;\nintonate a Lui un cantico nuovo;\nesultate in Dio Salvatore!",
-      "body": [
-        "<RIT>",
-        "Cantate al Signore con salmi di lode,\ndate al suo nome splendida gloria;\ncantate al Signore che stronca le guerre;\nci salva dai nostri nemici.",
-        "<RIT>",
-        "Ti temano tutte le creature,\ndalla tua Parola furono fatte;\nmandasti il tuo Spirito ed ebbero vita\ndalla tua voce potente.",
-        "<RIT>",
-        "I monti e le acque sussulteranno,\nle rocce come cera si scioglieranno,\nnon avrà paura chi teme Te,\nsarà sempre grande in eterno.",
-        "<RIT>",
-        "Adorate il Signore, sia in festa il vostro cuore,\nperché grande è la vittoria del Signore.\n\nAl Signore andrà la mia lode e il mio canto:\nil Signore saprà tutto di me (x2)",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Grande è la tua bontà",
-      "number": 228,
-      "tag": ["comunione"],
-      "<RIT>": "Tu dirigi ogni mio passo\nSei mia roccia e mio baluardo\nE dal laccio che mi hanno teso\nMia difesa, Tu mi scioglierai.",
-      "body": [
-        "Grande è la Tua bontà, che riservi per chi Ti teme\nColmi della Tua grazia l'uomo che in Te si rifugia.\nSolo Tu mio Dio sei la rupe che mi accoglie\nTu sei la mia fortezza, confido in Te mio Signor.",
-        "<RIT>",
-        "Porgi a me l'orecchio, vieni presto a liberarmi,\nPer la Tua giustizia, non privarmi del Tuo volto.\nIn Te io mi rifugio, mi affido alle Tue mani,\nSolo Tu mi proteggi, ho fede in Te mio Signor",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Quale gioia è star con te",
-      "number": 167,
-      "tag": ["fine"],
-      "<RIT>": "Quale gioia è star con Te, Gesù, vivo e vicino;\nbello è dar lode a Te: Tu sei il Signor.\nQuale dono è aver creduto in Te, che non mi abbandoni;\nio per sempre abiterò la Tua casa, mio Re.",
-      "body": [
-        "Ogni volta che Ti cerco, ogni volta che Ti invoco,\nsempre mi accogli, Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.",
-        "<RIT>",
-        "Hai guarito il mio dolore, hai cambiato questo cuore:\noggi rinasco, Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.\n",
-        "<RIT>",
-        "Hai salvato la mia vita, hai aperto la mia bocca;\ncanto per Te, mio Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Servire e Regnare",
-      "number": 259,
-      "tag": ["comunione", "offertorio"],
-      "<RIT>": "Fa’ che impariamo, Signore, da Te,\nChe il più grande è chi più sa servire,\nChi s’abbassa e chi si sa piegare,\nPerché grande è soltanto l’amore.",
-      "body": [
-        "Guardiamo a te che sei\nMaestro e Signore:\nChinato a terra stai,\nCi mostri che l’amore\nÈ cingersi il grembiule,\nSapersi inginocchiare,\nC’insegni che amare è servire.",
-        "<RIT>",
-        "E ti vediamo poi,\nMaestro e Signore,\nChe lavi i piedi a noi\nChe siamo tue creature\nE cinto del grembiule,\nChe è il manto tuo regale,\nC’insegni che servire è regnare.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Servo per Amore",
-      "number": 133,
-      "tag": ["offertorio", "comunione"],
-      "<RIT>": "Offri la vita tua come Maria ai piedi della croce\ne sarai servo di ogni uomo servo per amore,\nsacerdote dell'umanità.",
-      "body": [
-        "Una notte di sudore sulla barca in mezzo al mare\ne mentre il cielo s'imbianca già tu guardi le tue reti vuote.\nMa la voce che ti chiama un altro mare ti mostrerà \ne sulle rive di ogni cuore le tue reti getterai.",
-        "<RIT>",
-        "Avanzavi nel silenzio fra le lacrime speravi\nche il seme sparso davanti a te cadesse sulla buona terra.\nOra il cuore tuo è in festa perchè il grano biondeggia ormai,\nè maturato sotto il sole puoi riporlo nei granai."
-      ]
-    },
-    {
-      "title": "Tempo per Ricominciare",
-      "number": 206,
-      "tag": ["intro", "comunione"],
-      "<RIT>": "Oggi è tempo di ricominciare Tempo di perdono nella verità\nPer comporre in terra un firmamento Stelle sopra il fango d'ogni povertà\ne l'unità",
-      "body": [
-        "Padre nostro siamo qui nella nostra povertà davanti a te\nTu che di ogni cuore sai storie, luci, lacrime e verità\nDacci il tuo perdono che ci risana l'anima con la tua pace\nPadre nostro tu che puoi tutti i nostri debiti prendili tu\nIl ritorno che non c'è, la ferita, il torto che brucia di più\nIl perdono che ci dai ce lo offriamo tra di noi e lo chiediamo",
-        "<RIT>",
-        "Vieni, dolce spirito, scendi col tuo balsamo, tu che lo puoi.\nDove il cuore sanguina, quando grida l’anima dentro di noi,\nsoffia via la cenere, dacci il tuo respiro di misericordia.\nVieni, santo spirito, rialzaci e rivestici di novità.\nFa di noi il tuo lievito che nel mondo semina fraternità.\nScendi fuoco limpido, scendi fiume carico di primavera.",
-        "<RIT>"
-      ]
-    },
-    {
-      "title": "Quelli che amano te",
-      "number": 260,
-      "tag": ["offertorio"],
-      "<RIT>": "Insieme ai doni veniamo noi stessi\nFigli di tutta la Terra\nPer riscaldarci attorno alla mensa\nChe hai preparato per noi",
-      "body": [
-        "Ecco il frumento che noi ti portiamo\nPane della Madre Terra\nE del lavoro e il sudore di tanti\nQuelli che amano te",
-        "Portiamo il vino, frutto della vite\nSangue della Madre Terra\nE del lavoro e la gioia di tanti\nQuelli che amano te",
-        "<RIT>",
-        "Per riscaldarci attorno alla mensa\nChe hai preparato per noi"
-      ]
-    }
-
-
-  ]
+    "version": 1.2000000000000002,
+    "songs": [
+        {
+            "title": "Popoli tutti",
+            "number": 161,
+            "tag": [
+                "intro"
+            ],
+            "<RIT>": "Popoli tutti acclamate al Signore,\ngloria e potenza cantiamo al Re,\nmari e monti si prostino a Te, al tuo nome, o Signore.\nCanto di gioia per quello che fai,\nper sempre Signore con Te restero',\n non c'e' promessa, non c'e' fedelta' che in Te.",
+            "body": [
+                "Mio Dio, Signore, nulla \u00e8 pari a Te.\nOra e per sempre, voglio lodare il Tuo grande amor per noi.\nMia roccia Tu sei, pace e conforto mi dai.\nCon tutto il cuore e le mie forze, sempre io Ti adorer\u00f2.",
+                "<RIT>",
+                "Mio Dio, Creatore, tutto parla di Te,\nOra e per sempre voglio cantare la Tua presenza qui tra noi.\nMia forza, Tu sei, scudo e difesa mi dai,\ncon tutto me stesso e la mia vita, sempre io Ti amer\u00f2!",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Grandi cose",
+            "number": 55,
+            "tag": [
+                "intro",
+                "fine",
+                "comunione"
+            ],
+            "<RIT>": "Grandi cose ha fatto il Signore per noi, \nha fatto germogliare i fiori fra le rocce.\nGrandi cose ha fatto il Signore per noi, \nci ha riportati liberi alla nostra terra.\nEd ora possiamo cantare possiamo gridare l\u2019amore che Dio ha versato su noi.",
+            "body": [
+                "<RIT>",
+                "Tu che sai strappare dalla morte,\nhai sollevato il nostro viso dalla polvere. \nTu che hai sentito il nostro pianto,\nnel nostro cuore hai messo un seme di felicit\u00e0.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Gloria Mariano",
+            "number": 1000,
+            "tag": [
+                "gloria"
+            ],
+            "<RIT2>": "Gloria a Dio nell\u2019alto dei cieli\ne pace in terra agli uomini che egli ama. (x2)",
+            "<RIT>": "Gloria a Dio nell\u2019alto dei cieli\ne pace in terra agli uomini che egli ama.",
+            "body": [
+                "<RIT2>",
+                "Noi ti lodiamo, ti benediciamo,\nti adoriamo, ti glorifichiamo,\nti rendiamo grazie per la tua immensa gloria.\n\nSignore Dio, re del cielo, Dio Padre onnipotente,\nFiglio unigenito, Cristo Ges\u00f9.",
+                "<RIT>",
+                "Signore Dio, Agnello di Dio,\nFiglio del Padre onnipotente.\nTu che togli i peccati del mondo, abbi piet\u00e0 di noi.\n\nTu che togli i peccati del mondo, accogli benigno la nostra preghiera.\nTu che siedi alla destra del Padre, abbi piet\u00e0 di noi.",
+                "<RIT>",
+                "Tu solo il Santo, tu solo il Signore,\ntu l\u2019Altissimo, Ges\u00f9 Cristo,\ncon lo Spirito Santo nella gloria del Padre.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Segni del tuo amore",
+            "number": 131,
+            "tag": [
+                "offertorio"
+            ],
+            "<RIT>": "Ecco il pane e il vino, segni del tuo amore.\nEcco questa offerta, accoglila Signore:\ntu di mille e mille cuori fai un cuore solo, un corpo solo in te\ne il Figlio tuo verr\u00e0, vivr\u00e0 ancora in mezzo a noi.",
+            "body": [
+                "Mille e mille grani nelle spighe d'oro,\nmandano fragranza e danno gioia al cuore,\nquando, macinati, fanno un pane solo:\npane quotidiano, dono tuo, Signore.",
+                "<RIT>",
+                "Mille grappoli maturi sotto il sole,\nfesta della terra, donano vigore,\nquando da ogni perla stilla il vino nuovo:\nvino della gioia, dono tuo, Signore.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Cosa offrirti",
+            "number": 1001,
+            "tag": [
+                "offertorio"
+            ],
+            "<RIT>": "Accetta mio Re, questo poco che ho,\noffro a te la mia vita,\ngioia \u00e8 per me far la tua volont\u00e0,\nil mio unico bene sei solo tu, solo tu.",
+            "body": [
+                "Cosa offrirti o Dio, cosa posso darti,\neccomi son qui davanti a te.\nLe gioie ed i dolori,\ngli affanni di ogni giorno,\ntutto voglio vivere in te.",
+                "<RIT>",
+                "Vengo a te mio Dio, apro le mie braccia\nche la tua letizia riempir\u00e0.\nRinnova questo cuore\nperch\u00e8 Ti sappia amare e\nnella tua pace io vivr\u00f2",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Prendi la vita mia",
+            "number": 166,
+            "tag": [
+                "offertorio"
+            ],
+            "<RIT>": "Prendi la vita mia, la metto qui davanti a te,\npoca cosa \u00e8 tutto per me, fanne ci\u00f2 che vuoi\nper le strade che mi dirai cammineremo insieme",
+            "body": [
+                "Non so se sar\u00f2 capace, di amare gli altri pi\u00f9 di me,\ndi lasciare ci\u00f2 che mi piace per seguire un sogno che c\u2019\u00e8 in te,\nnon so se sar\u00f2 capace di lasciare tutto ci\u00f2 che ho\nle mie facili certezze.",
+                "<RIT>",
+                "Signore io non ho la forza di fare tutto ci\u00f2 che vuoi\nda solo sono un povero uomo che cerca ancora di nascondersi.\nSignore io non ho la forza di guardare negli occhi te\ndammi tu la fede.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "La pace del Signore sia con te",
+            "number": 1002,
+            "tag": [
+                "pace"
+            ],
+            "<RIT>": "La pace del Signore sia con te \nLa pace del Signore dentro te \n\nLa pace vera che il mondo non pu\u00f2 dare\nLa pace del Signore su di te",
+            "body": [
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Su ali d'aqulia",
+            "number": 139,
+            "tag": [
+                "intro",
+                "comunione"
+            ],
+            "<RIT>": "E ti rialzer\u00e0, ti sollever\u00e0  su ali d'aquila\nti regger\u00e0 sulla brezza dell'alba ti far\u00e0 brillar come il sole,\ncos\u00ec nelle sue mani vivrai. ",
+            "body": [
+                "Tu che abiti al riparo del Signore\ne che dimori alla sua ombra,\ndi' al Signore: 'Mio rifugio,\nmia roccia su cui confido.'",
+                "<RIT>",
+                "Dal laccio del cacciatore ti liberer\u00e0,\ne dalla carestia che distrugge,\npoi ti coprir\u00f2 con le Sue ali,\ne rifugio troverai",
+                "<RIT>",
+                "Non devi temere i terrori della notte\nne' freccia che vola di giorno,\nmille cadranno al tuo fianco,\nma nulla ti colpir\u00e0",
+                "<RIT>",
+                "Perch\u00e9 ai Suoi angeli ha dato un comando,\ndi preservarti in tutte le tue vie,\nti porteranno sulle loro mani\ncontro la pietra non inciamperai.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Abbracciami",
+            "number": 170,
+            "tag": [
+                "intro",
+                "comunione"
+            ],
+            "<RIT>": "Abbracciami Dio dell\u2019eternit\u00e0\nRifugio dell\u2019anima grazia che opera.\nRiscaldami fuoco che libera\nManda il tuo Spirito Maranath\u00e0 Ges\u00f9",
+            "body": [
+                "Ges\u00f9 parola viva e vera.\nSorgente che disseta e cura ogni ferita.\nFerma su di me i tuoi occhi.\nLa tua mano stendi e donami la vita",
+                "<RIT>",
+                "Ges\u00f9 asciuga il nostro pianto.\nLeone vincitore della trib\u00f9 di Giuda.\nVieni nella tua potenza questo\ncuore sciogli. Con ogni sua paura",
+                "<RIT>",
+                "Per sempre io canter\u00f2 la tua immensa fedelt\u00e0\nIl tuo spirito in me in eterno ti loder\u00e0\nPer sempre io canter\u00f2 la tua immensa fedelt\u00e0\nIl tuo spirito in me in eterno ti loder\u00e0",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Il canto dell'amore",
+            "number": 189,
+            "tag": [
+                "intro",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Perch\u00e9 tu sei prezioso ai miei occhi\nVali pi\u00f9 del pi\u00f9 grande dei tesori\nIo sar\u00f2 con te dovunque andrai",
+            "<RIT2>": "Seguirai la mia luce nella notte\nSentirai la mia forza nel cammino\nIo sono il tuo Dio, il Signore",
+            "body": [
+                "Se dovrai attraversare il deserto\nNon temere io sar\u00f2 con te\nSe dovrai camminare nel fuoco\nLa sua fiamma non ti brucer\u00e0",
+                "<RIT>",
+                "Sono io che ti ho fatto e plasmato\nTi ho chiamato per nome\nIo da sempre ti ho conosciuto\nE ti ho dato il mio amore",
+                "<RIT2>",
+                "Non pensare alle cose di ieri\nCose nuove fioriscono gi\u00e0\nAprir\u00f2 nel deserto sentieri\nDar\u00f2 acqua nell'aridit\u00e0",
+                "<RIT2>",
+                "Io ti sar\u00f2 accanto sar\u00f2 con te\nPer tutto il tuo viaggio sar\u00f2 con te\nIo ti sar\u00f2 accanto sar\u00f2 con te\nPer tutto il tuo viaggio sar\u00f2 con te"
+            ]
+        },
+        {
+            "title": "Ti ringrazio",
+            "number": 147,
+            "tag": [
+                "fine"
+            ],
+            "<RIT>": "Ti ringrazio mio signore non ho pi\u00f9 paura, perch\u00e9,\ncon la mia mano nella mano degli amici miei,\ncammino fra la gente della mia citt\u00e0 e non mi sento pi\u00f9 solo;\nnon sento la stanchezza e guardo dritto avanti a me,\nperch\u00e9 sulla mia strada ci sei Tu.",
+            "body": [
+                "Amatevi l'un l'altro come Lui ha amato noi:\ne siate per sempre suoi amici;\ne quello che farete al pi\u00f9 piccolo tra voi,\ncredete l'avete fatto a Lui.",
+                "<RIT>",
+                "Se amate veramente perdonatevi tra voi:\nnel cuore di ognuno ci sia pace;\nil Padre che \u00e8 nei cieli vede tutti i figli suoi\ncon gioia a voi perdoner\u00e0.",
+                "<RIT>",
+                "Sarete suoi amici se vi amate fra voi\ne questo \u00e8 tutto il suo Vangelo;\nl'amore non ha prezzo, non misura ci\u00f2 che d\u00e0:\nl'amore, confini non ne ha.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Ora vado sulla mia strada",
+            "number": 147,
+            "tag": [
+                "fine"
+            ],
+            "<RIT>": "Ora vado sulla mia strada\ncon l\u2019amore tuo che mi guida\nOh Signore, ovunque io vada\nResta accanto a me.\n\nIo ti prego, stammi vicino\nogni passo del mio cammino\nOgni notte, ogni mattino\nResta accanto a me",
+            "body": [
+                "Il tuo sguardo puro sia luce per me,\ne la tua parola sia voce per me.\nChe io trovi il senso del mio andare solo in te\nnel tuo fedele amare il mio perch\u00e9.",
+                "<RIT>",
+                "Fa\u2019 che chi mi guarda non veda che te\nfa\u2019 che chi mi ascolta non senta che te\ne chi pensa a me, fa\u2019 che nel cuore pensi a te\ne trovi quell\u2019amore che hai dato a me.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Chiamati per nome",
+            "number": -1,
+            "tag": [
+                "intro",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Veniamo da te, Chiamati per nome\nChe festa, Signore, tu cammini con noi\nCi parli di te, Per noi spezzi il pane\nTi riconosciamo e il cuore arde, sei tu\nE noi tuo popolo Siamo qui",
+            "body": [
+                "<RIT>",
+                "Siamo come terra ed argilla\nE la tua parola ci plasmer\u00e0\nBrace pronta per la scintilla\nE il tuo spirito soffier\u00e0\nC'infiammer\u00e0",
+                "<RIT>",
+                "Siamo come semi nel solco\nCome vigna che il suo frutto dar\u00e0\nGrano del Signore risorto\nLa tua messe che fiorir\u00e0 d'eternit\u00e0",
+                "<RIT>",
+                "<b>E noi tuo popolo\nSiamo qui. Siamo qui</b>"
+            ]
+        },
+        {
+            "title": "Benedici il Signore Anima mia",
+            "number": 16,
+            "tag": [
+                "intro",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Benedici il Signore, anima mia,\n quanto \u00e8 in me benedica il suo nome;\nnon dimenticher\u00f2 tutti i suoi benefici,\nbenedici il Signore, anima mia.",
+            "body": [
+                "<RIT>",
+                "Lui perdona tutte le tue colpe e ti salva dalla morte.\nTi corona di grazia e ti sazia di beni nella tua giovinezza.",
+                "<RIT>",
+                "Il Signore agisce con giustizia, con amore verso i poveri.\nRivel\u00f2 a Mos\u00e8 le sue vie, ad Israele le sue grandi opere.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Eccomi manda me",
+            "number": -1,
+            "tag": [
+                "offertorio"
+            ],
+            "<RIT>": "Eccomi, Signore, manda me!\nPiccolo seme, ma se vuoi, grandi frutti io dar\u00f2!\nEccoci, Signore, manda noi!\nPiccoli semi, ma se vuoi, grandi frutti noi daremo!\nTu, manda noi! Manda noi se vuoi!",
+            "body": [
+                "Se le ore di una vita vuota ti regalano soltanto solitudine,\ne i tuoi giorni sono tutti uguali, se per mettere le ali hai bisogno di qualcosa in pi\u00f9\u2026\nLui \u00e8 l\u00ec che aspetta te, tu cantando gli dirai:",
+                "<RIT>",
+                "Fai silenzio dentro alla tua vita: scoprirai che l'amore\nchiama sempre per nome. Non aver paura di rischiare: quello che tu perderai lo riavrai in quantit\u00e0\nLui \u00e8 l\u00ec che aspetta te, tu cantando gli dirai.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Santo, Santo",
+            "number": -1,
+            "tag": [
+                "santo"
+            ],
+            "<RIT>": "Santo, Santo, Santo \u00e8 il Signore Dio dell'universo\nSanto, Santo, i cieli e la terra sono pieni della sua gloria",
+            "<RIT2>": "Santo, Santo, Santo \u00e8 il Signore Dio dell'universo\nSanto, Santo, Santo",
+            "body": [
+                "<RIT>",
+                "Osanna nell'alto dei cieli\nOsanna nell'alto dei cieli.",
+                "<RIT>",
+                "Benedetto colui che viene nel nome del Signore\nOsanna nell'alto dei cieli\nOsanna nell'alto dei cieli.",
+                "<RIT2>"
+            ]
+        },
+        {
+            "title": "Santo Scout",
+            "number": -1,
+            "tag": [
+                "santo"
+            ],
+            "<RIT>": "Osanna osanna osanna-a, osanna osanna-a \nOsanna osanna osanna-a, osanna osanna-a ",
+            "body": [
+                "Santo santo, santo santo, santo il Signore Dio dell\u2019Universo\nI cieli e la terra sono pieni della tua gloria",
+                "<RIT>",
+                "Benedetto \u00e8 benedetto \u00e8, \u00e8 colui che viene nel nome del Signore",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Inno all'amore",
+            "number": -1,
+            "tag": [
+                "comunione"
+            ],
+            "<RIT>": "L\u2019amore e\u0300 paziente. L\u2019amore e\u0300 benigno.\nL\u2019amore non si gonfia. L\u2019amore non si vanta.\nL\u2019amore non invidia\nSempre rispetta",
+            "<RIT2>": "Non cerca mai il proprio interesse.\nNon conta mai il male ricevuto\nL\u2019amore tutto scusa. L\u2019amore tutto crede. L\u2019amore tutto spera.",
+            "<RIT3>": "E tutto sopporta.",
+            "body": [
+                "<RIT>",
+                "Se parlassi le lingue degli uomini\nSe parlassi le lingue degli angeli\nMa, ma non avessi amore\nSe riuscissi a conoscere tutto Se riuscissi a fare miracoli\nMa, ma non avessi amore\nIo sarei bronzo che rimbomba a vuoto\nNon sarei nulla, nulla, nulla",
+                "<RIT>",
+                "Se donassi tutti i miei beni\nSe donassi la mia stessa vita\nMa, ma non avessi amore\nNon servirebbe a nulla, a nulla, a nulla.",
+                "<RIT>",
+                "<RIT2>",
+                "Vediamo come in uno specchio, in modo imperfetto\nTutte le cose passeranno, ma l\u2019amore resta eterno",
+                "<RIT>",
+                "<RIT2>",
+                "<RIT3>"
+            ]
+        },
+        {
+            "title": "Non c'\u00e8 Amore pi\u00f9 grande",
+            "number": 261,
+            "tag": [
+                "comunione"
+            ],
+            "<RIT>": "Non c\u2019\u00e8 amore pi\u00f9 grande\ndi chi d\u00e0 la vita per i suoi.\nNon c\u2019\u00e8 amore pi\u00f9 grande:\nio do\u2019 la mia vita per voi.",
+            "body": [
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Cantiamo insieme al Signore",
+            "number": 222,
+            "tag": [
+                "fine"
+            ],
+            "<RIT>": "Cantiamo insieme al Signor: \u201clode a te\u201d\nGridiamo forte a lui: \u201cSanto tu sei\u201d\nCantiamo insieme al Signor: \u201clode a te\u201d\nGridiamo forte a lui: \u201cSanto tu sei\u201d\nLode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui",
+            "<RIT2>": "Cantiamo insieme a Dio. Cantiamo insieme a Dio\nLode al Signor, gridiamo forte a Lui Cantiamo insieme al Signor: \u201clode a te\u201d Gridiamo forte a lui: \u201cSanto tu sei\u201d Lode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui\n\nCantiamo insieme a Dio: \u201cLode al Signor!\u201d",
+            "body": [
+                "Ti esalter\u00f2 per sempre Signore perch\u00e9 mi hai liberato\nA te ho gridato e mi hai guarito mi hai dato la vita Signore.\nCantate inni al Signore rendete grazie a lui\nPerch\u00e9 la sua collera dura un istante \nper sempre la sua bont\u00e0",
+                "<RIT>",
+                "Signore vieni in mio aiuto ascolta la mia preghiera\nLa sera sopraggiunge il pianto ma ecco al mattino la gioia Tu hai cambiato il mio lamento in gioia ed esultanza Perch\u00e9 io possa cantare al Signore per sempre la tua bont\u00e0.",
+                "<RIT>",
+                "Lode gloria a Dio, lode gloria a lui\nLode gloria a Dio, lode gloria a lui",
+                "<RIT2>"
+            ]
+        },
+        {
+            "title": "Cantico di Giuditta",
+            "number": 222,
+            "tag": [
+                "intro",
+                "fine"
+            ],
+            "<RIT>": "Inneggiate al Signor con canti di gioia;\ncelebrate voi tutti il suo Nome;\nintonate a Lui un cantico nuovo;\nesultate in Dio Salvatore!",
+            "body": [
+                "<RIT>",
+                "Cantate al Signore con salmi di lode,\ndate al suo nome splendida gloria;\ncantate al Signore che stronca le guerre;\nci salva dai nostri nemici.",
+                "<RIT>",
+                "Ti temano tutte le creature,\ndalla tua Parola furono fatte;\nmandasti il tuo Spirito ed ebbero vita\ndalla tua voce potente.",
+                "<RIT>",
+                "I monti e le acque sussulteranno,\nle rocce come cera si scioglieranno,\nnon avr\u00e0 paura chi teme Te,\nsar\u00e0 sempre grande in eterno.",
+                "<RIT>",
+                "Adorate il Signore, sia in festa il vostro cuore,\nperch\u00e9 grande \u00e8 la vittoria del Signore.\n\nAl Signore andr\u00e0 la mia lode e il mio canto:\nil Signore sapr\u00e0 tutto di me (x2)",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Grande \u00e8 la tua bont\u00e0",
+            "number": 228,
+            "tag": [
+                "comunione"
+            ],
+            "<RIT>": "Tu dirigi ogni mio passo\nSei mia roccia e mio baluardo\nE dal laccio che mi hanno teso\nMia difesa, Tu mi scioglierai.",
+            "body": [
+                "Grande \u00e8 la Tua bont\u00e0, che riservi per chi Ti teme\nColmi della Tua grazia l'uomo che in Te si rifugia.\nSolo Tu mio Dio sei la rupe che mi accoglie\nTu sei la mia fortezza, confido in Te mio Signor.",
+                "<RIT>",
+                "Porgi a me l'orecchio, vieni presto a liberarmi,\nPer la Tua giustizia, non privarmi del Tuo volto.\nIn Te io mi rifugio, mi affido alle Tue mani,\nSolo Tu mi proteggi, ho fede in Te mio Signor",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Quale gioia \u00e8 star con te",
+            "number": 167,
+            "tag": [
+                "fine"
+            ],
+            "<RIT>": "Quale gioia \u00e8 star con Te, Ges\u00f9, vivo e vicino;\nbello \u00e8 dar lode a Te: Tu sei il Signor.\nQuale dono \u00e8 aver creduto in Te, che non mi abbandoni;\nio per sempre abiter\u00f2 la Tua casa, mio Re.",
+            "body": [
+                "Ogni volta che Ti cerco, ogni volta che Ti invoco,\nsempre mi accogli, Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.",
+                "<RIT>",
+                "Hai guarito il mio dolore, hai cambiato questo cuore:\noggi rinasco, Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.\n",
+                "<RIT>",
+                "Hai salvato la mia vita, hai aperto la mia bocca;\ncanto per Te, mio Signor.\nGrandi sono i Tuoi prodigi, Tu sei buono verso tutti,\nSanto, Tu regni tra noi.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Servire e Regnare",
+            "number": 259,
+            "tag": [
+                "comunione",
+                "offertorio"
+            ],
+            "<RIT>": "Fa\u2019 che impariamo, Signore, da Te,\nChe il pi\u00f9 grande \u00e8 chi pi\u00f9 sa servire,\nChi s\u2019abbassa e chi si sa piegare,\nPerch\u00e9 grande \u00e8 soltanto l\u2019amore.",
+            "body": [
+                "Guardiamo a te che sei\nMaestro e Signore:\nChinato a terra stai,\nCi mostri che l\u2019amore\n\u00c8 cingersi il grembiule,\nSapersi inginocchiare,\nC\u2019insegni che amare \u00e8 servire.",
+                "<RIT>",
+                "E ti vediamo poi,\nMaestro e Signore,\nChe lavi i piedi a noi\nChe siamo tue creature\nE cinto del grembiule,\nChe \u00e8 il manto tuo regale,\nC\u2019insegni che servire \u00e8 regnare.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Servo per Amore",
+            "number": 133,
+            "tag": [
+                "offertorio",
+                "comunione"
+            ],
+            "<RIT>": "Offri la vita tua come Maria ai piedi della croce\ne sarai servo di ogni uomo servo per amore,\nsacerdote dell'umanit\u00e0.",
+            "body": [
+                "Una notte di sudore sulla barca in mezzo al mare\ne mentre il cielo s'imbianca gi\u00e0 tu guardi le tue reti vuote.\nMa la voce che ti chiama un altro mare ti mostrer\u00e0 \ne sulle rive di ogni cuore le tue reti getterai.",
+                "<RIT>",
+                "Avanzavi nel silenzio fra le lacrime speravi\nche il seme sparso davanti a te cadesse sulla buona terra.\nOra il cuore tuo \u00e8 in festa perch\u00e8 il grano biondeggia ormai,\n\u00e8 maturato sotto il sole puoi riporlo nei granai."
+            ]
+        },
+        {
+            "title": "Tempo per Ricominciare",
+            "number": 206,
+            "tag": [
+                "intro",
+                "comunione"
+            ],
+            "<RIT>": "Oggi \u00e8 tempo di ricominciare Tempo di perdono nella verit\u00e0\nPer comporre in terra un firmamento Stelle sopra il fango d'ogni povert\u00e0\ne l'unit\u00e0",
+            "body": [
+                "Padre nostro siamo qui nella nostra povert\u00e0 davanti a te\nTu che di ogni cuore sai storie, luci, lacrime e verit\u00e0\nDacci il tuo perdono che ci risana l'anima con la tua pace\nPadre nostro tu che puoi tutti i nostri debiti prendili tu\nIl ritorno che non c'\u00e8, la ferita, il torto che brucia di pi\u00f9\nIl perdono che ci dai ce lo offriamo tra di noi e lo chiediamo",
+                "<RIT>",
+                "Vieni, dolce spirito, scendi col tuo balsamo, tu che lo puoi.\nDove il cuore sanguina, quando grida l\u2019anima dentro di noi,\nsoffia via la cenere, dacci il tuo respiro di misericordia.\nVieni, santo spirito, rialzaci e rivestici di novit\u00e0.\nFa di noi il tuo lievito che nel mondo semina fraternit\u00e0.\nScendi fuoco limpido, scendi fiume carico di primavera.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Quelli che amano te",
+            "number": 260,
+            "tag": [
+                "offertorio"
+            ],
+            "<RIT>": "Insieme ai doni veniamo noi stessi\nFigli di tutta la Terra\nPer riscaldarci attorno alla mensa\nChe hai preparato per noi",
+            "body": [
+                "Ecco il frumento che noi ti portiamo\nPane della Madre Terra\nE del lavoro e il sudore di tanti\nQuelli che amano te",
+                "Portiamo il vino, frutto della vite\nSangue della Madre Terra\nE del lavoro e la gioia di tanti\nQuelli che amano te",
+                "<RIT>",
+                "Per riscaldarci attorno alla mensa\nChe hai preparato per noi"
+            ]
+        }
+    ]
 }

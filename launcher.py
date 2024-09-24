@@ -3,11 +3,11 @@ import os
 import sys
 from functools import partial
 
-from PyQt6 import QtCore
-from PyQt6.QtCore import QDate
+from PyQt6.QtCore import QDate, QThread, QObject
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QFileDialog, QVBoxLayout, QLabel, QListWidget, QListWidgetItem, QHBoxLayout, \
-    QDateEdit, QPushButton, QLineEdit, QFrame, QMainWindow, QDialog, QDialogButtonBox, QMenuBar, QToolBar, QTextEdit
+    QDateEdit, QPushButton, QLineEdit, QFrame, QMainWindow, QDialog, QDialogButtonBox, QMenuBar, QToolBar, QTextEdit, \
+    QCheckBox
 from qt_material import apply_stylesheet
 
 from model.bible import Bible
@@ -17,8 +17,10 @@ from model.commons import MassMoment
 
 import subprocess
 
+from update_manager import UpdateManager
 
-class SongListElement(QListWidgetItem):
+
+class SongPieceListItem(QListWidgetItem):
     def __init__(self, text="", rit_key=None, *args, **kwargs):
         super().__init__(text, *args, **kwargs)
         self.rit_key = rit_key
@@ -28,6 +30,15 @@ class SongListElement(QListWidgetItem):
             return self.rit_key
 
         return self.text()
+
+
+class SongListItem(QListWidgetItem):
+    def __init__(self, song=None, *args, **kwargs):
+        super().__init__(song.title, *args, **kwargs)
+        self.song = song
+
+    def get_pages(self):
+        return self.song.get_pages()
 
 
 class AddSongDialog(QDialog):
@@ -57,18 +68,31 @@ class AddSongDialog(QDialog):
         self.txt_number = QTextEdit()
         self.txt_number.setPlaceholderText("Numero Librone")
 
-        self.txt_momento = QTextEdit()
-        self.txt_momento.setPlaceholderText("Inserisci i momenti della messa in cui può essere usato il canto "
-                                            "separati da spazio.\nPossibili valori: intro, gloria, offertorio, santo,"
-                                            " pace, comunione, fine.")
-        self.txt_momento.setToolTip("Inserisci i momenti della messa in cui può essere usato il canto separati da "
-                                    "spazio.\nPossibili valori: intro, gloria, offertorio, santo, pace, comunione, "
-                                    "fine.")
+        self.check_intro = QCheckBox("intro")
+        self.check_gloria = QCheckBox("gloria")
+        self.check_offertorio = QCheckBox("offertorio")
+        self.check_santo = QCheckBox("santo")
+        self.check_pace = QCheckBox("pace")
+        self.check_comunione = QCheckBox("comunione")
+        self.check_fine = QCheckBox("fine")
+
+        ly_moments = QHBoxLayout()
+        self.moments_check_list = {
+            "intro": self.check_intro,
+            "gloria": self.check_gloria,
+            "offertorio": self.check_offertorio,
+            "santo": self.check_santo,
+            "pace": self.check_pace,
+            "comunione": self.check_comunione,
+            "fine": self.check_fine
+        }
+
+        for name, check in self.moments_check_list.items():
+            ly_moments.addWidget(check)
 
         head_layout = QHBoxLayout()
         head_layout.addWidget(self.txt_title)
         head_layout.addWidget(self.txt_number)
-        head_layout.addWidget(self.txt_momento)
 
         self.ly_rits = QVBoxLayout()
         self.btn_add_rit = QPushButton("Aggiungi Ritornello")
@@ -86,6 +110,7 @@ class AddSongDialog(QDialog):
 
         left_layout = QVBoxLayout()
         left_layout.addLayout(head_layout)
+        left_layout.addLayout(ly_moments)
         left_layout.addWidget(separator)
         left_layout.addLayout(self.ly_rits)
         left_layout.addWidget(separator2)
@@ -110,7 +135,7 @@ class AddSongDialog(QDialog):
         txt = self.txt_strofa.toPlainText()
         if txt == "":
             return
-        self.song.addItem(SongListElement(txt))
+        self.song.addItem(SongPieceListItem(txt))
         self.song_list.append(txt)
         self.txt_strofa.clear()
 
@@ -118,7 +143,7 @@ class AddSongDialog(QDialog):
         txt = self.rit_map.get(lbl, "").toPlainText()
         if txt == "":
             return
-        self.song.addItem(SongListElement(text=txt, rit_key=lbl))
+        self.song.addItem(SongPieceListItem(text=txt, rit_key=lbl))
         self.song_list.append(lbl)
 
     def new_rit(self):
@@ -160,7 +185,8 @@ class AddSongDialog(QDialog):
         self.song.clear()
         self.txt_strofa.clear()
         self.txt_number.clear()
-        self.txt_momento.clear()
+        for name, check in self.moments_check_list.items():
+            check.setChecked(False)
         self.txt_title.clear()
         self.remove_items(self.ly_rits)
         self.btn_add_rit = QPushButton("Aggiungi Ritornello")
@@ -176,8 +202,9 @@ class AddSongDialog(QDialog):
 
         if title != "":
             number = self.txt_number.toPlainText()
-            momento = self.txt_momento.toPlainText()
-            self.add_song_callback(title, number, momento, rits, structure)
+            moments = [name for name, check in self.moments_check_list.items() if check.isChecked()]
+
+            self.add_song_callback(title, number, moments, rits, structure)
 
         self.reset()
         super().accept()
@@ -185,6 +212,99 @@ class AddSongDialog(QDialog):
     def reject(self):
         self.reset()
         super().reject()
+
+
+class ManageLibrone(QDialog):
+    def __init__(self, delete_song_callback, add_song_callback):
+        super().__init__()
+        self.setWindowTitle("Gestione Librone")
+        self.setGeometry(0, 0, 700, 700)
+
+        self.ext_delete_song_callback = delete_song_callback
+        self.ext_add_song_callback = add_song_callback
+        self.librone = None
+
+        self.add_song_dialog = AddSongDialog(self.ext_add_song_callback)
+
+        btn_add = QPushButton("Aggiungi")
+        btn_add.clicked.connect(self.add_song)
+
+        btn_edit = QPushButton("Modifica")
+        btn_edit.clicked.connect(self.edit_song)
+
+        btn_remove = QPushButton("Elimina")
+        btn_remove.clicked.connect(self.remove_song)
+
+        ly_btn = QHBoxLayout()
+        ly_btn.addWidget(btn_add)
+        ly_btn.addWidget(btn_edit)
+        ly_btn.addWidget(btn_remove)
+
+        self.songs_list = QListWidget()
+        self.songs_list.itemClicked.connect(self.show_lyrics)
+        self.txt_song = QTextEdit("")
+        self.txt_song.setStyleSheet("color: white")
+
+        ly_songs = QHBoxLayout()
+        ly_songs.addWidget(self.songs_list)
+        ly_songs.addWidget(self.txt_song)
+
+        layout = QVBoxLayout()
+        layout.addLayout(ly_btn)
+        layout.addLayout(ly_songs)
+
+        self.setLayout(layout)
+
+    def add_song(self):
+        self.add_song_dialog.show()
+
+    def edit_song(self):
+        pass
+
+    def remove_song(self):
+        title = self.songs_list.currentItem().text()
+        self.ext_delete_song_callback(title=title)
+
+    def set_librone(self, librone):
+        self.librone = librone
+        self.load_songs()
+
+    def load_songs(self):
+        self.txt_song.clear()
+        self.songs_list.clear()
+        for s in self.librone:
+            self.songs_list.addItem(SongListItem(song=s, ))
+
+    def show_lyrics(self, item):
+        pages = item.get_pages()
+        html_txt = ""
+        for page in pages:
+            html_txt += f"{page}<br>"
+        self.txt_song.setText(html_txt)
+
+
+class UpdateDialog(QDialog):
+    def __init__(self, update_worker):
+        super().__init__()
+        self.new_version = 0.0
+
+        self.lbl = QLabel("Trovata nuova versione, Aggiornare?")
+        button_box = QDialogButtonBox(QDialogButtonBox.StandardButton.Ok | QDialogButtonBox.StandardButton.Cancel)
+        button_box.accepted.connect(self.accept)
+        button_box.rejected.connect(self.reject)
+
+        ly = QVBoxLayout()
+        ly.addWidget(self.lbl)
+        ly.addWidget(button_box)
+        self.setLayout(ly)
+
+        self.thread = QThread()
+        self.update_worker = update_worker
+
+    def accept(self):
+        self.update_worker.moveToThread(self.thread)
+        self.thread.started.connect(self.update_worker.update)
+        self.thread.start()
 
 
 class Launcher(QMainWindow):
@@ -229,10 +349,10 @@ class Launcher(QMainWindow):
 
         menu = self.menuBar()
 
-        act_add_song = QAction("Aggiungi Canzone", self)
-        act_add_song.triggered.connect(self.add_song)
+        act_add_song = QAction("Gestisci Canzoni", self)
+        act_add_song.triggered.connect(self.manage_songs)
 
-        act_sync_librone = QAction("Sincronizza con Google Drive", self)
+        act_sync_librone = QAction("Scarica da Google Drive", self)
         act_sync_librone.triggered.connect(self.sync_librone)
 
         act_check_update = QAction("Verifica Aggiornamenti", self)
@@ -265,13 +385,25 @@ class Launcher(QMainWindow):
         main_frame.setLayout(main_layout)
         self.setCentralWidget(main_frame)
 
-        self.add_song_dialog = AddSongDialog(self.add_song_callback)
+        self.manage_songs_dialog = ManageLibrone(
+            delete_song_callback=self.delete_song_callback,
+            add_song_callback=self.add_song_callback
+        )
 
-    def add_song(self):
-        self.add_song_dialog.show()
+        self.update_manager = UpdateManager()
+        self.update_dialog = UpdateDialog(self.update_manager)
 
-    def add_song_callback(self, title, number, moments_txt, rits, structure):
-        moments = moments_txt.split(" ")
+    def manage_songs(self):
+        self.manage_songs_dialog.set_librone(self.librone.get_all_songs())
+        self.manage_songs_dialog.show()
+
+    def delete_song_callback(self, title):
+        ok = self.librone.delete_song(title)
+        if ok:
+            self.populate_song_lists(reload=True)
+            self.manage_songs_dialog.set_librone(self.librone.get_all_songs())
+
+    def add_song_callback(self, title, number, moments, rits, structure):
         ok = self.librone.add_song(
             title=title,
             number=number,
@@ -282,13 +414,17 @@ class Launcher(QMainWindow):
 
         if ok:
             self.populate_song_lists(reload=True)
+            self.manage_songs_dialog.set_librone(self.librone.get_all_songs())
 
     def sync_librone(self):
         if self.librone.check_for_updates():
             self.populate_song_lists(reload=True)
+            self.manage_songs_dialog.set_librone(self.librone.scaletta)
 
     def check_for_updates(self):
-        pass
+        new_version, v = self.update_manager.check_for_updates()
+        if new_version:
+            self.update_dialog.show()
 
     def populate_song_lists(self, reload=False):
         self.songs_by_moment = self.librone.load_songs_by_moment()
