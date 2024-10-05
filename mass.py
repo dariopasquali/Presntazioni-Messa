@@ -3,6 +3,7 @@ import sys
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QLabel, QMainWindow, QHBoxLayout, QFrame, QDialog, QDialogButtonBox, QVBoxLayout
 
+from NewsFetcher import NewsFetcher
 from model.commons import MassMoment, Pages
 from model.rfixed_rites import *
 from pdf import PDFMaker
@@ -114,6 +115,9 @@ class MassPresenter(QMainWindow):
             MassMoment.comunione,
             MassMoment.silence,
 
+            MassMoment.news,
+            MassMoment.silence,
+
             MassMoment.fine]
 
         self.mass_structure = {
@@ -134,6 +138,7 @@ class MassPresenter(QMainWindow):
             MassMoment.agnello: [Pages(body=agnello)],  # R
             MassMoment.invito_cena: [Pages(body=invito_cena)],  # R
             MassMoment.comunione: [],  # C
+            MassMoment.news: [Pages(body=NewsFetcher.fetch_news())],
             MassMoment.fine: [],  # C
         }
 

@@ -1,5 +1,5 @@
 {
-    "version": 1.2000000000000002,
+    "version": 1.5000000000000004,
     "songs": [
         {
             "title": "Popoli tutti",
@@ -422,6 +422,75 @@
                 "Portiamo il vino, frutto della vite\nSangue della Madre Terra\nE del lavoro e la gioia di tanti\nQuelli che amano te",
                 "<RIT>",
                 "Per riscaldarci attorno alla mensa\nChe hai preparato per noi"
+            ]
+        },
+        {
+            "title": "Vieni dal Libano",
+            "number": "0",
+            "tag": [
+                "intro"
+            ],
+            "<RIT>": "Cercai l\u2019amore dell\u2019anima mia,\nlo cercai senza trovarlo.\ntrovai l\u2019amore dell\u2019anima mia,\nl\u2019ho abbracciato e non lo lascer\u00f2 mai!",
+            "body": [
+                "Vieni dal Libano mia sposa, vieni dal Libano vieni!\nAvrai per corona le vette dei monti, le alte cime dell\u2019Hermon\nTu m'hai ferito, ferito il cuore, o sorella mia sposa.\nVieni dal Libano mia sposa, vieni dal Libano vieni.",
+                "<RIT>",
+                "Io appartengo al mio diletto ed egli \u00e8 tutto per me. \nVieni usciamo alla campagna, dimoriamo nei villaggi.\nAndremo all\u2019alba nelle vigne, vi raccoglieremo i frutti.\nIo appartengo al mio diletto ed egli \u00e8 tutto per me.",
+                "<RIT>",
+                "Come sigillo sul tuo cuore, come sigillo sul braccio; \nche l\u2019amore \u00e8 forte come la morte e le acque non lo spegneranno.\nDare per esso tutti i beni della casa sarebbe disprezzarlo.\nCome sigillo sul tuo cuore, come sigillo sul braccio.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Benedicat",
+            "number": "215",
+            "tag": [
+                "intro",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Benedicat, benedicat,\nbenedicat tibi Dominus et custodiat te.\nbenedicat tibi Dominus et custodiat te.",
+            "<RIT1>": "Benedicat, benedicat, benedicat,\nbenedicat, tibi Dominus,\nbenedicat, tibi Dominum et custodiat te.",
+            "body": [
+                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat frater Leo, te",
+                "<RIT>",
+                "<RIT1>",
+                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat frater Leo, te",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Rimanete in Me",
+            "number": "225",
+            "tag": [
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Io sono la vite, voi siete i tralci, rimanete in me.\nSe le mie parole resteranno in voi\nci\u00f2 che chiedete vi sar\u00e0 dato.",
+            "body": [
+                "Rimanete in me ed io in voi perch\u00e9 senza di me non potete far nulla.\nChi rimane in me ed io in lui molto frutto far\u00e0.",
+                "<RIT>",
+                "Rimanete in me ed io in voi, questo ho detto perch\u00e8 la mia gioia sia in voi\nChi rimane in me ed io in lui molto frutto far\u00e0.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Per Nome",
+            "number": "0",
+            "tag": [
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Oggi ti chiamo per nome\nSigillo il tuo cuore\nE ti mando nel mondo ad amarlo come io amo te.",
+            "<RIT1>": "Oggi ti chiamo per nome, sigillo il tuo cuore\nE ti mando nel mondo ad amarlo come io amo te\nOggi ti chiamo per nome conosco il tuo cuore \nE ci voglio abitare ed amarlo come io amo te amo te\nSi, io amo te, amo te",
+            "body": [
+                "Sceglimi ogni giorno come in questo in giorno,\nEd io ti parler\u00f2 attraverso chi avrai attorno.\nParlami ogni giorno come puoi,\nIo ti ascolter\u00f2, lo sai che non perdo nulla di ci\u00f2 che fai.",
+                "Amami ogni giorno come in questo giorno,\nEd io ti amer\u00f2 attraverso chi avrai attorno.\nCercami ogni giorno come puoi,\nIo ti trover\u00f2, lo sai che non perdo nulla di ci\u00f2 che fai...",
+                "<RIT>",
+                "Seguimi ogni giorno come in questo giorno,\nEd io ti abbraccer\u00f2 attraverso chi avrai attorno.\nPregami ogni giorno come puoi,\nIo ti ascolter\u00f2, lo sai che non perso nulla di ci\u00f2 che fai..",
+                "<RIT>",
+                "Dai te stesso da mangiare,\nFatti vino, fatti pane...",
+                "<RIT1>"
             ]
         }
     ]

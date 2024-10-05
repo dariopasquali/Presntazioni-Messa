@@ -22,6 +22,7 @@ class MassMoment(enum.Enum):
     comunione = 15  # CANTO (x2/3)
     fine = 16  # CANTO
     silence = 20
+    news = 21
 
     @staticmethod
     def from_name(name):
@@ -45,6 +46,7 @@ class MassMoment(enum.Enum):
             "invito_cena": MassMoment.invito_cena,
             "comunione": MassMoment.comunione,
             "fine": MassMoment.fine,
+            "news": MassMoment.news,
             "silence": MassMoment.silence,
         }[name]
 
