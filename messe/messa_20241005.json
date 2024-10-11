@@ -1,0 +1,40 @@
+{
+    "date": "20241005",
+    "songs": {
+        "intro": [],
+        "gloria": [],
+        "offertorio": [],
+        "santo": [],
+        "pace": [],
+        "comunione": [],
+        "fine": []
+    },
+    "lectures": {
+        "lettura_1": {
+            "head": "Dal libro di Giobbe",
+            "body": "Giobbe prese a dire al Signore: \u00abComprendo che tu puoi tutto e che nessun progetto per te \u00e8 impossibile. Chi \u00e8 colui che, da ignorante, pu\u00f2 oscurare il tuo piano? Davvero ho esposto cose che non capisco, cose troppo meravigliose per me, che non comprendo. Io ti conoscevo solo per sentito dire, ma ora i miei occhi ti hanno veduto. Perci\u00f2 mi ricredo e mi pento sopra polvere e cenere\u00bb. Il Signore benedisse il futuro di Giobbe pi\u00f9 del suo passato. Cos\u00ec possedette quattordicimila pecore e seimila cammelli, mille paia di buoi e mille asine. Ebbe anche sette figli e tre figlie. Alla prima mise nome Colomba, alla seconda Cassia e alla terza Argentea. In tutta la terra non si trovarono donne cos\u00ec belle come le figlie di Giobbe e il loro padre le mise a parte dell\u2019eredit\u00e0 insieme con i loro fratelli. Dopo tutto questo, Giobbe visse ancora centoquarant\u2019anni e vide figli e nipoti per quattro generazioni. Poi Giobbe mor\u00ec, vecchio e sazio di giorni.",
+            "ending": "Parola di Dio"
+        },
+        "salmo": {
+            "rit": "Fa\u2019 risplendere il tuo volto sul tuo servo, Signore.",
+            "body": [
+                "Insegnami il gusto del bene e la conoscenza,\nperch\u00e9 ho fiducia nei tuoi comandi. \nBene per me se sono stato umiliato,\nperch\u00e9 impari i tuoi decreti. ",
+                "Signore, io so che i tuoi giudizi sono giusti\ne con ragione mi hai umiliato.\nPer i tuoi giudizi tutto \u00e8 stabile fino ad oggi,\nperch\u00e9 ogni cosa \u00e8 al tuo servizio.",
+                "Io sono tuo servo: fammi comprendere\ne conoscer\u00f2 i tuoi insegnamenti. \nLa rivelazione delle tue parole illumina,\ndona intelligenza ai semplici."
+            ]
+        },
+        "lettura_2": {
+            "head": "",
+            "body": "",
+            "ending": "Parola di Dio"
+        },
+        "alleluia": {
+            "body": "Ti rendo lode, Padre, \r\nSignore del cielo e della terra, \r\nperch\u00e9 ai piccoli hai rivelato i misteri del Regno."
+        },
+        "vangelo": {
+            "head": "Dal Vangelo secondo Luca",
+            "body": "In quel tempo, i settantadue tornarono pieni di gioia, dicendo: \u00abSignore, anche i dem\u00f2ni si sottomettono a noi nel tuo nome\u00bb.  Egli disse loro: \u00abVedevo Satana cadere dal cielo come una folgore. Ecco, io vi ho dato il potere di camminare sopra serpenti e scorpioni e sopra tutta la potenza del nemico: nulla potr\u00e0 danneggiarvi. Non rallegratevi per\u00f2 perch\u00e9 i dem\u00f2ni si sottomettono a voi; rallegratevi piuttosto perch\u00e9 i vostri nomi sono scritti nei cieli\u00bb. In quella stessa ora Ges\u00f9 esult\u00f2 di gioia nello Spirito Santo e disse: \u00abTi rendo lode, o Padre, Signore del cielo e della terra, perch\u00e9 hai nascosto queste cose ai sapienti e ai dotti e le hai rivelate ai piccoli. S\u00ec, o Padre, perch\u00e9 cos\u00ec hai deciso nella tua benevolenza. Tutto \u00e8 stato dato a me dal Padre mio e nessuno sa chi \u00e8 il Figlio se non il Padre, n\u00e9 chi \u00e8 il Padre se non il Figlio e colui al quale il Figlio vorr\u00e0 rivelarlo\u00bb. E, rivolto ai discepoli, in disparte, disse: \u00abBeati gli occhi che vedono ci\u00f2 che voi vedete. Io vi dico che molti profeti e re hanno voluto vedere ci\u00f2 che voi guardate, ma non lo videro, e ascoltare ci\u00f2 che voi ascoltate, ma non lo ascoltarono\u00bb.",
+            "ending": "Parola del Signore"
+        }
+    }
+}

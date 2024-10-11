@@ -90,10 +90,16 @@ class Bible:
             MassMoment.vangelo: None,
         }
 
+        self.daily_header = ""
+        self.sunday_image_available = False
+
     def get(self, mass_moment):
         if mass_moment in self.lectures:
             return self.lectures[mass_moment]
         return None
+
+    def get_cover_slide(self):
+        return self.daily_header, self.sunday_image_available, "sunday_image.jpg"
 
     def load_json(self, bible_json):
         for moment_name, lect in bible_json.items():
@@ -116,8 +122,21 @@ class Bible:
             print(f"Failed to retrieve the page. Status code: {response.status_code}")
             return None
 
-        soup = BeautifulSoup(response.text,
-                             "html.parser")
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        daily_header = soup.find_all('div', class_='section-title')
+        if len(daily_header) > 0:
+            self.daily_header = daily_header[0].text.strip()
+
+        if self.daily_header != "":
+            imgs = soup.find_all('img')
+            imgs = [img['src'] for img in imgs if img['alt'] == "Liturgia"]
+            if len(imgs) == 1:
+                with open("sunday_image.jpg", "wb") as f:
+                    response = requests.get(imgs[0])
+                    f.write(response.content)
+                    self.sunday_image_available = True
+
         lectures = soup.find_all('div', class_='section-content-testo')
 
         lectures = [x.find_all('p') for x in lectures]

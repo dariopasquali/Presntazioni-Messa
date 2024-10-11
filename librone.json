@@ -1,5 +1,5 @@
 {
-    "version": 1.5000000000000004,
+    "version": 1.6000000000000005,
     "songs": [
         {
             "title": "Popoli tutti",
@@ -272,11 +272,10 @@
             "tag": [
                 "comunione"
             ],
-            "<RIT>": "L\u2019amore e\u0300 paziente. L\u2019amore e\u0300 benigno.\nL\u2019amore non si gonfia. L\u2019amore non si vanta.\nL\u2019amore non invidia\nSempre rispetta",
+            "<RIT>": "L\u2019amore e\u0300 paziente. L\u2019amore e\u0300 benigno.\nL\u2019amore non si gonfia. L\u2019amore non si vanta.\nL\u2019amore non invidia. Sempre rispetta",
             "<RIT2>": "Non cerca mai il proprio interesse.\nNon conta mai il male ricevuto\nL\u2019amore tutto scusa. L\u2019amore tutto crede. L\u2019amore tutto spera.",
             "<RIT3>": "E tutto sopporta.",
             "body": [
-                "<RIT>",
                 "Se parlassi le lingue degli uomini\nSe parlassi le lingue degli angeli\nMa, ma non avessi amore\nSe riuscissi a conoscere tutto Se riuscissi a fare miracoli\nMa, ma non avessi amore\nIo sarei bronzo che rimbomba a vuoto\nNon sarei nulla, nulla, nulla",
                 "<RIT>",
                 "Se donassi tutti i miei beni\nSe donassi la mia stessa vita\nMa, ma non avessi amore\nNon servirebbe a nulla, a nulla, a nulla.",
@@ -451,10 +450,10 @@
             "<RIT>": "Benedicat, benedicat,\nbenedicat tibi Dominus et custodiat te.\nbenedicat tibi Dominus et custodiat te.",
             "<RIT1>": "Benedicat, benedicat, benedicat,\nbenedicat, tibi Dominus,\nbenedicat, tibi Dominum et custodiat te.",
             "body": [
-                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat frater Leo, te",
+                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat et custodiat te",
                 "<RIT>",
                 "<RIT1>",
-                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat frater Leo, te",
+                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat et custodiat te",
                 "<RIT>"
             ]
         },
@@ -491,6 +490,19 @@
                 "<RIT>",
                 "Dai te stesso da mangiare,\nFatti vino, fatti pane...",
                 "<RIT1>"
+            ]
+        },
+        {
+            "title": "Nel Tuo Silenzio",
+            "number": "194",
+            "tag": [
+                "comunione"
+            ],
+            "<RIT>": "",
+            "body": [
+                "Nel tuo Silenzio accolgo il mistero\nvenuto a vivere dentro di me.\nSei Tu che vieni o forse [ pi\u00f9 vero\nChe tu mi accogli in te, Ges\u00f9",
+                "Sorgente viva che nasce nel cuore\n\u00e8 questo dono che abita in me\nLa tua presenza \u00e8 un Fuoco d'amore\nche avvolge l'anima mia, Ges\u00f9",
+                "Ora il tuo Spirito in me dice: 'Padre'\nnon sono io a parlare, sei tu.\nNell'infinito oceano di pace\ntu vivi in me, io in te, Ges\u00f9"
             ]
         }
     ]

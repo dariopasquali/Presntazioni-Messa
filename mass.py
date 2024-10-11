@@ -1,6 +1,7 @@
 import sys
 
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QLabel, QMainWindow, QHBoxLayout, QFrame, QDialog, QDialogButtonBox, QVBoxLayout
 
 from NewsFetcher import NewsFetcher
@@ -130,7 +131,7 @@ class MassPresenter(QMainWindow):
             MassMoment.lettura_2: [],  # L
             MassMoment.alleluia: [],  # L
             MassMoment.vangelo: [],  # L
-            MassMoment.credo: [Pages(body=credo_apostolico)],  # R
+            MassMoment.credo: [Pages(body=credo_apostolico), Pages(body=credo_tradizionale)],  # R
             MassMoment.offertorio: [],  # C
             MassMoment.santo: [],  # TODO
             MassMoment.padre_nostro: [Pages(body=padre_nostro)],  # R
@@ -149,14 +150,18 @@ class MassPresenter(QMainWindow):
         main_layout = QHBoxLayout()
         main_frame = QFrame()
 
-        self.body = QLabel(f'Messa del {aaaammdd}')
+        self.body = QLabel('')
         self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
         # self.body.setFont(QFont("Roboto", 50))
         self.body.setWordWrap(True)
         self.body.setContentsMargins(20, 0, 20, 0)
         self.body.setProperty('class', 'main_label')
 
+        self.cover_image = QLabel()
+        self.cover_image.setProperty('class', 'main_label')
+
         main_layout.addWidget(self.body)
+        main_layout.addWidget(self.cover_image, alignment=Qt.AlignmentFlag.AlignCenter)
         main_frame.setLayout(main_layout)
         self.setCentralWidget(main_frame)
         self.setFocus()
@@ -172,6 +177,15 @@ class MassPresenter(QMainWindow):
         self.mass_structure[MassMoment.lettura_2] = [self.bible.get(MassMoment.lettura_2)]  # L
         self.mass_structure[MassMoment.alleluia] = [self.bible.get(MassMoment.alleluia)]  # L
         self.mass_structure[MassMoment.vangelo] = [self.bible.get(MassMoment.vangelo)]  # L
+
+        daily_header, img_available, img_filename = self.bible.get_cover_slide()
+        self.body.setText(daily_header)
+        if img_available:
+            img = QPixmap(img_filename)
+            img = img.scaled(img.width()*3, img.height()*3, Qt.AspectRatioMode.KeepAspectRatio)
+            self.cover_image.setPixmap(img)
+        else:
+            self.cover_image.hide()
 
     def set_librone(self, librone):
         self.librone = librone
@@ -260,6 +274,7 @@ class MassPresenter(QMainWindow):
     def on_right(self):
         # Store the last page
         self.showFullScreen()
+        self.cover_image.hide()
         if self.pdf_maker_mode and self.page_pointer >= 0:
             self.pdf_maker.new_page(self.pages[self.page_pointer], font_size=self.body_font)
 

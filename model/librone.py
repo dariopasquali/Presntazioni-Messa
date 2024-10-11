@@ -40,7 +40,7 @@ class Song:
         pages = []
         word_count = 0
 
-        current_page = f"<b><u>{self.title}</u></b><br><br>"
+        current_page = f"<b><u>{self.title}</u></b><br>"
 
         for i in range(0, len(self.body), 2):
 
@@ -49,7 +49,7 @@ class Song:
 
             current_page += f"{v1}<br><br>{v2}"
             if i + 1 < len(self.body):
-                current_page += "<br><br>"
+                current_page += "<br>"
 
             pages.append(current_page)
             current_page = ""
