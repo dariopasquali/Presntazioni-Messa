@@ -145,7 +145,7 @@ class Bible:
 
         salmo = [x.replace("\t", "").replace("\r\n", "<VERSE>").split("\n") for x in
                  lectures[1][0].text.strip().split("\n\r\n")]
-        salmo = [item.replace("<VERSE>", "\n") for sub in salmo for item in sub]
+        salmo = [item.replace("<VERSE>", "<br>") for sub in salmo for item in sub]
 
         if len(lectures) == 4:
             lecture_2 = [txt.replace("\r\n", " ") for txt in lectures[2][0].text.strip().split("\n\r\n")]

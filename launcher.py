@@ -19,6 +19,8 @@ import subprocess
 
 from update_manager import UpdateManager
 
+import logging
+
 
 class SongPieceListItem(QListWidgetItem):
     def __init__(self, text="", rit_key=None, *args, **kwargs):
@@ -130,6 +132,9 @@ class AddSongDialog(QDialog):
         layout.addLayout(body_layout)
         layout.addWidget(button_box)
         self.setLayout(layout)
+
+        self.logger = logging.getLogger(__name__)
+        self.logger.info("Window build done")
 
     def add_strofa(self):
         txt = self.txt_strofa.toPlainText()
@@ -531,6 +536,10 @@ stylesheet = {
 }
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(name)s] - %(levelname)s - %(message)s',
+                        handlers=[logging.StreamHandler()]
+                        )
+
     app = QApplication(sys.argv)
     apply_stylesheet(app, theme='dark_lightgreen.xml', invert_secondary=False,
                      extra=stylesheet, css_file="custom.css")

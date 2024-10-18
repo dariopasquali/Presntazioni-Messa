@@ -1,5 +1,5 @@
 {
-    "version": 1.6000000000000005,
+    "version": 2.5,
     "songs": [
         {
             "title": "Popoli tutti",
@@ -272,10 +272,11 @@
             "tag": [
                 "comunione"
             ],
-            "<RIT>": "L\u2019amore e\u0300 paziente. L\u2019amore e\u0300 benigno.\nL\u2019amore non si gonfia. L\u2019amore non si vanta.\nL\u2019amore non invidia. Sempre rispetta",
+            "<RIT>": "L\u2019amore e\u0300 paziente. L\u2019amore e\u0300 benigno.\nL\u2019amore non si gonfia. L\u2019amore non si vanta.\nL\u2019amore non invidia\nSempre rispetta",
             "<RIT2>": "Non cerca mai il proprio interesse.\nNon conta mai il male ricevuto\nL\u2019amore tutto scusa. L\u2019amore tutto crede. L\u2019amore tutto spera.",
             "<RIT3>": "E tutto sopporta.",
             "body": [
+                "<RIT>",
                 "Se parlassi le lingue degli uomini\nSe parlassi le lingue degli angeli\nMa, ma non avessi amore\nSe riuscissi a conoscere tutto Se riuscissi a fare miracoli\nMa, ma non avessi amore\nIo sarei bronzo che rimbomba a vuoto\nNon sarei nulla, nulla, nulla",
                 "<RIT>",
                 "Se donassi tutti i miei beni\nSe donassi la mia stessa vita\nMa, ma non avessi amore\nNon servirebbe a nulla, a nulla, a nulla.",
@@ -450,10 +451,24 @@
             "<RIT>": "Benedicat, benedicat,\nbenedicat tibi Dominus et custodiat te.\nbenedicat tibi Dominus et custodiat te.",
             "<RIT1>": "Benedicat, benedicat, benedicat,\nbenedicat, tibi Dominus,\nbenedicat, tibi Dominum et custodiat te.",
             "body": [
-                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat et custodiat te",
+                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat frater Leo, te",
                 "<RIT>",
                 "<RIT1>",
-                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat et custodiat te",
+                "Benedicat tibi Dominus et custodiat te,\nostendat faciem suam tibi et misereatur tui\nconvertat vultum suum ad te\net det tibi pacem.\nDominus benedicat frater Leo, te",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Segni del Tuo Amore",
+            "number": "131",
+            "tag": [
+                "offertorio"
+            ],
+            "<RIT>": "Ecco il pane e il vino segni del Tuo amore\nEcco questa offerta accoglila Signore\nTu da mille e mille cuori fai un cuore solo\nun corpo solo in Te e il figlio tuo verr\u00e0, vivr\u00e0\nancora in mezzo a noi.",
+            "body": [
+                "Mille e mille grani nelle spighe d\u2019oro\nMandano fragranza e danno gioia al cuore\nquando macinate fanno un pane solo\npane quotidiano dono Tuo Signore",
+                "<RIT>",
+                "Mille grappoli maturi sotto il sole\nfesta della terra donano vigore\nquando da ogni perla stilla il vino nuovo\nvino della gioia dono Tuo Signore.",
                 "<RIT>"
             ]
         },
@@ -493,16 +508,141 @@
             ]
         },
         {
-            "title": "Nel Tuo Silenzio",
+            "title": "Fammi Conoscere",
+            "number": "185",
+            "tag": [
+                "intro",
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Fammi conoscere la tua volont\u00e0:\nparla, ti ascolto, Signore! \nLa mia felicit\u00e0\n\u00e8 fare il tuo volere: \nporter\u00f2 con me la tua Parola! ",
+            "body": [
+                "<RIT>",
+                "Lampada ai miei passi \n\u00e8 la tua Parola, \nluce sul mio cammino; \nogni giorno la mia volont\u00e0\ntrova una guida in te.",
+                "<RIT>",
+                "Porter\u00f2 con me\ni tuoi insegnamenti, \ndanno al mio cuore gioia.\nLa tua Parola \u00e8 fonte di luce,\ndona saggezza ai semplici. ",
+                "<RIT>",
+                "La mia bocca \nimpari la tua lode, \nsempre ti renda grazie. \nOgni momento canti il tuo amore;\nla mia speranza \u00e8 in te."
+            ]
+        },
+        {
+            "title": "Invochiamo la tua presenza",
+            "number": "212",
+            "tag": [
+                "intro",
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Vieni Spirito, vieni Spirito, scendi su di noi!\nvieni Spirito, vieni Spirito, scendi su di noi\nVieni su noi Maranath\u00e0, vieni su noi Spirito!\nVieni Spirito, vieni Spirito, scendi su di noi!\nVieni Spirito, vieni Spirito, scendi su di noi\nscendi su di noi. ",
+            "body": [
+                "Invochiamo la tua presenza vieni Signor. \nInvochiamo la tua presenza scendi su di noi.\nVieni Consolatore e dona pace e umilt\u00e0.\nAcqua viva d\u2019amore questo cuore apriamo a Te. ",
+                "<RIT>",
+                "Invochiamo la tua presenza, vieni Signor,\ninvochiamo la tua presenza scendi su di noi.\nVieni luce dei cuori dona forza e fedelt\u00e0.\nFuoco eterno d\u2019amore questa vita offriamo a te.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Ogni mia parola",
+            "number": "100",
+            "tag": [
+                "offertorio"
+            ],
+            "<RIT>": "Come la pioggia e la neve\nScendono gi\u00f9 dal cielo\ne non vi ritornano\nsenza irrigare\ne far germogliare la terra,\nCos\u00ec ogni mia parola\nnon ritorner\u00e0 a me\nsenza operare quanto desidero,\nsenza aver compiuto\nci\u00f2 per cui l\u2019avevo mandata.\nOgni mia parola, ogni mia parola.",
+            "body": [
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Come un Prodigio",
+            "number": "208",
+            "tag": [
+                "intro",
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Sei tu che mi hai creato, e mi hai tessuto nel seno di mia madre\nTu mi hai fatto come un prodigio, le tue opere sono stupende\nE per questo ti lodo",
+            "body": [
+                "Signore tu mi scruti e conosci\nSai quando seggo e quando mi alzo.\nRiesci a vedere i miei pensieri\nSai quando io cammino e quando riposo.\nTi sono note tutte le mie vie.\nLa mia parola non \u00e8 ancora sulla lingua.\nE tu, Signore, gi\u00e0 la conosci tutta ",
+                "<RIT>",
+                "Di fronte e alle spalle tu mi circondi\nPoni su me la tua mano \nLa tua saggezza, stupenda per me \nE\u2019 troppo alta e io non la comprendo\nChe sia in cielo o agli inferi ci sei \nNon si pu\u00f2 mai fuggire dalla tua presenza\nOvunque la tua mano guider\u00e0 la mia.",
+                "<RIT>",
+                "E nel segreto tu mi hai formato\nMi hai intessuto dalla terra\nNeanche le ossa ti eran nascoste \nAncora informe mi hanno visto i tuoi occhi\nI miei giorni erano fissati \nQuando ancora non ne esisteva uno \nE tutto quanto era scritto nel tuo libro.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Tutto \u00e8 possibile",
+            "number": "245",
+            "tag": [
+                "intro",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "E andremo e annunceremo che, in Lui tutto \u00e8 possibile\nE andremo e annunceremo che nulla ci pu\u00f2 vincere\nPerch\u00e9 abbiamo udito le sue parole\nPerch\u00e9 abbiam veduto vite cambiare\nPerch\u00e9 abbiamo visto l'amore vincere\nS\u00ec, abbiamo visto l'amore vincere",
+            "body": [
+                "Questo \u00e8 il luogo che Dio ha scelto per te\nQuesto \u00e8 il tempo pensato per te\nQuella che vedi \u00e8 la strada che Lui traccer\u00e0\nQuello che senti, l'amore che mai finir\u00e0",
+                "<RIT>",
+                "Questo \u00e8 il momento che Dio ha atteso per te\nQuesto \u00e8 il sogno che ha fatto su te\nQuella che vedi \u00e8 la strada tracciata per te\nQuello che senti, l'amore che ti accompagner\u00e0",
+                "<RIT>",
+                "<RIT>",
+                "Questo \u00e8 il tempo che Dio ha scelto per te\nQuesto \u00e8 il sogno che aveva su te"
+            ]
+        },
+        {
+            "title": "Alto e Glorioso Dio",
+            "number": "220",
+            "tag": [
+                "comunione"
+            ],
+            "<RIT>": "Alto e glorioso Dio Illumina il cuore mio\nDammi fede retta, speranza certa Carit\u00e0 perfetta\nDammi umilt\u00e0 profonda Dammi senno e cognoscimento\nChe io possa sempre servire\nCon gioia i tuoi comandamenti",
+            "body": [
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Nel tuo Silenzio",
             "number": "194",
             "tag": [
                 "comunione"
             ],
             "<RIT>": "",
             "body": [
-                "Nel tuo Silenzio accolgo il mistero\nvenuto a vivere dentro di me.\nSei Tu che vieni o forse [ pi\u00f9 vero\nChe tu mi accogli in te, Ges\u00f9",
-                "Sorgente viva che nasce nel cuore\n\u00e8 questo dono che abita in me\nLa tua presenza \u00e8 un Fuoco d'amore\nche avvolge l'anima mia, Ges\u00f9",
-                "Ora il tuo Spirito in me dice: 'Padre'\nnon sono io a parlare, sei tu.\nNell'infinito oceano di pace\ntu vivi in me, io in te, Ges\u00f9"
+                "Nel tuo silenzio accolgo il mistero\nVenuto a vivere dentro di me\nSei tu che vieni, o forse \u00e8 pi\u00f9 vero\nChe tu mi accogli in te, Ges\u00f9",
+                "Sorgente viva che nasce nel cuore\n\u00c8 questo dono che abita in me\nLa tua presenza \u00e8 un fuoco d'amore\nChe avvolge l'anima mia, Ges\u00f9",
+                "Ora il tuo Spirito in me dice: \"Padre\"\nNon sono io a parlare, sei Tu\nNell'infinito oceano di pace\nTu vivi in me, io in te, Ges\u00f9"
+            ]
+        },
+        {
+            "title": "Vieni e Seguimi",
+            "number": "156",
+            "tag": [
+                "fine"
+            ],
+            "<RIT>": "E sarai luce per gli uomini\ne sarai sale della terra\ne nel mondo deserto\naprirai una strada nuova. (2v)",
+            "body": [
+                "Lascia che il mondo vada per la sua strada.\nLascia che l'uomo ritorni alla sua casa.\nLascia che la gente accumuli la sua fortuna.\nMa tu, tu vieni e seguimi, tu vieni e seguimi.",
+                "Lascia che la barca in mare spieghi la vela.\nLascia che trovi affetto chi segue il cuore.\nLascia che dall'albero cadano i frutti maturi.\nMa tu, tu vieni e seguimi, tu vieni e seguimi.",
+                "<RIT>",
+                "E per questa strada va', va'\ne non voltarti indietro, va'\ne non voltarti indietro, va'."
+            ]
+        },
+        {
+            "title": "Santo Gen (Milan)",
+            "number": "",
+            "tag": [
+                "santo"
+            ],
+            "<RIT1>": "Santo, Santo, Santo",
+            "<RIT>": "Santo, Santo, Santo il Signore Dio dell'universo.\nSanto, Santo. I cieli e la terra sono pieni della tua gloria",
+            "body": [
+                "<RIT>",
+                "Osanna nell'alto dei cieli\nOsanna nell'alto dei cieli",
+                "<RIT>",
+                "Benedetto colui che viene nel nome del Signore\nOsanna nell'alto dei cieli\nOsanna nell'alto dei cieli",
+                "<RIT1>"
             ]
         }
     ]
