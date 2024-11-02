@@ -1,5 +1,5 @@
 {
-    "version": 2.5,
+    "version": 3.2000000000000006,
     "songs": [
         {
             "title": "Popoli tutti",
@@ -276,7 +276,6 @@
             "<RIT2>": "Non cerca mai il proprio interesse.\nNon conta mai il male ricevuto\nL\u2019amore tutto scusa. L\u2019amore tutto crede. L\u2019amore tutto spera.",
             "<RIT3>": "E tutto sopporta.",
             "body": [
-                "<RIT>",
                 "Se parlassi le lingue degli uomini\nSe parlassi le lingue degli angeli\nMa, ma non avessi amore\nSe riuscissi a conoscere tutto Se riuscissi a fare miracoli\nMa, ma non avessi amore\nIo sarei bronzo che rimbomba a vuoto\nNon sarei nulla, nulla, nulla",
                 "<RIT>",
                 "Se donassi tutti i miei beni\nSe donassi la mia stessa vita\nMa, ma non avessi amore\nNon servirebbe a nulla, a nulla, a nulla.",
@@ -643,6 +642,139 @@
                 "<RIT>",
                 "Benedetto colui che viene nel nome del Signore\nOsanna nell'alto dei cieli\nOsanna nell'alto dei cieli",
                 "<RIT1>"
+            ]
+        },
+        {
+            "title": "Dall'aurora al tramonto",
+            "number": "180",
+            "tag": [
+                "intro",
+                "comunione",
+                "fine"
+            ],
+            "<RIT1>": "Dall\u2019aurora io cerco te fino al tramonto ti chiamo\nha sete solo di te, l\u2019anima mia come terra deserta\nha sete solo di te, l\u2019anima mia come terra deserta",
+            "<RIT>": "Dall\u2019aurora io cerco te fino al tramonto ti chiamo\nha sete solo di te, l\u2019anima mia come terra deserta",
+            "body": [
+                "<RIT>",
+                "Non mi fermer\u00f2 un solo istante, sempre canter\u00f2 la tua lode\nperch\u00e9 sei il mio Dio, il mio riparo,\nmi proteggerai all\u2019ombra delle Tue ali.",
+                "<RIT>",
+                "Non mi fermer\u00f2 un solo istante, io racconter\u00f2 le tue opere\nperch\u00e9 sei il mio Dio, unico bene\nnulla mai potr\u00e0, la notte contro di me ",
+                "<RIT>",
+                "<RIT1>"
+            ]
+        },
+        {
+            "title": "Andate per le strade",
+            "number": "10",
+            "tag": [
+                "fine"
+            ],
+            "<RIT>": "Andate per le strade in tutto il mondo,\nchiamate i miei amici per far festa,\nc'\u00e8 un posto per ciascuno alla mia mensa!",
+            "body": [
+                "<RIT>",
+                "Nel vostro cammino annunciate il Vangelo,\ndicendo: \u201d\u00e8 vicino il Regno dei cieli\u201d. \nGuarite i malati, mondate i lebbrosi,\nrendete la vita a chi l\u2019 ha perduta. ",
+                "<RIT>",
+                "Vi \u00e8 stato donato con amore gratuito:\nugualmente donate con gioia e per amore.\nCon voi non prendete n\u00e9 oro n\u00e9 argento,\nperch\u00e9 l\u2019operaio ha diritto al suo cibo.",
+                "<RIT>",
+                "Entrando in una casa donatele pace.\nSe c\u2019\u00e8 chi vi rifiuta e non accoglie\nil dono la pace torni a voi, e uscite dalla casa\nscotendo la polvere dai vostri calzari.",
+                "<RIT>",
+                "Ecco io vi mando come agnelli in mezzo ai lupi:\nsiate dunque avveduti come sono i serpenti.\nMa liberi e chiari come le colombe:\ndovrete sopportare prigioni e tribunali.",
+                "<RIT>",
+                "Nessuno \u00e8 pi\u00f9 grande del proprio maestro:\nn\u00e9 il servo \u00e8 pi\u00f9 importante del suo padrone.\nSe hanno odiato me odieranno anche voi,\nvoi non temete: non vi lascio soli.",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Benedetto Signore (Cerco solo Te)",
+            "number": "213",
+            "tag": [
+                "intro",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Benedetto il Signore Benedetto il Tuo nome\nCome un tenero padre Sei verso di me, mio Signor",
+            "<RIT1>": "Benedetto il Signore Benedetto il Tuo nome\nDalle Tue mani questa mia vita Riceve salvezza e amor",
+            "body": [
+                "Cerco solo Te mio Signor,\nPerch\u00e9 solo Tu dai gioia al mio\ncuore Si rallegra l'anima mia Solo in Te, solo in Te",
+                "Cerco solo Te mio Signor,\nPerch\u00e9 la Tua via conduce alla vita\nSi rallegra l'anima mia Solo in Te, solo in Te",
+                "<RIT>",
+                "<RIT1>",
+                "Cerco solo Te mio Signor\nPerch\u00e9 la Tua grazia rimane in eterno \nSi rallegra l'anima mia Solo in Te, solo in Te",
+                "Cerco solo Te mio Signor \nPerch\u00e9 mi colori di misericordia\nSi rallegra l'anima mia Solo in Te, solo in Te",
+                "<RIT>",
+                "<RIT1>"
+            ]
+        },
+        {
+            "title": "Magnificat",
+            "number": "216",
+            "tag": [
+                "intro",
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Grandi cose \nHa fatto per me Dio Onnipotente\nE Santo \u00e8 il suo nome \nE Santo \u00e8 il suo nome",
+            "body": [
+                "<RIT>",
+                "L\u2019anima mia magnifica il Signore \nE il mio spirito esulta in Dio, mio salvatore\nPerch\u00e9 ha guardato l\u2019umilt\u00e0 della sua serva\nD\u2019ora in poi mi chiameranno beata ",
+                "<RIT>",
+                "Ha spiegato la potenza del suo braccio\nHa disperso i superbi nel loro cuore\nHa rovesciato i potenti dai troni\nHa innalzato gli umili.",
+                "<RIT>",
+                "Ha ricolmato di beni gli affamati\nHa rimandato i ricchi a mani vuote\nHa soccorso Israele suo servo\nRicordandosi della sua Misericordia. ",
+                "<RIT>",
+                "Di generazione in generazione\nIl suo amore si stende su chi lo teme \nCome aveva promesso ai nostri padri e ad Abramo\nE alla sua discendenza per sempre, per sempre."
+            ]
+        },
+        {
+            "title": "Come fuoco vivo",
+            "number": "31",
+            "tag": [
+                "intro",
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Come fuoco vivo si accende in noi un'immensa felicit\u00e0\nche mai pi\u00f9 nessuno ci toglier\u00e0 perch\u00e8 Tu sei ritornato. \nChi potr\u00e0 tacere, da ora in poi, che sei Tu in cammino con noi. \nChe la morte \u00e8 vinta per sempre, che ci hai ridonato la vita ",
+            "body": [
+                "<RIT>",
+                "Spezzi il pane davanti a noi mentre il sole \u00e8 al tramonto:\nora gli occhi ti vedono, sei Tu ! Resta con noi",
+                "<RIT>",
+                "E per sempre ti mostrerai in quel gesto d\u2019amore:\nmani che ancora spezzano pane d\u2019eternit\u00e0 ",
+                "<RIT>"
+            ]
+        },
+        {
+            "title": "Dammi i tuoi occhi",
+            "number": "249",
+            "tag": [
+                "intro",
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Inondami Dio della tua luce\nprendi il mio tempo \u00e8 per te\ntraccia il cammino che devo seguir.\nDammi i tuoi sogni i tuoi respiri\ni tuoi pensieri il tuo sentir\neccomi Padre, ti voglio servir",
+            "body": [
+                "Dammi i tuoi occhi voglio veder\ndammi le parole per parlar, io ti voglio amar.\nDammi i tuoi piedi io voglio andar,\ndammi i tuoi desideri per sperar, io ti voglio lodar.\nDammi ci\u00f2 di cui ho bisogno per raggiungere te",
+                "<RIT>",
+                "Voglio veder ci\u00f2 che vedi tu dammi la tua grazia il tuo poter\nvoglio darti il mio cuor... Signor\nvoglio guardare dentro te essere trasformato dal tuo amor\nvoglio darti il mio cuor.\nDammi ci\u00f2 di cui ho bisogno per raggiungere te!"
+            ]
+        },
+        {
+            "title": "Spirito Santo Cuore dell'umanit\u00e0",
+            "number": "201",
+            "tag": [
+                "intro",
+                "offertorio",
+                "comunione",
+                "fine"
+            ],
+            "<RIT>": "Spirito Santo, cuore dell\u2019umanit\u00e0, vieni e donaci unit\u00e0. \nSpirito Santo, fuoco che sempre brucer\u00e0, vieni e infiamma tutti noi. ",
+            "body": [
+                "Spirito Santo, scendi su di noi\nCon la Tua grazia riempi i nostri cuor.\nCon la Tua forza rialza i figli tuoi\nsolo Tu sei il Consolator. ",
+                "<RIT>",
+                "Tocca le labbra, f\u00e0 che parlino di Te,\ntocca questi occhi per vedere il nostro Re.\nFa' che ascoltiamo la tua voce, o Signor,\nnel nostro cuore l'amore sar\u00e0. ",
+                "<RIT>"
             ]
         }
     ]
