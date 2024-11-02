@@ -168,7 +168,7 @@ class MassPresenter(QMainWindow):
 
         self.page_pointer = -1
         self.pages = []
-        self.words_per_page = 90
+        self.words_per_page = 80
 
     def set_bible(self, bible):
         self.bible = bible
