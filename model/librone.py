@@ -2,10 +2,13 @@ import json
 import os
 
 import gdown
+import requests
 
 from model.commons import MassMoment
 
 librone_drive_url = "https://drive.google.com/uc?id=1aB18D_4piytDuV2fMfAp-1ByQ7kdOwV7"
+librone_webapp = "https://corogiovani.pythonanywhere.com/librone/json"
+librone_webapp_upload = "https://corogiovani.pythonanywhere.com/librone/upload"
 
 class Song:
     def __init__(self):
@@ -77,7 +80,9 @@ class Librone:
             MassMoment.fine
         ]
 
-    def check_for_updates(self):
+        self.check_for_updates()
+
+    def check_for_updates_drive(self):
         try:
             print("Check for updates")
             gdown.download(librone_drive_url, "librone.tmp.json")
@@ -95,11 +100,53 @@ class Librone:
                 os.remove("librone.tmp.json")
                 print(f"No update, version: {self.version}")
 
-
             return True
         except Exception as e:
             print(e)
             return False
+
+    def check_for_updates(self):
+
+        # Send a GET request to the API endpoint
+        response = requests.get(librone_webapp)
+
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Save the content to a file
+            with open("librone.tmp.json", "w") as json_file:
+                json_file.write(response.text)
+
+            with open("librone.tmp.json", 'r', encoding="utf-8") as f:
+                librone_tmp = json.load(f)
+
+            if round(librone_tmp["version"], 2) > round(self.version, 2):
+                print("New update found, load the new version!")
+                self.version = librone_tmp["version"]
+                self.librone = librone_tmp
+                os.remove("librone.json")
+                os.rename("librone.tmp.json", self.filename)
+            else:
+                os.remove("librone.tmp.json")
+                print(f"No update, version: {round(self.version, 2)}")
+
+            return True
+        else:
+            print(f"Failed to download file. Status code: {response.status_code}")
+            print("Response:", response.text)
+            return False
+
+    def upload_new_version(self):
+
+        with open(self.filename, 'rb') as json_file:
+            files = {'file': json_file}  # Prepare the file to be sent
+            response = requests.post(librone_webapp_upload, files=files)  # Send the POST request
+
+            # Check the response from the server
+            if response.status_code == 200:
+                print("File uploaded successfully:", response.json())
+            else:
+                print(f"Failed to upload file. Status code: {response.status_code}")
+                print("Response:", response.text)
 
     def get(self, mass_moment):
         if mass_moment in self.scaletta:

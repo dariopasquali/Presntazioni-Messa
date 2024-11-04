@@ -1,5 +1,5 @@
 {
-    "version": 3.2000000000000006,
+    "version": 3.3000000000000006,
     "songs": [
         {
             "title": "Popoli tutti",
@@ -179,8 +179,9 @@
             "tag": [
                 "fine"
             ],
-            "<RIT>": "Ora vado sulla mia strada\ncon l\u2019amore tuo che mi guida\nOh Signore, ovunque io vada\nResta accanto a me.\n\nIo ti prego, stammi vicino\nogni passo del mio cammino\nOgni notte, ogni mattino\nResta accanto a me",
+            "<RIT>": "Ora vado sulla mia strada con l\u2019amore tuo che mi guida\nOh Signore, ovunque io vada Resta accanto a me.\n\nIo ti prego, stammi vicino ogni passo del mio cammino\nOgni notte, ogni mattino Resta accanto a me",
             "body": [
+                "<RIT>",
                 "Il tuo sguardo puro sia luce per me,\ne la tua parola sia voce per me.\nChe io trovi il senso del mio andare solo in te\nnel tuo fedele amare il mio perch\u00e9.",
                 "<RIT>",
                 "Fa\u2019 che chi mi guarda non veda che te\nfa\u2019 che chi mi ascolta non senta che te\ne chi pensa a me, fa\u2019 che nel cuore pensi a te\ne trovi quell\u2019amore che hai dato a me.",
@@ -777,5 +778,6 @@
                 "<RIT>"
             ]
         }
+
     ]
 }

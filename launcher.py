@@ -3,6 +3,7 @@ import os
 import sys
 from functools import partial
 
+import requests
 from PyQt6.QtCore import QDate, QThread, QObject
 from PyQt6.QtGui import QIcon, QAction
 from PyQt6.QtWidgets import QApplication, QFileDialog, QVBoxLayout, QLabel, QListWidget, QListWidgetItem, QHBoxLayout, \
@@ -334,6 +335,7 @@ class Launcher(QMainWindow):
         self.date_edit = QDateEdit(calendarPopup=True)
         self.date_edit.setDate(QDate.currentDate())
         self.date_edit.setStyleSheet("color: rgb(255, 255, 255);")
+        self.date_edit.dateChanged.connect(self.on_date_select)
         toolbar.addWidget(self.date_edit)
 
         act_save = QAction('Salva PDF Messa', self)
@@ -357,8 +359,11 @@ class Launcher(QMainWindow):
         act_add_song = QAction("Gestisci Canzoni", self)
         act_add_song.triggered.connect(self.manage_songs)
 
-        act_sync_librone = QAction("Scarica da Google Drive", self)
+        act_sync_librone = QAction("Scarica Librone", self)
         act_sync_librone.triggered.connect(self.sync_librone)
+
+        act_upload_librone = QAction("Carica Librone Aggiornato", self)
+        act_upload_librone.triggered.connect(self.upload_librone)
 
         act_check_update = QAction("Verifica Aggiornamenti", self)
         act_check_update.triggered.connect(self.check_for_updates)
@@ -366,6 +371,7 @@ class Launcher(QMainWindow):
         menu_librone = menu.addMenu("Librone")
         menu_librone.addAction(act_add_song)
         menu_librone.addAction(act_sync_librone)
+        menu_librone.addAction(act_upload_librone)
 
         menu_software = menu.addMenu("Aggiorna")
         menu_software.addAction(act_check_update)
@@ -398,6 +404,38 @@ class Launcher(QMainWindow):
         self.update_manager = UpdateManager()
         self.update_dialog = UpdateDialog(self.update_manager)
 
+        self.webapp_mass = []
+        self.fetch_saved_mass_from_webapp()
+
+    def fetch_saved_mass_from_webapp(self):
+        response = requests.get("https://corogiovani.pythonanywhere.com/messa/list")
+        self.webapp_mass = response.json()
+
+    def load_webapp_mass(self, date):
+        if date in self.webapp_mass:
+            response = requests.get(f"https://corogiovani.pythonanywhere.com/messa/{date}")
+            songs = response.json()
+
+            scaletta = {}
+            for moment_name, song_list in songs.items():
+                moment = MassMoment.from_name(moment_name)
+                scaletta[moment] = song_list
+                for id in range(self.list_songs[moment].count()):
+                    item = self.list_songs[moment].item(id)
+                    for s in song_list:
+                        if s == item.text():
+                            item.setSelected(True)
+
+            self.librone.load_songs(scaletta)
+        else:
+            for moment_name in self.lbl_canto_text.keys():
+                if moment_name in self.list_songs:
+                    self.list_songs[moment_name].clearSelection()
+
+    def on_date_select(self):
+        date = self.date_edit.date().toString("yyyy-MM-dd")
+        self.load_webapp_mass(date)
+
     def manage_songs(self):
         self.manage_songs_dialog.set_librone(self.librone.get_all_songs())
         self.manage_songs_dialog.show()
@@ -425,6 +463,9 @@ class Launcher(QMainWindow):
         if self.librone.check_for_updates():
             self.populate_song_lists(reload=True)
             self.manage_songs_dialog.set_librone(self.librone.scaletta)
+
+    def upload_librone(self):
+        self.librone.upload_new_version()
 
     def check_for_updates(self):
         new_version, v = self.update_manager.check_for_updates()
