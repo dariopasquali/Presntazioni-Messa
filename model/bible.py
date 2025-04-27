@@ -154,7 +154,7 @@ class Bible:
             lecture_2 = ["", ""]
             gospel = [txt.replace("\r\n", " ") for txt in lectures[2][0].text.strip().split("\n\r\n")]
 
-        alleluia = [p for p in soup.find_all('p') if 'alleluia' in p.get_text().lower()][0]
+        alleluia = [p for p in soup.find_all('p') if 'alleluia, alleluia.' in p.get_text().lower()][0]
 
         self.lectures[MassMoment.lettura_1] = Lecture(head=lecture_1[0], body=lecture_1[1])
         self.lectures[MassMoment.lettura_2] = Lecture(head=lecture_2[0], body=lecture_2[1])

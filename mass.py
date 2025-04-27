@@ -131,7 +131,9 @@ class MassPresenter(QMainWindow):
             MassMoment.lettura_2: [],  # L
             MassMoment.alleluia: [],  # L
             MassMoment.vangelo: [],  # L
-            MassMoment.credo: [Pages(body=credo_apostolico), Pages(body=credo_tradizionale)],  # R
+            MassMoment.credo: [Pages(body=credo_apostolico),
+                               Pages(body=credo_tradizionale), Pages(body=credo_tradizionale_2),
+                               Pages(body=credo_tradizionale_3), Pages(body=credo_tradizionale_4)],  # R
             MassMoment.offertorio: [],  # C
             MassMoment.santo: [],  # TODO
             MassMoment.padre_nostro: [Pages(body=padre_nostro)],  # R
@@ -143,7 +145,7 @@ class MassPresenter(QMainWindow):
             MassMoment.fine: [],  # C
         }
 
-        self.default_font = 40
+        self.default_font = 43
         self.body_font = self.default_font
 
         self.setWindowTitle(f'Messa del {aaaammdd}')

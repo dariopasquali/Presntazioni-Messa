@@ -410,6 +410,7 @@ class Launcher(QMainWindow):
     def fetch_saved_mass_from_webapp(self):
         response = requests.get("https://corogiovani.pythonanywhere.com/messa/list")
         self.webapp_mass = response.json()
+        self.on_date_select()
 
     def load_webapp_mass(self, date):
         if date in self.webapp_mass:
