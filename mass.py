@@ -5,6 +5,7 @@ from PyQt6.QtGui import QPixmap
 from PyQt6.QtWidgets import QLabel, QMainWindow, QHBoxLayout, QFrame, QDialog, QDialogButtonBox, QVBoxLayout
 
 from NewsFetcher import NewsFetcher
+from dummy import AutoFontLabel
 from model.commons import MassMoment, Pages
 from model.rfixed_rites import *
 from pdf import PDFMaker
@@ -131,7 +132,7 @@ class MassPresenter(QMainWindow):
             MassMoment.lettura_2: [],  # L
             MassMoment.alleluia: [],  # L
             MassMoment.vangelo: [],  # L
-            MassMoment.credo: [Pages(body=credo_apostolico),
+            MassMoment.credo: [Pages(body=credo_apostolico), Pages(body=credo_apostolico_2),
                                Pages(body=credo_tradizionale), Pages(body=credo_tradizionale_2),
                                Pages(body=credo_tradizionale_3), Pages(body=credo_tradizionale_4)],  # R
             MassMoment.offertorio: [],  # C
@@ -272,6 +273,7 @@ class MassPresenter(QMainWindow):
             self.page_pointer = len(self.pages) - 1
 
         self.body.setText(self.pages[self.page_pointer])
+        # self.body.adjustFontSize()
 
     def on_right(self):
         # Store the last page
@@ -308,6 +310,7 @@ class MassPresenter(QMainWindow):
 
         try:
             self.body.setText(self.pages[self.page_pointer])
+            # self.body.adjustFontSize()
         except Exception as e:
             print(e)
 

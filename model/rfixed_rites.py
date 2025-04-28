@@ -23,11 +23,14 @@ Kýrie, kyrie, eléison."""
 
 credo_apostolico = """
 <u><b>Credo Apostolico</b></u><br>
-Io credo in Dio, Padre onnipotente, Creatore del cielo e della terra.<br>
+Io credo in Dio, Padre onnipotente,<br>
+Creatore del cielo e della terra.<br>
 E in Gesù Cristo, Suo unico Figlio, nostro Signore,<br>
 il quale fu concepito di Spirito Santo, nacque da Maria Vergine,<br>
 patì sotto Ponzio Pilato, fu crocifisso, <br>
 morì e fu sepolto; discese agli inferi; <br>
+"""
+credo_apostolico_2 = """
 il terzo giorno risuscitò da morte;<br>
 salì al cielo, siede alla destra di Dio Padre onnipotente:<br>
 di là verrà a giudicare i vivi e i morti. <br>

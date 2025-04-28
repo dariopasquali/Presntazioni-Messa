@@ -16,12 +16,14 @@ class Song:
         self.number = 0
         self.body = []
         self.raw = ""
+        self.tags = []
 
     def parse_json(self, song_json):
         self.raw = song_json
         self.title = song_json["title"]
         self.number = song_json["number"]
         self.body = song_json["body"]
+        self.tags = [MassMoment.from_name(t) for t in song_json["tag"]]
         return self
 
     def __get_body_page_html(self, id):
