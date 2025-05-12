@@ -5,7 +5,7 @@ from functools import partial
 
 import requests
 from PyQt6.QtCore import QDate, QThread, QObject
-from PyQt6.QtGui import QIcon, QAction
+from PyQt6.QtGui import QIcon, QAction, QFontDatabase, QFont
 from PyQt6.QtWidgets import QApplication, QFileDialog, QVBoxLayout, QLabel, QListWidget, QListWidgetItem, QHBoxLayout, \
     QDateEdit, QPushButton, QLineEdit, QFrame, QMainWindow, QDialog, QDialogButtonBox, QMenuBar, QToolBar, QTextEdit, \
     QCheckBox
@@ -313,6 +313,16 @@ class UpdateDialog(QDialog):
         self.thread.start()
 
 
+def load_custom_font_family():
+    font_id = QFontDatabase.addApplicationFont("fonts/Roboto-Regular.ttf")
+    if font_id != -1:
+        font_families = QFontDatabase.applicationFontFamilies(font_id)
+        if font_families:
+            return font_families[0]
+
+    return None
+
+
 class Launcher(QMainWindow):
     def __init__(self, file_librone="librone.json"):
         super().__init__()
@@ -495,7 +505,7 @@ class Launcher(QMainWindow):
     def on_start_messa(self):
         # Set and configure the messa
         self.get_data()
-        self.messa = MassPresenter(aaaammdd=self.date)
+        self.messa = MassPresenter(aaaammdd=self.date, body_font_family=load_custom_font_family())
         self.messa.set_bible(self.bible)
         self.messa.set_librone(self.librone)
         self.messa.run_fullscreen()
@@ -573,8 +583,7 @@ stylesheet = {
     'warning': '#ffc107',
     'success': '#13191c',
     # Font
-    'font_family': 'Roboto',
-    'background': '#202020',
+    'background': '#000000',
 }
 
 if __name__ == "__main__":

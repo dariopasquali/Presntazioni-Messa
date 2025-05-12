@@ -623,7 +623,7 @@ stylesheet = {
     'warning': '#ffc107',
     'success': '#13191c',
     # Font
-    'font_family': 'Roboto',
+    'font_family': 'NotoSans',
     'background': '#202020',
 }
 

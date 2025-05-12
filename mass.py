@@ -1,11 +1,10 @@
 import sys
 
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QPixmap
+from PyQt6.QtGui import QPixmap, QFont, QFontMetrics
 from PyQt6.QtWidgets import QLabel, QMainWindow, QHBoxLayout, QFrame, QDialog, QDialogButtonBox, QVBoxLayout
 
 from NewsFetcher import NewsFetcher
-from dummy import AutoFontLabel
 from model.commons import MassMoment, Pages
 from model.rfixed_rites import *
 from pdf import PDFMaker
@@ -13,16 +12,12 @@ from pdf import PDFMaker
 casi_duso = """
 
 # BASE
-- Download dicitura tempo ordinario e messa + data
-
 - TASTO PER aggiungere immagine volante/predefinita, solitamente alla fine
 - TASTO PER aggiungere canzone volante, poco prima della messa, ma anche durante prendendo spunto dall'omelia
 
 # EXTRA
 - canti con doppie voci
-- sequenze particolari (sequenza pasquale,)
 """
-
 
 class InstrDialog(QDialog):
     def __init__(self, pdf_maker_mode=False):
@@ -61,7 +56,7 @@ class InstrDialog(QDialog):
 
 
 class MassPresenter(QMainWindow):
-    def __init__(self, aaaammdd, pdf_maker_mode=False):
+    def __init__(self, aaaammdd, pdf_maker_mode=False, body_font_family=None):
         super().__init__()
         self.on_close = lambda: None
         self.pdf_maker_mode = pdf_maker_mode
@@ -146,16 +141,17 @@ class MassPresenter(QMainWindow):
             MassMoment.fine: [],  # C
         }
 
-        self.default_font = 43
-        self.body_font = self.default_font
+        self.body_font_family = body_font_family
+        self.default_font_size = 43
+        self.body_font_size = self.default_font_size
+        self.body_font = QFont(self.body_font_family, self.body_font_size)
 
         self.setWindowTitle(f'Messa del {aaaammdd}')
         main_layout = QHBoxLayout()
         main_frame = QFrame()
 
         self.body = QLabel('')
-        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
-        # self.body.setFont(QFont("Roboto", 50))
+        self.body.setFont(self.body_font)
         self.body.setWordWrap(True)
         self.body.setContentsMargins(20, 0, 20, 0)
         self.body.setProperty('class', 'main_label')
@@ -183,6 +179,7 @@ class MassPresenter(QMainWindow):
 
         daily_header, img_available, img_filename = self.bible.get_cover_slide()
         self.body.setText(daily_header)
+        self.body.setFont(self.body_font)
         if img_available:
             img = QPixmap(img_filename)
             img = img.scaled(img.width()*3, img.height()*3, Qt.AspectRatioMode.KeepAspectRatio)
@@ -221,30 +218,19 @@ class MassPresenter(QMainWindow):
             self.on_right()
 
     def zoom_in(self):
-        self.body_font += 2
-        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
+        self.body_font_size += 2
+        self.body_font.setPointSize(self.body_font_size)
+        self.body.setFont(self.body_font)
 
     def reset_font(self):
-        self.body_font = self.default_font
-        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
+        self.body_font_size = self.default_font_size
+        self.body_font.setPointSize(self.body_font_size)
+        self.body.setFont(self.body_font)
 
     def zoom_out(self):
-        self.body_font -= 2
-        self.body.setStyleSheet(f"font-size: {self.body_font}pt;")
-
-    def adjust_font_size(self):
-        """Adjust font size dynamically based on window width."""
-        # Get the width of the window
-        window_h = self.height()
-
-        # Adjust font size based on the window width
-        # You can fine-tune this scaling factor as needed
-        font_size = window_h // 28
-
-        # Set the new font size
-        font = self.body.font()
-        font.setPointSize(font_size)
-        self.body.setFont(font)
+        self.body_font_size -= 2
+        self.body_font.setPointSize(self.body_font_size)
+        self.body.setFont(self.body_font)
 
     def on_left(self):
         self.reset_font()
@@ -273,11 +259,10 @@ class MassPresenter(QMainWindow):
             self.page_pointer = len(self.pages) - 1
 
         self.body.setText(self.pages[self.page_pointer])
-        # self.body.adjustFontSize()
 
     def on_right(self):
         # Store the last page
-        self.showFullScreen()
+        self.showMaximized()
         self.cover_image.hide()
         if self.pdf_maker_mode and self.page_pointer >= 0:
             self.pdf_maker.new_page(self.pages[self.page_pointer], font_size=self.body_font)
@@ -310,7 +295,6 @@ class MassPresenter(QMainWindow):
 
         try:
             self.body.setText(self.pages[self.page_pointer])
-            # self.body.adjustFontSize()
         except Exception as e:
             print(e)
 
@@ -319,7 +303,6 @@ class MassPresenter(QMainWindow):
 
     def run_fullscreen(self, pdf_filename="messa.pdf", on_close=lambda: None):
         dlg = InstrDialog(pdf_maker_mode=self.pdf_maker_mode)
-        self.pdf_maker.set_filename(pdf_filename)
         self.on_close = on_close
         self.showFullScreen()
         dlg.exec()
@@ -327,7 +310,6 @@ class MassPresenter(QMainWindow):
 
     def run_maximized(self, pdf_filename="messa/messa.pdf", on_close=lambda: None):
         dlg = InstrDialog(pdf_maker_mode=self.pdf_maker_mode)
-        self.pdf_maker.set_filename(pdf_filename)
         self.on_close = on_close
         self.showMaximized()
         dlg.exec()
