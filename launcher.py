@@ -8,7 +8,7 @@ from PyQt6.QtCore import QDate, QThread, QObject
 from PyQt6.QtGui import QIcon, QAction, QFontDatabase, QFont
 from PyQt6.QtWidgets import QApplication, QFileDialog, QVBoxLayout, QLabel, QListWidget, QListWidgetItem, QHBoxLayout, \
     QDateEdit, QPushButton, QLineEdit, QFrame, QMainWindow, QDialog, QDialogButtonBox, QMenuBar, QToolBar, QTextEdit, \
-    QCheckBox
+    QCheckBox, QSpinBox
 from qt_material import apply_stylesheet
 
 from model.bible import Bible
@@ -348,15 +348,17 @@ class Launcher(QMainWindow):
         self.date_edit.dateChanged.connect(self.on_date_select)
         toolbar.addWidget(self.date_edit)
 
-        act_save = QAction('Salva PDF Messa', self)
-        act_save.triggered.connect(self.on_save_messa)
-        toolbar.addAction(act_save)
+        lbl_font = QLabel("Dimensione Testo")
+        self.spin_font = QSpinBox()
+        self.spin_font.setMinimum(40)
+        self.spin_font.setMaximum(60)
+        self.spin_font.setStyleSheet("color: white;")
 
-        act_pick = QAction('Carica Messa', self)
-        act_pick.triggered.connect(self.on_pick_file)
-        toolbar.addAction(act_pick)
+        toolbar.addWidget(lbl_font)
+        toolbar.addWidget(self.spin_font)
 
-        toolbar.addSeparator()
+        self.check_single_section = QCheckBox("Una strofa per slide")
+        toolbar.addWidget(self.check_single_section)
 
         self.act_start = QAction(QIcon("start.png"), 'INIZIA MESSA!', self)
         self.act_start.triggered.connect(self.on_start_messa)
@@ -505,40 +507,42 @@ class Launcher(QMainWindow):
     def on_start_messa(self):
         # Set and configure the messa
         self.get_data()
-        self.messa = MassPresenter(aaaammdd=self.date, body_font_family=load_custom_font_family())
+        self.messa = MassPresenter(aaaammdd=self.date,
+                                   body_font_family=load_custom_font_family(),
+                                   default_font_size=self.spin_font.value())
         self.messa.set_bible(self.bible)
         self.messa.set_librone(self.librone)
-        self.messa.run_fullscreen()
+        self.messa.run(fullscreen=True, one_section_per_page=self.check_single_section.isChecked())
 
-    def on_pick_file(self):
-        os.makedirs("messe", exist_ok=True)
-        fname = QFileDialog.getOpenFileName(self, 'Open file', 'messe')[0]
-
-        if fname == "":
-            return
-
-        # Load the schema
-        with open(fname, 'r') as f:
-            messa_js = json.load(f)
-
-        # Set the date
-        self.date = messa_js['date']
-
-        # Load lectures
-        self.bible.load_json(messa_js['lectures'])
-
-        # Load songs
-        scaletta = {}
-        for moment_name, song_list in messa_js['songs'].items():
-            moment = MassMoment.from_name(moment_name)
-            scaletta[moment] = song_list
-            for id in range(self.list_songs[moment].count()):
-                item = self.list_songs[moment].item(id)
-                for s in song_list:
-                    if s == item.text():
-                        item.setSelected(True)
-
-        self.librone.load_songs(scaletta)
+    # def on_pick_file(self):
+    #     os.makedirs("messe", exist_ok=True)
+    #     fname = QFileDialog.getOpenFileName(self, 'Open file', 'messe')[0]
+    #
+    #     if fname == "":
+    #         return
+    #
+    #     # Load the schema
+    #     with open(fname, 'r') as f:
+    #         messa_js = json.load(f)
+    #
+    #     # Set the date
+    #     self.date = messa_js['date']
+    #
+    #     # Load lectures
+    #     self.bible.load_json(messa_js['lectures'])
+    #
+    #     # Load songs
+    #     scaletta = {}
+    #     for moment_name, song_list in messa_js['songs'].items():
+    #         moment = MassMoment.from_name(moment_name)
+    #         scaletta[moment] = song_list
+    #         for id in range(self.list_songs[moment].count()):
+    #             item = self.list_songs[moment].item(id)
+    #             for s in song_list:
+    #                 if s == item.text():
+    #                     item.setSelected(True)
+    #
+    #     self.librone.load_songs(scaletta)
 
     def get_data(self):
         scaletta = {}
@@ -556,22 +560,22 @@ class Launcher(QMainWindow):
 
         return songs, lectures
 
-    def on_save_messa(self):
-
-        songs, lectures = self.get_data()
-        messa_js = {
-            "date": self.date,
-            "songs": songs,
-            "lectures": lectures
-        }
-        os.makedirs("messe", exist_ok=True)
-        with open(f'messe/messa_{self.date}.json', 'w', encoding="utf-8") as outfile:
-            json.dump(messa_js, outfile, indent=4)
-
-        self.messa = MassPresenter(aaaammdd=self.date, pdf_maker_mode=True)
-        self.messa.set_bible(self.bible)
-        self.messa.set_librone(self.librone)
-        self.messa.run_fullscreen(pdf_filename=f'messe/messa_{self.date}.pdf', on_close=self.on_close)
+    # def on_save_messa(self):
+    #
+    #     songs, lectures = self.get_data()
+    #     messa_js = {
+    #         "date": self.date,
+    #         "songs": songs,
+    #         "lectures": lectures
+    #     }
+    #     os.makedirs("messe", exist_ok=True)
+    #     with open(f'messe/messa_{self.date}.json', 'w', encoding="utf-8") as outfile:
+    #         json.dump(messa_js, outfile, indent=4)
+    #
+    #     self.messa = MassPresenter(aaaammdd=self.date, pdf_maker_mode=True)
+    #     self.messa.set_bible(self.bible)
+    #     self.messa.set_librone(self.librone)
+    #     self.messa.run_fullscreen(pdf_filename=f'messe/messa_{self.date}.pdf', on_close=self.on_close)
 
     def on_close(self):
         subprocess.call("explorer messe", shell=True)

@@ -4,14 +4,16 @@ import os
 import gdown
 import requests
 
-from model.commons import MassMoment
+from model.commons import MassMoment, Pages
 
 librone_drive_url = "https://drive.google.com/uc?id=1aB18D_4piytDuV2fMfAp-1ByQ7kdOwV7"
 librone_webapp = "https://corogiovani.pythonanywhere.com/librone/json"
 librone_webapp_upload = "https://corogiovani.pythonanywhere.com/librone/upload"
 
-class Song:
+
+class Song(Pages):
     def __init__(self):
+        super().__init__("")
         self.title = ""
         self.number = 0
         self.body = []
@@ -39,25 +41,29 @@ class Song:
         verse = verse.replace("\n", "<br>")
         return verse
 
-    def get_pages(self, wpp=100):
+    def get_pages(self, wpp=100, one_section_per_page=False, font=None, max_width=1024, max_height=768):
         # Generate the following pages combo
         # RIT alone / RIT + verse / verse + RIT / verse alone
         pages = []
-        word_count = 0
 
         current_page = f"<b><u>{self.title}</u></b><br>"
 
-        for i in range(0, len(self.body), 2):
+        if one_section_per_page:
+            for i in range(len(self.body)):
+                current_page += self.__get_body_page_html(i)
+                pages.append(current_page)
+                current_page = ""
+        else:
+            for i in range(0, len(self.body), 2):
+                v1 = self.__get_body_page_html(i)
+                v2 = self.__get_body_page_html(i + 1)
 
-            v1 = self.__get_body_page_html(i)
-            v2 = self.__get_body_page_html(i + 1)
+                current_page += f"{v1}<br><br>{v2}"
+                if i + 1 < len(self.body):
+                    current_page += "<br>"
 
-            current_page += f"{v1}<br><br>{v2}"
-            if i + 1 < len(self.body):
-                current_page += "<br>"
-
-            pages.append(current_page)
-            current_page = ""
+                pages.append(current_page)
+                current_page = ""
         return pages
 
 

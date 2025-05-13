@@ -1,4 +1,5 @@
 import requests
+from PyQt6.QtGui import QFontMetrics
 from bs4 import BeautifulSoup
 
 from model.commons import Pages, MassMoment
@@ -24,15 +25,40 @@ class Lecture(Pages):
             "ending": self.ending
         }
 
-    def get_pages(self, wpp=100):
+    def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
         if self.body == "":
             return [""]
 
-        txt = f"<b>{self.head}</b>"
-        txt += "<br><br>"
-        txt += self.body + f"<br><br><b>{self.ending}</b>"
-        words = txt.split(" ")
-        return [" ".join(words[i:i + wpp]) for i in range(0, len(words), wpp)]
+        txt = f"""<b>{self.head}</b><br>"""
+        txt += self.body + f"""<br><b>{self.ending}</b>"""
+
+        # Break text into wrapped lines
+        metrics = QFontMetrics(font)
+        words = txt.split()
+        lines = []
+        line = ""
+
+        for word in words:
+            test_line = f"{line} {word}".strip()
+            if metrics.boundingRect(test_line).width() > max_width:
+                lines.append(line)
+                line = word
+            else:
+                line = test_line
+        if line:
+            lines.append(line)
+
+        # Group lines into pages
+        line_height = metrics.lineSpacing()
+        max_lines = max_height // line_height
+
+        return [
+            " ".join(lines[i:i + max_lines])
+            for i in range(0, len(lines), max_lines)
+        ]
+
+        # words = txt.split(" ")
+        # return [" ".join(words[i:i + wpp]) for i in range(0, len(words), wpp)]
 
 
 class Salmo(Lecture):
@@ -50,7 +76,7 @@ class Salmo(Lecture):
     def from_json(js):
         return Salmo(rit=js['rit'], body=js['body'])
 
-    def get_pages(self, wpp=100):
+    def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
         pages = []
         for b in self.body:
             txt = f"<b>RIT: {self.rit}</b><br><br>"
@@ -73,7 +99,7 @@ class Alleluia(Lecture):
             "body": self.body,
         }
 
-    def get_pages(self, wpp=100):
+    def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
         alle = "<b>Alleluia, Alleluia</b><br><br>"
         alle += self.body + "<br><br>"
         alle += "<b>Alleluia</b>"

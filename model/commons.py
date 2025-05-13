@@ -1,4 +1,5 @@
 import enum
+import requests
 
 
 class MassMoment(enum.Enum):
@@ -55,6 +56,16 @@ class Pages:
     def __init__(self, body):
         self.body = body
 
-    def get_pages(self, wpp=100):
+    def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
         words = self.body.split(" ")
         return [" ".join(words[i:i + wpp]) for i in range(0, len(words), wpp)]
+
+
+news_url = "https://corogiovani.pythonanywhere.com/get_news"
+
+
+class NewsFetcher:
+    @staticmethod
+    def fetch_news():
+        response = requests.get(news_url)
+        return response.text
