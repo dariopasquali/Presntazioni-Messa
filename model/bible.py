@@ -87,8 +87,10 @@ class Salmo(Lecture):
 
 
 class Alleluia(Lecture):
-    def __init__(self, body, head=""):
+    def __init__(self, body, head="", before="<b>Alleluia, Alleluia</b><br><br>", after="<b>Alleluia</b>"):
         super().__init__(body, head)
+        self.before = before
+        self.after = after
 
     @staticmethod
     def from_json(js):
@@ -100,9 +102,29 @@ class Alleluia(Lecture):
         }
 
     def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
-        alle = "<b>Alleluia, Alleluia</b><br><br>"
+        alle = self.before
         alle += self.body + "<br><br>"
-        alle += "<b>Alleluia</b>"
+        alle += self.after
+        return [alle]
+
+
+class AlleluiaQuaresima(Lecture):
+    def __init__(self, body, head=""):
+        super().__init__(body, head)
+
+    @staticmethod
+    def from_json(js):
+        return AlleluiaQuaresima(body=js['body'])
+
+    def to_json(self):
+        return {
+            "body": self.body,
+        }
+
+    def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
+        alle = "<b>Lode a te o Cristo, re di eterna gloria</b><br><b>Lode a te o Cristo, parola di Dio con noi!</b><br><br>"
+        alle += self.body + "<br><br>"
+        alle += "<b>Lode a te o Cristo, re di eterna gloria</b><br><b>Lode a te o Cristo, parola di Dio con noi!</b>"
         return [alle]
 
 
@@ -184,15 +206,32 @@ class Bible:
             lecture_2 = ["", ""]
             gospel = [txt.replace("\r\n", " ") for txt in lectures[2][0].text.strip().split("\n\r\n")]
 
-        alleluia = [p for p in soup.find_all('p') if 'alleluia, alleluia.' in p.get_text().lower()]
-
         self.lectures[MassMoment.lettura_1] = Lecture(head=lecture_1[0], body=lecture_1[1])
         self.lectures[MassMoment.lettura_2] = Lecture(head=lecture_2[0], body=lecture_2[1])
         self.lectures[MassMoment.vangelo] = Lecture(head=gospel[0], body=gospel[1], ending="Parola del Signore")
         self.lectures[MassMoment.salmo] = Salmo(rit=salmo[0], body=salmo[1:])
 
-        if alleluia:
-            self.lectures[MassMoment.alleluia] = Alleluia(body="\r\n".join(alleluia[0].text.split("\r\n")[1:-1]))
+        if "quaresima" in self.daily_header.lower():
+            if "domenica" in self.daily_header.lower():
+                search_for = 'lode a te, o cristo'
+                before = "<b>Lode a te o Cristo, re di eterna gloria</b><br><b>Lode a te o Cristo, parola di Dio con noi!</b><br><br>"
+                after = "<b>Lode a te o Cristo, re di eterna gloria</b><br><b>Lode a te o Cristo, parola di Dio con noi!</b>"
+            else:
+                search_for = 'lode e onore a te,'
+                before = "<b>Lode e onore a te, Signore Gesù</b><br><br>"
+                after = "<b>Lode e onore a te, Signore Gesù</b>"
         else:
-            self.lectures[MassMoment.alleluia] = Alleluia(body="")
+            search_for = 'alleluia, alleluia.'
+            before = "<b>Alleluia, Alleluia</b><br><br>"
+            after = "<b>Alleluia</b>"
+
+        alleluia = [p for p in soup.find_all('p') if search_for in p.get_text().lower()]
+        if alleluia:
+            txt = "\r\n".join(alleluia[0].text.split("\r\n")[1:-1])
+        else:
+            txt = ""
+            before = "<b>Alleluia, Alleluia</b><br><br>"
+            after = "<b>Alleluia</b>"
+
+        self.lectures[MassMoment.alleluia] = Alleluia(body=txt, before=before, after=after)
 
