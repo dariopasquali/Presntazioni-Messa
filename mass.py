@@ -4,7 +4,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap, QFont, QFontMetrics
 from PyQt6.QtWidgets import QLabel, QMainWindow, QHBoxLayout, QFrame, QDialog, QDialogButtonBox, QVBoxLayout
 
-from model.commons import MassMoment, Pages, NewsFetcher
+from model.commons import MassMoment, Pages, NewsFetcher, FlayerFetcher, ImagePages
 from model.rfixed_rites import *
 casi_duso = """
 
@@ -127,7 +127,7 @@ class MassPresenter(QMainWindow):
             MassMoment.agnello: [Pages(body=agnello)],  # R
             MassMoment.invito_cena: [Pages(body=invito_cena)],  # R
             MassMoment.comunione: [],  # C
-            MassMoment.news: [Pages(body=NewsFetcher.fetch_news())],
+            MassMoment.news: [Pages(body=NewsFetcher.fetch_news()), ImagePages(content=FlayerFetcher.fetch_flayer())],
             MassMoment.fine: [],  # C
         }
 
@@ -145,6 +145,8 @@ class MassPresenter(QMainWindow):
         self.body.setWordWrap(True)
         self.body.setContentsMargins(20, 0, 20, 0)
         self.body.setProperty('class', 'main_label')
+
+        self.body_pixmap = QPixmap()
 
         self.cover_image = QLabel()
         self.cover_image.setProperty('class', 'main_label')
@@ -250,6 +252,21 @@ class MassPresenter(QMainWindow):
                     self.pages.append(p)
         self.page_pointer = 0
 
+    def display_body(self, content):
+        self.body.clear()
+        if isinstance(content, str):
+            self.body.setText(content)
+            self.body.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
+        else:
+            self.body_pixmap.loadFromData(content)
+            self.body_pixmap = self.body_pixmap.scaled(
+                self.body.size(),
+                Qt.AspectRatioMode.KeepAspectRatio,
+                Qt.TransformationMode.SmoothTransformation
+            )
+            self.body.setPixmap(self.body_pixmap)
+            self.body.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
     def on_left(self):
         self.reset_page_view()
 
@@ -266,7 +283,8 @@ class MassPresenter(QMainWindow):
             self.update_pages_to_show(mass_el)
             self.page_pointer = len(self.pages) - 1
 
-        self.body.setText(self.pages[self.page_pointer])
+        page_to_show = self.pages[self.page_pointer]
+        self.display_body(page_to_show)
 
     def on_right(self):
         self.reset_page_view()
@@ -282,7 +300,9 @@ class MassPresenter(QMainWindow):
 
             mass_el = self.sequence[self.mass_moment_pointer]
             self.update_pages_to_show(mass_el)
-        self.body.setText(self.pages[self.page_pointer])
+
+        page_to_show = self.pages[self.page_pointer]
+        self.display_body(page_to_show)
 
     def add(self, mass_moment, song):
         self.mass_structure[mass_moment].append(song)

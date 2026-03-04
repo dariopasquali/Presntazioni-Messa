@@ -60,8 +60,16 @@ class Pages:
         words = self.body.split(" ")
         return [" ".join(words[i:i + wpp]) for i in range(0, len(words), wpp)]
 
+class ImagePages:
+    def __init__(self, content):
+        self.content = content
+
+    def get_pages(self, *args, **kwargs):
+        return [self.content]
+
 
 news_url = "https://corogiovani.pythonanywhere.com/get_news"
+flayer_url = "https://corogiovani.pythonanywhere.com/get_flyer"
 
 
 class NewsFetcher:
@@ -69,3 +77,11 @@ class NewsFetcher:
     def fetch_news():
         response = requests.get(news_url)
         return response.text
+
+
+class FlayerFetcher:
+    @staticmethod
+    def fetch_flayer():
+        response = requests.get(flayer_url)
+        return response.content
+

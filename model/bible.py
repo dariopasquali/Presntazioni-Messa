@@ -141,7 +141,7 @@ class Bible:
 
     def fetch_online(self, aaaammdd="20240101"):
         url = website_root.format(aaaammdd=aaaammdd)
-        response = requests.get(url)
+        response = requests.get(url, verify=False)
         response.encoding = 'utf-8'
 
         if response.status_code != 200:
@@ -154,14 +154,18 @@ class Bible:
         if len(daily_header) > 0:
             self.daily_header = daily_header[0].text.strip()
 
-        if self.daily_header != "":
-            imgs = soup.find_all('img')
-            imgs = [img['src'] for img in imgs if img['alt'] == "Liturgia"]
-            if len(imgs) == 1:
-                with open("sunday_image.jpg", "wb") as f:
-                    response = requests.get(imgs[0])
-                    f.write(response.content)
-                    self.sunday_image_available = True
+        try:
+            if self.daily_header != "":
+                imgs = soup.find_all('img')
+                imgs = [img['src'] for img in imgs if img['alt'] == "Liturgia"]
+                if len(imgs) == 1:
+                    with open("sunday_image.jpg", "wb") as f:
+                        response = requests.get(imgs[0])
+                        f.write(response.content)
+                        self.sunday_image_available = True
+        except Exception as e:
+            print(e)
+            self.sunday_image_available = False
 
         lectures = soup.find_all('div', class_='section-content-testo')
 
@@ -180,10 +184,15 @@ class Bible:
             lecture_2 = ["", ""]
             gospel = [txt.replace("\r\n", " ") for txt in lectures[2][0].text.strip().split("\n\r\n")]
 
-        alleluia = [p for p in soup.find_all('p') if 'alleluia, alleluia.' in p.get_text().lower()][0]
+        alleluia = [p for p in soup.find_all('p') if 'alleluia, alleluia.' in p.get_text().lower()]
 
         self.lectures[MassMoment.lettura_1] = Lecture(head=lecture_1[0], body=lecture_1[1])
         self.lectures[MassMoment.lettura_2] = Lecture(head=lecture_2[0], body=lecture_2[1])
         self.lectures[MassMoment.vangelo] = Lecture(head=gospel[0], body=gospel[1], ending="Parola del Signore")
         self.lectures[MassMoment.salmo] = Salmo(rit=salmo[0], body=salmo[1:])
-        self.lectures[MassMoment.alleluia] = Alleluia(body="\r\n".join(alleluia.text.split("\r\n")[1:-1]))
+
+        if alleluia:
+            self.lectures[MassMoment.alleluia] = Alleluia(body="\r\n".join(alleluia[0].text.split("\r\n")[1:-1]))
+        else:
+            self.lectures[MassMoment.alleluia] = Alleluia(body="")
+
