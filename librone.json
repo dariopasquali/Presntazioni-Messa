@@ -30,6 +30,39 @@
             "title": "Grandi cose"
         },
         {
+            "<RIT>": "Gloria, gloria a Dio\n Gloria Gloria nell'alto dei cieli\nPace in terra agli uomini\namati dal Signor. Gloria.",
+            "body": [
+                "<RIT>",
+                "Noi ti lodiamo, ti benediciamo, ti adoriamo, glorifichiamo Te\nTi rendiamo grazie per la tua immensa gloria\nSignore Dio gloooria,\nRe del cielo gloooria\nDio Padre DIo onnipotente. Gloria.",
+                "<RIT>",
+                "Signore Figlio unigenito, Gesù Cristo\nSignore Agnello di Dio, Figlio del Padre\nTu che togli i peccati del mondo, abbi pietà di noi\nTu che togli i peccati del mondo, accogli la nostra supplica\nTu che siedi alla destra del Padre, abbi pietà di noi",
+                "<RIT>",
+                "Perché tu solo il Santo il Signore\nTu solo l’Altissimo Cristo Gesù\ncon lo Spirito Santo nella gloria del Padre.",
+                "<RIT>"
+            ],
+            "number": 1000,
+            "tag": [
+                "gloria"
+            ],
+            "title": "Gloria Gen Verde"
+        },
+        {
+            "body": [
+                "Gloria a Dio nell'alto dei cieli\ne pace in terra agli uomini amati dal Signore.\nNoi ti lodiamo, ti benediciamo,\nti adoriamo, ti glorifichiamo,\nti rendiamo grazie per la tua gloria immensa.",
+
+                "Signore Dio, Re del cielo,\nDio Padre Onnipotente,\nSignore Figlio unigenito Gesù Cristo,\nSignore Dio, Agnello di Dio, Figlio del Padre",
+
+                "Tu che togli i peccati del mondo abbi pietà di noi,\nTu che togli i peccati del mondo\naccogli la nostra supplica,\nTu che siedi alla destra del Padre abbi pietà di noi,\nperchè Tu solo il Santo,",
+
+                "Tu solo il Signore,\nTu solo l'Altissimo Gesù Cristo,\ncon lo Spirito Santo,\nnella gloria di Dio Padre. Amen."
+            ],
+            "number": 1000,
+            "tag": [
+                "gloria"
+            ],
+            "title": "Gloria Recitato"
+        },
+        {
             "<RIT2>": "Gloria a Dio nell\u2019alto dei cieli\ne pace in terra agli uomini che egli ama. (x2)",
             "<RIT>": "Gloria a Dio nell\u2019alto dei cieli\ne pace in terra agli uomini che egli ama.",
             "body": [
@@ -2058,7 +2091,7 @@
             ]
         },
         {
-            "title": "I.N.R.I. (Io Non Ritorno Indietro)\n\n",
+            "title": "I.N.R.I. (Io Non Ritorno Indietro)\n",
             "number": "",
             "tag": [
                 "intro",
@@ -2077,5 +2110,5 @@
             ]
         }
     ],
-    "version": 11.399999999999997
+    "version": 12.1
 }
