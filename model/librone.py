@@ -213,9 +213,26 @@ class Librone:
         self.librone['version'] = self.version
         self.librone["songs"].append(song_dict)
 
-        with open("librone.json", 'w', encoding="utf-8") as f:
+        with open(self.filename, 'w', encoding="utf-8") as f:
             json.dump(self.librone, f, indent=4)
 
+        return True
+
+    def update_song(self, original_title, title, number, moments, rits, structure):
+        index = next((i for i, song in enumerate(self.librone["songs"])
+                      if song["title"] == original_title), None)
+        if index is None:
+            return False
+        if title != original_title and self.search(title) is not None:
+            return False
+        updated = {"title": title, "number": number, "tag": list(moments), "body": list(structure)}
+        for key, text in rits:
+            updated[key] = text
+        self.librone["songs"][index] = updated
+        self.version += 0.1
+        self.librone["version"] = self.version
+        with open(self.filename, "w", encoding="utf-8") as file:
+            json.dump(self.librone, file, indent=4, ensure_ascii=False)
         return True
 
     def delete_song(self, title):
@@ -225,7 +242,7 @@ class Librone:
             self.version += 0.1
             self.librone['version'] = self.version
 
-            with open("librone.json", 'w', encoding="utf-8") as f:
+            with open(self.filename, 'w', encoding="utf-8") as f:
                 json.dump(self.librone, f, indent=4)
 
             return True

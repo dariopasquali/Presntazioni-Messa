@@ -1,3 +1,234 @@
-.main_label {{
-  background-color: #000000;
+/* PresentazioniMessa light pastoral theme.
+   qt-material supplies the base Material metrics; this file adds the app identity. */
+
+QWidget {{
+    font-family: "Segoe UI", "Arial";
+    font-size: 10.5pt;
+    color: #26352d;
 }}
+
+QMainWindow, QDialog {{
+    background-color: #f5f7f2;
+}}
+
+QMenuBar, QMenu, QToolBar {{
+    background-color: #eef3eb;
+    color: #20382a;
+    border: none;
+}}
+QToolBar {{
+    min-height: 46px;
+    spacing: 8px;
+    padding: 4px 8px;
+    border-bottom: 1px solid #ccd8ce;
+}}
+QMenuBar::item:selected, QMenu::item:selected {{
+    background-color: #dce9df;
+    color: #173e28;
+}}
+
+QGroupBox {{
+    background-color: #ffffff;
+    border: 1px solid #cbd8cd;
+    border-radius: 9px;
+    margin-top: 12px;
+    padding: 14px 8px 8px 8px;
+    font-weight: 600;
+    color: #31523c;
+}}
+QGroupBox::title {{
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 6px;
+    background-color: #f5f7f2;
+    color: #31523c;
+}}
+
+QLineEdit, QTextEdit, QDateEdit, QSpinBox, QComboBox, QListWidget {{
+    background-color: #ffffff;
+    color: #24332a;
+    border: 1px solid #bdccbf;
+    border-radius: 6px;
+    selection-background-color: #8dbb95;
+    selection-color: #102d1b;
+}}
+QLineEdit, QDateEdit, QSpinBox, QComboBox {{
+    min-height: 30px;
+    padding: 3px 8px;
+}}
+QTextEdit, QListWidget {{ padding: 5px; }}
+QLineEdit:focus, QTextEdit:focus, QDateEdit:focus, QComboBox:focus, QListWidget:focus {{
+    border: 2px solid #659d72;
+}}
+QListWidget::item {{ padding: 5px 7px; border-radius: 4px; }}
+QListWidget::item:hover {{ background-color: #edf5ee; }}
+QListWidget::item:selected {{ background-color: #a9cfae; color: #173e28; }}
+
+QPushButton {{
+    background-color: #dceade;
+    color: #23432d;
+    border: 1px solid #adc5b2;
+    border-radius: 6px;
+    min-height: 30px;
+    padding: 3px 12px;
+    font-weight: 600;
+}}
+QPushButton:hover {{ background-color: #c8dfcc; border-color: #78a983; }}
+QPushButton:pressed {{ background-color: #a9cfaf; }}
+QPushButton:checked {{ background-color: #5f966b; color: white; }}
+QPushButton:disabled {{ background-color: #e8ece8; color: #8a968d; }}
+
+QPushButton#primaryButton {{
+    background-color: #5f966b;
+    color: #ffffff;
+    border-color: #4c8058;
+    font-weight: 700;
+}}
+QPushButton#primaryButton:hover {{ background-color: #4f865c; }}
+QPushButton#dangerButton {{ background-color: #f5dfdb; color: #813c34; border-color: #deb7b0; }}
+QPushButton#blackoutButton {{ background-color: #46544a; color: white; border-color: #344139; }}
+QPushButton#blackoutButton:checked {{ background-color: #26332b; }}
+
+QCheckBox {{ spacing: 6px; color: #304b38; }}
+QCheckBox::indicator {{ width: 17px; height: 17px; }}
+
+QScrollArea {{ border: none; background: transparent; }}
+QScrollBar:vertical {{ background: #edf1ed; width: 11px; margin: 0; }}
+QScrollBar::handle:vertical {{ background: #a8baa9; min-height: 28px; border-radius: 5px; }}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {{ height: 0; }}
+QSplitter::handle {{ background-color: #d2ddd3; width: 2px; }}
+
+QLabel#sectionTitle {{ color: #31523c; font-size: 15pt; font-weight: 700; }}
+QLabel#subtleText {{ color: #607266; font-style: italic; }}
+QLabel#controlStatus {{ color: #264b32; font-size: 16pt; font-weight: 700; }}
+QFrame#momentCard, QFrame#controlMomentCard {{
+    background-color: #ffffff;
+    border: 1px solid #c8d6ca;
+    border-radius: 8px;
+}}
+
+/* Calendar popup: keep every day legible under qt-material. */
+QCalendarWidget QWidget {{ color: #26352d; background-color: white; }}
+QCalendarWidget QToolButton {{ color: #24462f; background-color: #e1ece3; font-weight: bold; }}
+QCalendarWidget QAbstractItemView:enabled {{
+    color: #26352d; background-color: white;
+    selection-color: white; selection-background-color: #5f966b;
+}}
+
+/* Projection is intentionally opt-out from the light Material theme. */
+QMainWindow#projectionWindow, QMainWindow#projectionWindow QWidget {{
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}}
+
+/* === Sage consistency and spacing refinements === */
+QAbstractItemView {{
+    selection-background-color: #b8d0bc;
+    selection-color: #1f3828;
+    alternate-background-color: #f4f7f3;
+}}
+QListWidget::item:selected, QListView::item:selected, QTreeView::item:selected,
+QTableView::item:selected, QCalendarWidget QAbstractItemView::item:selected {{
+    background-color: #b8d0bc;
+    color: #1f3828;
+}}
+QListWidget::item:selected:active, QListWidget::item:selected:!active {{
+    background-color: #b8d0bc;
+    color: #1f3828;
+}}
+
+QCheckBox::indicator {{
+    width: 17px;
+    height: 17px;
+    border: 1px solid #91aa96;
+    border-radius: 4px;
+    background-color: #ffffff;
+    image: none;
+}}
+QCheckBox::indicator:hover {{ background-color: #edf4ee; border-color: #6f9577; }}
+QCheckBox::indicator:checked {{
+    background-color: #91b398;
+    border-color: #719578;
+    image: url(:/qt-project.org/styles/commonstyle/images/standardbutton-apply-16.png);
+}}
+
+QCalendarWidget QAbstractItemView:enabled {{
+    color: #36523f;
+    background-color: #ffffff;
+    selection-color: #1f3828;
+    selection-background-color: #b8d0bc;
+}}
+QCalendarWidget QHeaderView::section {{
+    color: #405f49;
+    background-color: #e7efe7;
+    border: none;
+    padding: 4px;
+}}
+
+/* Floating group titles need enough top breathing room under qt-material. */
+QGroupBox {{
+    margin-top: 22px;
+    padding: 18px 10px 10px 10px;
+}}
+QGroupBox::title {{
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    left: 14px;
+    top: 3px;
+    padding: 2px 8px;
+    background-color: #f5f7f2;
+}}
+QGroupBox#launcherCard {{
+    background-color: #ffffff;
+    border: 1px solid #c5d4c7;
+    border-radius: 12px;
+    margin: 8px 4px;
+    margin-top: 24px;
+}}
+QGroupBox#launcherCard::title {{ background-color: #ffffff; }}
+QGroupBox#filterCard {{
+    background-color: #f8faf7;
+    border: 1px solid #d3ded4;
+    border-radius: 8px;
+    margin-top: 22px;
+}}
+QGroupBox#filterCard::title {{ background-color: #f8faf7; }}
+QSplitter#launcherSplitter::handle {{ background: #f5f7f2; width: 10px; }}
+
+/* Compact utility buttons: avoid qt-material horizontal padding clipping + and minus. */
+QPushButton#compactButton {{
+    min-width: 34px;
+    max-width: 34px;
+    min-height: 32px;
+    max-height: 32px;
+    padding: 0;
+    margin: 0;
+    font-size: 14pt;
+    font-weight: 700;
+}}
+QPushButton#pageButton {{
+    min-width: 38px;
+    max-width: 38px;
+    min-height: 32px;
+    max-height: 32px;
+    padding: 0;
+    margin: 0 2px;
+    background-color: #e2ede4;
+    border-color: #b8cdbb;
+    color: #25402e;
+}}
+QPushButton#pageButton:hover {{ background-color: #cedfD1; }}
+QPushButton#currentPageButton {{
+    min-width: 38px;
+    max-width: 38px;
+    min-height: 32px;
+    max-height: 32px;
+    padding: 0;
+    margin: 0 2px;
+    background-color: #9fbea5;
+    border-color: #789a7f;
+    color: #183321;
+    font-weight: 700;
+}}
+QFrame#controlMomentCard {{ padding-bottom: 8px; }}

@@ -2,7 +2,7 @@ import requests
 from PyQt6.QtGui import QFontMetrics
 from bs4 import BeautifulSoup
 
-from model.commons import Pages, MassMoment
+from model.commons import Pages, MassMoment, normalize_display_html
 
 website_root = "https://www.lachiesa.it/calendario/{aaaammdd}.html"
 
@@ -26,39 +26,69 @@ class Lecture(Pages):
         }
 
     def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
-        if self.body == "":
+        """Paginate by words, never by source lines from lachiesa.it.
+
+        The renderer performs the final visual wrapping using the actual target
+        widget width. Pages therefore contain continuous prose rather than hard
+        line breaks calculated with a different font size.
+        """
+        import math
+        from PyQt6.QtGui import QTextDocument
+        if not self.body:
             return [""]
 
-        txt = f"""<b>{self.head}</b><br>"""
-        txt += self.body + f"""<br><b>{self.ending}</b>"""
+        head = normalize_display_html(self.head)
+        body = normalize_display_html(self.body)
+        ending = normalize_display_html(self.ending)
+        words = body.split()
+        safe_width = max(200, int(max_width * 0.94))
+        safe_height = max(200, int(max_height * 0.90))
 
-        # Break text into wrapped lines
-        metrics = QFontMetrics(font)
-        words = txt.split()
-        lines = []
-        line = ""
+        def fits(candidate):
+            parts = []
+            if head:
+                parts.append(f"<b><u>{head}</u></b>")
+            if candidate:
+                parts.append(candidate)
+            if ending:
+                parts.append(f"<b>{ending}</b>")
+            doc = QTextDocument()
+            doc.setDefaultFont(font)
+            doc.setDocumentMargin(0)
+            doc.setHtml("<br>".join(parts))
+            doc.setTextWidth(safe_width)
+            return doc.size().height() <= safe_height
 
+        pages, current = [], []
         for word in words:
-            test_line = f"{line} {word}".strip()
-            if metrics.boundingRect(test_line).width() > max_width:
-                lines.append(line)
-                line = word
+            candidate = current + [word]
+            if current and not fits(" ".join(candidate)):
+                pages.append(current)
+                current = [word]
             else:
-                line = test_line
-        if line:
-            lines.append(line)
+                current = candidate
+        if current:
+            pages.append(current)
 
-        # Group lines into pages
-        line_height = metrics.lineSpacing()
-        max_lines = max_height // line_height
+        # Rebalance pages to avoid a very short final page.
+        if len(pages) > 1:
+            all_words = [word for page in pages for word in page]
+            target = math.ceil(len(all_words) / len(pages))
+            balanced = [all_words[i:i + target] for i in range(0, len(all_words), target)]
+            if len(balanced) == len(pages) and all(fits(" ".join(page)) for page in balanced):
+                pages = balanced
 
-        return [
-            " ".join(lines[i:i + max_lines])
-            for i in range(0, len(lines), max_lines)
-        ]
+        rendered = []
+        for page_index, page_words in enumerate(pages or [[]]):
+            parts = []
+            if page_index == 0 and head:
+                parts.append(f"<b><u>{head}</u></b>")
+            parts.append(" ".join(page_words))
+            if page_index == len(pages) - 1 and ending:
+                parts.append(f"<b>{ending}</b>")
+            rendered.append("<br>".join(part for part in parts if part))
+        return rendered or [""]
 
-        # words = txt.split(" ")
-        # return [" ".join(words[i:i + wpp]) for i in range(0, len(words), wpp)]
 
 
 class Salmo(Lecture):
@@ -79,7 +109,7 @@ class Salmo(Lecture):
     def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
         pages = []
         for b in self.body:
-            txt = f"<b>RIT: {self.rit}</b><br><br>"
+            txt = f"<b><u>RIT: {self.rit}</u></b><br><br>"
             txt += b
             pages.append(txt)
 
@@ -193,18 +223,18 @@ class Bible:
 
         lectures = [x.find_all('p') for x in lectures]
 
-        lecture_1 = [txt.replace("\r\n", " ") for txt in lectures[0][0].text.strip().split("\n\r\n")]
+        lecture_1 = [normalize_display_html(txt) for txt in lectures[0][0].text.strip().split("\n\r\n")]
 
         salmo = [x.replace("\t", "").replace("\r\n", "<VERSE>").split("\n") for x in
                  lectures[1][0].text.strip().split("\n\r\n")]
         salmo = [item.replace("<VERSE>", "<br>") for sub in salmo for item in sub]
 
         if len(lectures) == 4:
-            lecture_2 = [txt.replace("\r\n", " ") for txt in lectures[2][0].text.strip().split("\n\r\n")]
-            gospel = [txt.replace("\r\n", " ") for txt in lectures[3][0].text.strip().split("\n\r\n")]
+            lecture_2 = [normalize_display_html(txt) for txt in lectures[2][0].text.strip().split("\n\r\n")]
+            gospel = [normalize_display_html(txt) for txt in lectures[3][0].text.strip().split("\n\r\n")]
         else:
             lecture_2 = ["", ""]
-            gospel = [txt.replace("\r\n", " ") for txt in lectures[2][0].text.strip().split("\n\r\n")]
+            gospel = [normalize_display_html(txt) for txt in lectures[2][0].text.strip().split("\n\r\n")]
 
         self.lectures[MassMoment.lettura_1] = Lecture(head=lecture_1[0], body=lecture_1[1])
         self.lectures[MassMoment.lettura_2] = Lecture(head=lecture_2[0], body=lecture_2[1])

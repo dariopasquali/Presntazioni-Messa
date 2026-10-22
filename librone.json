@@ -35,9 +35,9 @@
                 "<RIT>",
                 "Noi ti lodiamo, ti benediciamo, ti adoriamo, glorifichiamo Te\nTi rendiamo grazie per la tua immensa gloria\nSignore Dio gloooria,\nRe del cielo gloooria\nDio Padre DIo onnipotente. Gloria.",
                 "<RIT>",
-                "Signore Figlio unigenito, Gesù Cristo\nSignore Agnello di Dio, Figlio del Padre\nTu che togli i peccati del mondo, abbi pietà di noi\nTu che togli i peccati del mondo, accogli la nostra supplica\nTu che siedi alla destra del Padre, abbi pietà di noi",
+                "Signore Figlio unigenito, Ges\u00f9 Cristo\nSignore Agnello di Dio, Figlio del Padre\nTu che togli i peccati del mondo, abbi piet\u00e0 di noi\nTu che togli i peccati del mondo, accogli la nostra supplica\nTu che siedi alla destra del Padre, abbi piet\u00e0 di noi",
                 "<RIT>",
-                "Perché tu solo il Santo il Signore\nTu solo l’Altissimo Cristo Gesù\ncon lo Spirito Santo nella gloria del Padre.",
+                "Perch\u00e9 tu solo il Santo il Signore\nTu solo l\u2019Altissimo Cristo Ges\u00f9\ncon lo Spirito Santo nella gloria del Padre.",
                 "<RIT>"
             ],
             "number": 1000,
@@ -49,12 +49,9 @@
         {
             "body": [
                 "Gloria a Dio nell'alto dei cieli\ne pace in terra agli uomini amati dal Signore.\nNoi ti lodiamo, ti benediciamo,\nti adoriamo, ti glorifichiamo,\nti rendiamo grazie per la tua gloria immensa.",
-
-                "Signore Dio, Re del cielo,\nDio Padre Onnipotente,\nSignore Figlio unigenito Gesù Cristo,\nSignore Dio, Agnello di Dio, Figlio del Padre",
-
-                "Tu che togli i peccati del mondo abbi pietà di noi,\nTu che togli i peccati del mondo\naccogli la nostra supplica,\nTu che siedi alla destra del Padre abbi pietà di noi,\nperchè Tu solo il Santo,",
-
-                "Tu solo il Signore,\nTu solo l'Altissimo Gesù Cristo,\ncon lo Spirito Santo,\nnella gloria di Dio Padre. Amen."
+                "Signore Dio, Re del cielo,\nDio Padre Onnipotente,\nSignore Figlio unigenito Ges\u00f9 Cristo,\nSignore Dio, Agnello di Dio, Figlio del Padre",
+                "Tu che togli i peccati del mondo abbi piet\u00e0 di noi,\nTu che togli i peccati del mondo\naccogli la nostra supplica,\nTu che siedi alla destra del Padre abbi piet\u00e0 di noi,\nperch\u00e8 Tu solo il Santo,",
+                "Tu solo il Signore,\nTu solo l'Altissimo Ges\u00f9 Cristo,\ncon lo Spirito Santo,\nnella gloria di Dio Padre. Amen."
             ],
             "number": 1000,
             "tag": [
@@ -2110,5 +2107,5 @@
             ]
         }
     ],
-    "version": 12.1
+    "version": 12.399999999999999
 }

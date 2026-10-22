@@ -1,4 +1,6 @@
 import enum
+import re
+
 import requests
 
 
@@ -52,13 +54,27 @@ class MassMoment(enum.Enum):
         }[name]
 
 
+def normalize_display_html(text):
+    """Remove accidental source line breaks while preserving intentional HTML breaks."""
+    if not text:
+        return ""
+    text = str(text).replace("\r\n", "\n").replace("\r", "\n")
+    text = re.sub(r"[ \t]*\n[ \t]*", " ", text)
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"\s*(<br\s*/?>)\s*", r"\1", text, flags=re.IGNORECASE)
+    return text.strip()
+
+
 class Pages:
     def __init__(self, body):
         self.body = body
 
     def get_pages(self, wpp=100, one_section_per_page=True, font=None, max_width=1024, max_height=768):
-        words = self.body.split(" ")
-        return [" ".join(words[i:i + wpp]) for i in range(0, len(words), wpp)]
+        body = normalize_display_html(self.body)
+        # Fixed rites contain deliberate <br> tags. Keep those tags, but do not
+        # turn indentation/newlines from triple-quoted strings into extra spacing.
+        tokens = body.split()
+        return [" ".join(tokens[i:i + wpp]) for i in range(0, len(tokens), wpp)] or [""]
 
 class ImagePages:
     def __init__(self, content):
