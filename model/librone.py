@@ -121,7 +121,7 @@ class Librone:
         # Check if the request was successful
         if response.status_code == 200:
             # Save the content to a file
-            with open("librone.tmp.json", "w") as json_file:
+            with open("librone.tmp.json", "w", encoding="utf-8") as json_file:
                 json_file.write(response.text)
 
             with open("librone.tmp.json", 'r', encoding="utf-8") as f:

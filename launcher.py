@@ -676,8 +676,7 @@ class Launcher(QMainWindow):
         self.date_edit.dateChanged.connect(self.on_date_select)
         toolbar.addWidget(self.date_edit)
         toolbar.addSeparator()
-        self.check_single_section = QCheckBox("Una strofa per slide")
-        toolbar.addWidget(self.check_single_section)
+
         spacer = QWidget()
         spacer.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
         toolbar.addWidget(spacer)
@@ -858,26 +857,89 @@ class Launcher(QMainWindow):
         event.accept()
 
     def fetch_saved_mass_from_webapp(self):
+        """Refresh the dates available on the remote webapp.
+
+        The endpoint historically returned a JSON list. Keep accepting an object
+        containing a ``dates`` or ``messe`` list so the desktop client remains
+        compatible with future API changes as well.
+        """
         try:
-            response = requests.get("https://corogiovani.pythonanywhere.com/messa/list", timeout=10)
-            self.webapp_mass = response.json()
-        except Exception:
-            self.webapp_mass = []
+            response = requests.get(
+                "https://corogiovani.pythonanywhere.com/messa/list",
+                timeout=10
+            )
+            response.raise_for_status()
+            payload = response.json()
+            if isinstance(payload, list):
+                dates = payload
+            elif isinstance(payload, dict):
+                dates = payload.get("dates", payload.get("messe", []))
+            else:
+                dates = []
+            self.webapp_mass = {str(date) for date in dates}
+        except (requests.RequestException, ValueError, TypeError) as error:
+            logging.getLogger(__name__).warning(
+                "Could not retrieve the remote Mass list: %s", error
+            )
+            self.webapp_mass = set()
         self.on_date_select()
+
+    @staticmethod
+    def _extract_remote_moments(payload):
+        """Return the song mapping from both old and new webapp responses.
+
+        Old endpoint: {"intro": [...], ...}
+        New endpoint: {"date": "...", "moments": {"intro": [...], ...}, ...}
+        """
+        if not isinstance(payload, dict):
+            return {}
+        nested = payload.get("moments")
+        return nested if isinstance(nested, dict) else payload
 
     def load_webapp_mass(self, date):
         self.clear_mass_structure()
         if date not in self.webapp_mass:
+            self.statusBar().showMessage(
+                f"Nessuna Messa salvata online per il {date}", 4000
+            )
             return
+
         try:
-            response = requests.get(f"https://corogiovani.pythonanywhere.com/messa/{date}", timeout=10)
-            songs = response.json()
-            for moment_name, titles in songs.items():
-                moment = MassMoment.from_name(moment_name)
-                if moment in self.moment_lists:
-                    self.add_song_titles(moment, titles)
-        except Exception:
-            pass
+            response = requests.get(
+                f"https://corogiovani.pythonanywhere.com/messa/{date}",
+                timeout=10
+            )
+            response.raise_for_status()
+            moments = self._extract_remote_moments(response.json())
+            loaded_songs = 0
+
+            for moment_name, titles in moments.items():
+                try:
+                    moment = MassMoment.from_name(moment_name)
+                except (KeyError, ValueError, TypeError):
+                    continue
+
+                if moment not in self.moment_lists:
+                    continue
+                if isinstance(titles, str):
+                    titles = [titles]
+                if not isinstance(titles, list):
+                    continue
+
+                clean_titles = [str(title).strip() for title in titles if str(title).strip()]
+                self.add_song_titles(moment, clean_titles)
+                loaded_songs += len(clean_titles)
+
+            self.statusBar().showMessage(
+                f"Messa del {date} caricata: {loaded_songs} canti", 5000
+            )
+        except (requests.RequestException, ValueError, TypeError) as error:
+            logging.getLogger(__name__).exception(
+                "Could not load the remote Mass for %s", date
+            )
+            self.statusBar().showMessage(
+                f"Impossibile caricare la Messa del {date}: {error}", 7000
+            )
 
     def on_date_select(self):
         self.load_webapp_mass(self.date_edit.date().toString("yyyy-MM-dd"))
@@ -930,7 +992,7 @@ class Launcher(QMainWindow):
         self.messa = MassPresenter(aaaammdd=self.date, body_font_family=load_custom_font_family(), default_font_size=48)
         self.messa.set_bible(self.bible)
         self.messa.set_librone(self.librone)
-        self.messa.run(fullscreen=True, one_section_per_page=self.check_single_section.isChecked())
+        self.messa.run(fullscreen=True)
 
     def on_close(self):
         subprocess.call("explorer messe", shell=True)
@@ -951,6 +1013,8 @@ if __name__ == "__main__":
                         )
 
     app = QApplication(sys.argv)
+    app.setApplicationName("PresentazioniMessa")
+    app.setWindowIcon(QIcon("PresentazioniMessa.ico"))
     apply_stylesheet(
         app,
         theme='light_lightgreen.xml',
